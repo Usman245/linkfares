@@ -35,6 +35,7 @@ module.exports = {
         },
         "black-2f": "#2f2f2f",
         "gray-e0": "#e0e0e0",
+        "green-f2": "#DDFBF2",
       },
 
       fontFamily: {
