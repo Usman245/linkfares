@@ -129,7 +129,7 @@ const Footer = () => {
       <div className="bg-green-600">
         <div className="container py-4">
           <div className="flex justify-center font-roboto text-sm font-bold  text-white">
-            Copyright @Link Fares 2024
+            Copyright @Link Fares 2023
           </div>
         </div>
       </div>
