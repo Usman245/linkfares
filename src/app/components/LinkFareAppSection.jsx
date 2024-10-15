@@ -55,9 +55,6 @@ const LinkFareAppSection = () => {
                 <input  className="   py-[22px] px-[23px] text-xl font-bold font-roboto border border-gray-56 rounded-lg   outline-none "  type="tel" placeholder="Your Phone Number"></input>
                 <button className="bg-green-6A  py-[22px] px-[52px] rounded-lg bg-green-500 hover:bg-green-600  text-xl font-bold  font-roboto text-[28px] text-white"> Share Link</button>
             </div>
-
-
-
           </div>
         </div>
       </div>
