@@ -12,8 +12,8 @@ module.exports = {
         DEFAULT: "1rem",
         sm: "2rem",
         lg: "5rem",
-        xl: "8.438rem",
-        "2xl": "6rem",
+        xl: "5rem",
+        "2xl": "5rem",
       },
     },
     extend: {
@@ -36,7 +36,12 @@ module.exports = {
         "black-2f": "#2f2f2f",
         "gray-e0": "#e0e0e0",
         "green-f2": "#DDFBF2",
+        "gray-71": "#626971",
+        "black-26": "#262626",
+        "black-33": "#333333",
+        "gray-56": "#565656",
       },
+
 
       fontFamily: {
         roboto: ["var(--roboto)"],

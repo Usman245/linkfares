@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="grid  gap-y-10 grid-cols-1 lg:grid-cols-2">
               <div className="grid gap-y-10  grid-cols-2">
                 <div className="flex flex-col gap-y-9 ">
-                  <Image src="/images/footerlogo.png" width={148} height={48} />
+                  <Image src="/images/footerlogo.png" width={148} height={48}  alt=""/>
 
                   <div className="font-roboto font-bold text-sm py-[11px] px-[16px] hidden sm:block  text-white  bg-green-400 rounded-lg text-center w-max">
                     Pakistan . English (UK) . RS PKR
