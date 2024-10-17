@@ -1,9 +1,11 @@
+const { nextui } = require("@nextui-org/theme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     container: {
@@ -11,9 +13,9 @@ module.exports = {
       padding: {
         DEFAULT: "1rem",
         sm: "2rem",
-        lg: "5rem",
-        xl: "5rem",
-        "2xl": "5rem",
+        lg: "4rem",
+        xl: "4rem",
+        "2xl": "6rem",
       },
     },
     extend: {
@@ -34,20 +36,26 @@ module.exports = {
           900: "#054f31",
         },
         "black-2f": "#2f2f2f",
+        "black-1E": "#1C1B1E",
+
         "gray-e0": "#e0e0e0",
         "green-f2": "#DDFBF2",
         "gray-71": "#626971",
         "black-26": "#262626",
         "black-33": "#333333",
         "gray-56": "#565656",
+        "green-11": "#112211",
+        "gray-4B": "#4B4B4B",
+        "gray-D9":"#D9D9D9",
       },
-
 
       fontFamily: {
         roboto: ["var(--roboto)"],
         poppins: ["var(--poppins)"],
+        inter: ["var(--inter)"],
       },
     },
   },
-  plugins: [],
+  darkMode: "class",
+  plugins: [nextui()],
 };

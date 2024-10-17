@@ -5,6 +5,12 @@ import Footer from "./components/Footer";
 
 import { Roboto } from "next/font/google";
 import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
+
+// app/providers.tsx
+
+import { NextUIProvider } from "@nextui-org/react";
+import Newsletter from "./components/Newsletter";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -15,6 +21,12 @@ const roboto = Roboto({
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--poppins", // Correct usage of variable
+  weight: ["100", "300", "400", "500", "700", "900"], // Available weights for Roboto
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--inter", // Correct usage of variable
   weight: ["100", "300", "400", "500", "700", "900"], // Available weights for Roboto
 });
 
@@ -36,15 +48,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={` ${roboto.variable}  ${poppins.variable}`}>
+    <html
+      lang="en"
+      className={` ${roboto.variable}  ${poppins.variable}  ${inter.variable}`}
+    >
       <body
-        className={`${geistSans.variable} ${geistMono.variable}  antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable}   antialiased`}
       >
         <div>
           <Header />
         </div>
-        {children}
+        <NextUIProvider>{children}</NextUIProvider>
         <div>
+          {/* <Newsletter/> */}
           <Footer />
         </div>
       </body>

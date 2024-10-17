@@ -1,6 +1,12 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 
 const exploreData = [
   {
@@ -23,6 +29,17 @@ const exploreData = [
     imgpath: "/images/Hotel.png",
     cardtitle: "Hotels",
   },
+  {
+    id: 4,
+    imgpath: "/images/Hotel.png",
+    cardtitle: "Hotels",
+  },
+
+  {
+    id: 4,
+    imgpath: "/images/Hotel.png",
+    cardtitle: "Hotels",
+  },
 ];
 
 const ExploreMore = () => {
@@ -39,25 +56,52 @@ const ExploreMore = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {exploreData.map((item, index) => (
-              <Link href="#" key={index} className=" relative ">
-                <div className="rounded-lg">
-                  <Image
-                    src={item.imgpath}
-                    width={270}
-                    height={270}
-                    layout="responsive"
-                    alt=""
-                    className="rounded-lg"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/10 w-full rounded-lg"></div>
-                  <p className="font-poppins font-bold text-[22px] absolute bottom-[16px] text-white left-[16px] ">
-                    {item.cardtitle}
-                  </p>
-                </div>
-              </Link>
-            ))}
+          <div className="relative">
+            <Swiper
+              spaceBetween={20}
+              loop
+              autoplay
+              pagination={{
+                clickable: true,
+              }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3, // 3 slides for screens 1024px and up
+                },
+                1440: {
+                  slidesPerView: 4,
+                },
+              }}
+              className="mySwiper"
+            >
+              {exploreData.map((item, index) => (
+                <SwiperSlide key={index} className="rounded-lg">
+                  {" "}
+                  <Link href="#" className="  ">
+                    <div className="rounded-lg">
+                      <Image
+                        src={item.imgpath}
+                        width={270}
+                        height={270}
+                        alt=""
+                        layout="responsive"
+                        className="rounded-lg"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/10 w-full rounded-lg"></div>
+                      <p className="font-poppins font-bold text-[22px] absolute bottom-[16px] text-white left-[16px] ">
+                        {item.cardtitle}
+                      </p>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </div>

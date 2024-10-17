@@ -24,3 +24,76 @@ body {
     text-wrap: balance;
   }
 }
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.style-module_fillIcons__6---A {
+  display: flex !important;
+
+}
+
+
+.style-module_emptyIcons__Bg-FZ {
+  display: flex !important;
+}
+
+
+.my-custom-slider {
+  position: relative;
+  /* width: 90vw; */
+  /* height: auto */
+  display: flex;
+  justify-content: center;
+}
+
+.my-custom-slider .swiper-wrapper {
+  padding: 115px 0px;
+
+
+}
+
+
+
+
+.my-custom-slider .swiper-slide {
+  height: 300px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms linear;
+  transform: scaleY(0.8)
+}
+
+.my-custom-slider .swiper-slide-active {
+  transform: scaleY(1.3) !important;
+
+  /* This will apply only to active slide */
+}
+
+.my-custom-slider .swiper-button-prev,
+.my-custom-slider .swiper-button-next {
+  /* Custom styling for navigation buttons */
+  color: #333;
+}
