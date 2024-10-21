@@ -15,7 +15,7 @@ const Header = () => {
     <header>
       <nav className="bg-white border-gray-200  py-3  dark:bg-gray-800">
         <div className="flex flex-wrap justify-between items-center container">
-          <a href="https://flowbite.com" className="flex items-center">
+          <a href="/" className="flex items-center">
             <Image src="/images/Logo.png" width={148} height={48} />
           </a>
           <div className="flex items-center gap-5  lg:order-2 ">
@@ -70,7 +70,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/Flights/flightHome"
                   className="text-black-2f  font-bold text-sm  font-roboto"
                 >
                   Flights
@@ -134,7 +134,7 @@ const Header = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/Flights/flightHome"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <span className="ms-3  font-roboto  text-black-2f font-bold">
