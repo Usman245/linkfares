@@ -7,7 +7,8 @@ const page = () => {
   return (
     <div>
       <FlightHomeBanner />
-      <FlightsDiplayPage/>
+      <FlightsDiplayPage />
+      
     </div>
   );
 };

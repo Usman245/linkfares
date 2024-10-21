@@ -8,6 +8,14 @@ module.exports = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      xs: "375px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     container: {
       center: true,
       padding: {
@@ -37,7 +45,6 @@ module.exports = {
         },
         "black-2f": "#2f2f2f",
         "black-1E": "#1C1B1E",
-
         "gray-e0": "#e0e0e0",
         "green-f2": "#DDFBF2",
         "gray-71": "#626971",
@@ -46,9 +53,9 @@ module.exports = {
         "gray-56": "#565656",
         "green-11": "#112211",
         "gray-4B": "#4B4B4B",
-        "gray-D9":"#D9D9D9",
+        "gray-D9": "#D9D9D9",
+        "gray-87": "#878787",
       },
-
       fontFamily: {
         roboto: ["var(--roboto)"],
         poppins: ["var(--poppins)"],

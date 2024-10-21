@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { RxCrossCircled } from "react-icons/rx";
 import { TbCheckbox } from "react-icons/tb";
+import { Slider } from "@nextui-org/react";
 
 const stopData = [
   {
@@ -23,8 +24,24 @@ const stopData = [
 
 const FlightFilter = () => {
   const [checkedItems, setCheckedItems] = useState({});
+  const [timeRange, setTimeRange] = useState([0, 12]);
+  const [hoursRange, setHoursRange] = useState([0, 46]);
 
-  // Function to handle checkbox change
+  const formatTime = (value) => {
+    const hours = value % 24; // Convert value to 24-hour format
+    const isAM = hours < 12;
+    const displayHours = hours % 12 || 12; // Convert to 12-hour format (show 12 instead of 0)
+    const period = isAM ? "AM" : "PM";
+
+    return `${displayHours}:00 ${period}`;
+  };
+
+  const formatHours = (hours) => `${hours} hours`;
+
+  const handleSliderChange = (value) => {
+    setHoursRange(value); // Update both start and end hours
+  };
+
   const handleCheckboxChange = (id) => {
     setCheckedItems((prev) => ({
       ...prev,
@@ -34,50 +51,11 @@ const FlightFilter = () => {
   return (
     <div className="flex flex-col gap-[15px] ">
       <div className="flex flex-col gap-[17px] ">
-        <div className="flex flex-col gap-3">
-          <p className="font-poppins  text-lg text-gray-4B  font-medium">
-            Filters
-          </p>
-          <div className="grid grid-cols-2 w-max gap-3">
-            <button className="py-[4px] px-[23px] flex justify-center gap-2 items-center border border-gray-4B rounded-[20px]  border-2">
-              <p className="text-[10px] font-roboto font-regular text-gray-4B ">
-                Direct{" "}
-              </p>
-
-              <RxCrossCircled color="#4B4B4B" width={6} />
-            </button>
-
-            <button className="py-[4px] px-[23px] flex justify-center gap-2 items-center border border-gray-4B rounded-[20px]  border-2">
-              <p className="text-[10px] font-roboto font-regular text-gray-4B ">
-                Outbound{" "}
-              </p>
-
-              <RxCrossCircled color="#4B4B4B" width={6} />
-            </button>
-
-            <button className="py-[4px] px-[23px] flex justify-center gap-2 items-center border border-gray-4B rounded-[20px]  border-2">
-              <p className="text-[10px] font-roboto font-regular text-gray-4B ">
-                03 hours{" "}
-              </p>
-
-              <RxCrossCircled color="#4B4B4B" width={6} />
-            </button>
-
-            <button className="py-[4px] px-[23px] flex justify-center gap-2 items-center border border-gray-4B rounded-[20px]  border-2">
-              <p className="text-[10px] font-roboto font-regular text-gray-4B ">
-                Delete All{" "}
-              </p>
-
-              <RxCrossCircled color="#4B4B4B" width={6} />
-            </button>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-[15px]">
+        <div className="flex  flex-col   gap-2 lg:gap-[15px]">
           <p className="font-poppins  text-lg text-gray-4B  font-medium">
             Stops
           </p>
-          <div className="flex flex-col gap-2">
+          <div className="flex lg:flex-col gap-2">
             {stopData.map((item, index) => (
               <div className="flex items-center gap-2" key={index}>
                 <div>
@@ -117,7 +95,92 @@ const FlightFilter = () => {
         <p className="font-poppins  text-[20px] text-gray-4B  font-medium">
           Departure times
         </p>
-        <div className="flex flex-col  gap-12"></div>
+
+        <div className="flex flex-col gap-[32px]">
+          <div className="flex flex-col  gap-[12px]">
+            <p className="text-[16px] font-medium font-roboto text-gray-4B">
+              Return
+            </p>
+
+            <Slider
+              label={` ${formatTime(timeRange[0])} - ${formatTime(
+                timeRange[1]
+              )}`}
+              step={1} // Step by 1 hour
+              minValue={0} // Start at 12:00 AM (0 hours)
+              maxValue={23} // End at 11:00 PM (23 hours)
+              defaultValue={[0, 12]} // Default range from 12:00 AM to 12:00 PM
+              onChange={setTimeRange} // Update time range as the slider moves
+              className="max-w-md"
+              color="#12B76A"
+              classNames={{
+                filler: "bg-green-600",
+                thumb: "bg-green-600",
+                label: "text-lg",
+                defaultValue: "text-lg text-gray-4B font-roboto font-bold",
+                value: "text-lg text-gray-4B font-roboto font-bold",
+              }}
+              range
+            />
+          </div>
+        </div>
+        <div className="flex flex-col  gap-[12px]">
+          <p className="text-[16px] font-medium font-roboto text-gray-4B">
+            Outbound
+          </p>
+
+          <Slider
+            label={` ${formatTime(timeRange[0])} - ${formatTime(timeRange[1])}`}
+            step={1} // Step by 1 hour
+            minValue={0} // Start at 12:00 AM (0 hours)
+            maxValue={23} // End at 11:00 PM (23 hours)
+            defaultValue={[0, 12]} // Default range from 12:00 AM to 12:00 PM
+            onChange={setTimeRange} // Update time range as the slider moves
+            className="max-w-md"
+            color="#12B76A"
+            classNames={{
+              filler: "bg-green-600",
+              thumb: "bg-green-600",
+              label: "text-lg",
+              defaultValue: "text-lg text-gray-4B font-roboto font-bold",
+              value: "text-lg text-gray-4B font-roboto font-bold",
+            }}
+            range // Enable range selection
+          />
+        </div>
+      </div>
+
+      <hr class="my-[24px] h-0.5 border-t-0 bg-gray-D9 " />
+
+      <div className="flex flex-col gap-[16px] ">
+        <p className="font-poppins  text-[20px] text-gray-4B  font-medium">
+          Trip Duration
+        </p>
+
+        <div className="flex flex-col gap-[32px]"></div>
+        <div className="flex flex-col  ">
+          <Slider
+            label={`${formatHours(hoursRange[0])} - ${formatHours(
+              hoursRange[1]
+            )}`}
+            step={1} // Step by 1 hour
+            minValue={0} // Minimum value is 7 hours
+            maxValue={46} // Maximum value is 46 hours
+            defaultValue={[hoursRange[0], hoursRange[1]]} // Default range: 7 hours to 46 hours
+            onChange={handleSliderChange} // Update the hoursRange dynamically
+            className="max-w-md"
+            color="#12B76A"
+            classNames={{
+              filler: "bg-green-600",
+              thumb: "bg-green-600",
+              label: "text-lg",
+              defaultValue: "text-lg text-gray-4B font-roboto font-bold",
+              value: "text-lg text-gray-4B font-roboto font-bold",
+              width: "w-full box-shadow-none",
+            }}
+            range // Enable range selection
+          />
+        </div>
       </div>
     </div>
   );
