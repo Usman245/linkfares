@@ -97,3 +97,8 @@ body {
   /* Custom styling for navigation buttons */
   color: #333;
 }
+.accordian-wrapper h2 button {
+  padding: 12px !important;
+  border: 2px solid #E7E9EB !important;
+  border-radius: 12px;
+}

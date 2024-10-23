@@ -77,13 +77,19 @@ const  FlightBanner = () => {
                         </label>
                         <input
                           type="text"
-                          class="  w-full text-base  text-gray-71 "
+                          className="  w-full text-base  text-gray-71 "
                           placeholder="Enter Origin"
-                          required
                         />
                       </div>
- 
-                      <div className="absolute right-[50%] bottom-[-40%] lg:right-[-6%]  lg:bottom-[15%] "><MdOutlineSwapHorizontalCircle size={"40"} color="#429C7D"  enableBackground={true}   className="bg-white rounded-full m-0 p-0  transform rotate-90  lg:rotate-0" /></div>
+
+                      <div className="absolute right-[50%] bottom-[-40%] lg:right-[-6%]  lg:bottom-[15%] ">
+                        <MdOutlineSwapHorizontalCircle
+                          size={"40"}
+                          color="#429C7D"
+                          enableBackground={true}
+                          className="bg-white rounded-full m-0 p-0  transform rotate-90  lg:rotate-0"
+                        />
+                      </div>
                     </div>
 
                     <div className="bg-white  rounded-lg lg:rounded-none  p-2 flex lg:justify-center">
@@ -93,9 +99,8 @@ const  FlightBanner = () => {
                         </label>
                         <input
                           type="text"
-                          class="  w-full text-base  text-gray-71 "
+                          className="  w-full text-base  text-gray-71 "
                           placeholder="Enter Origin"
-                          required
                         />
                       </div>
                     </div>
@@ -105,38 +110,52 @@ const  FlightBanner = () => {
                         <label className=" font-roboto text-sm font-bold ">
                           Depart
                         </label>
-                        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}   className="   w-full text-base  text-gray-71 outline-none"/>
+                        <DatePicker
+                          selected={startDate}
+                          onChange={(date) => setStartDate(date)}
+                          className="   w-full text-base  text-gray-71 outline-none"
+                        />
                       </div>
-
-                  
                     </div>
                     <div className="bg-white rounded-lg lg:rounded-none  p-2 flex lg:justify-center">
                       <div className="flex flex-col  justify-center">
                         <label className=" font-roboto text-sm font-bold ">
                           Return
                         </label>
-                        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}   className="   w-full text-base  text-gray-71 outline-none"/>
+                        <DatePicker
+                          selected={startDate}
+                          onChange={(date) => setStartDate(date)}
+                          className="   w-full text-base  text-gray-71 outline-none"
+                        />
                       </div>
                     </div>
 
                     <div className="bg-white rounded-lg lg:rounded-none  lg:rounded-r-lg p-2 flex lg:justify-center">
                       <div className="flex flex-col  justify-center">
                         <label className=" font-roboto text-sm font-bold ">
-                        Travellers and cabin class
+                          Travellers and cabin class
                         </label>
                         <input
                           type="text"
-                          class="  w-full text-base  text-gray-71 "
+                          className="  w-full text-base  text-gray-71 "
                           placeholder="Enter Origin"
-                          required
                         />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="col-span-12   md:col-span-12 lg:col-span-1"> <button  className=" px-[14px] py-3 w-full font-roboto text-sm font-bold text-white bg-green-500 hover:bg-green-700 rounded-lg h-full" type="submit" >
-                  Search
-                  </button></div>
+
+                <div className="col-span-12   md:col-span-12 lg:col-span-1">
+                  {" "}
+                  <Link href={"/Flights"}>
+                    <button
+                      className=" px-[14px] py-3 w-full font-roboto text-sm font-bold text-white bg-green-500 hover:bg-green-700 rounded-lg h-full"
+                      type="submit"
+                    >
+                      Search
+                    </button>
+                  </Link>
+                </div>
               </div>
             </form>
           </div>

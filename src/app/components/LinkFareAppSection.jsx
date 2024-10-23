@@ -19,29 +19,29 @@ const LinkFareAppSection = () => {
             </p>
 
             <div className="flex gap-[50px] items-center  mt-[36px]">
-              <div class="flex items-center space-x-2">
+              <div className="flex items-center space-x-2">
                 <div className="w-6 h-6 border-2 border-green-600 rounded-full">
-                  <input type="checkbox" id="phone" class="hidden peer" />
+                  <input type="checkbox" id="phone" className="hidden peer" />
 
                   <label
                     for="phone"
-                    class="flex items-center justify-center  bg-gray-200  w-full h-full    border-2  rounded rounded-[50%] border   border-white cursor-pointer peer-checked:bg-green-600 peer-checked:border-geen-600  p-2  relative "
+                    className="flex items-center justify-center  bg-gray-200  w-full h-full    border-2  rounded rounded-[50%] border   border-white cursor-pointer peer-checked:bg-green-600 peer-checked:border-geen-600  p-2  relative "
                   ></label>
                 </div>
 
-                <span class="text-2xl font-roboto font-bold">Phone</span>
+                <span className="text-2xl font-roboto font-bold">Phone</span>
               </div>
-              <div class="flex items-center space-x-2">
+              <div className="flex items-center space-x-2">
                 <div className="w-6 h-6 border-2 border-green-600 rounded-full">
-                  <input type="checkbox" id="email" class="hidden peer" />
+                  <input type="checkbox" id="email" className="hidden peer" />
 
                   <label
                     for="email"
-                    class="flex items-center justify-center  bg-gray-200  w-full h-full    border-2  rounded rounded-[50%] border   border-white cursor-pointer peer-checked:bg-green-600 peer-checked:border-geen-600  p-2  relative "
+                    className="flex items-center justify-center  bg-gray-200  w-full h-full    border-2  rounded rounded-[50%] border   border-white cursor-pointer peer-checked:bg-green-600 peer-checked:border-geen-600  p-2  relative "
                   ></label>
                 </div>
 
-                <span class="text-2xl font-roboto font-bold ">Email</span>
+                <span className="text-2xl font-roboto font-bold ">Email</span>
               </div>
             </div>
 

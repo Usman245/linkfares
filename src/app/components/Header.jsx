@@ -70,7 +70,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="/Flights/flightHome"
+                  href="/Flights"
                   className="text-black-2f  font-bold text-sm  font-roboto"
                 >
                   Flights
@@ -134,7 +134,7 @@ const Header = () => {
                 </li>
                 <li>
                   <a
-                    href="/Flights/flightHome"
+                    href="/Flights"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <span className="ms-3  font-roboto  text-black-2f font-bold">

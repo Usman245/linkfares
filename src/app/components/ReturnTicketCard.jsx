@@ -5,6 +5,7 @@ import { IoIosAirplane } from "react-icons/io";
 import { GrFormNextLink } from "react-icons/gr";
 import { Slider } from "@nextui-org/react";
 import ReactStars from "react-rating-stars-component";
+import Link from "next/link";
 
 const ReturnTicketCard = ({ FlightsData }) => {
   const [visibleRecords, setVisibleRecords] = useState(5); // State for visible records
@@ -76,12 +77,15 @@ const ReturnTicketCard = ({ FlightsData }) => {
                     <p className="text-2xl xl:text-3xl text-gray-4B font-poppins font-semibold">
                       {item.ticketPrice}
                     </p>
-                    <button className="px-[25px] py-[10px] xl:py-[13px] xl:px-[45px] flex gap-1 justify-center items-center bg-green-600 rounded-[25px] w-full xs:w-max">
-                      <p className="text-base font-poppins text-white">
-                        Select
-                      </p>
-                      <GrFormNextLink color="white" />
-                    </button>
+
+                    <Link href={`Flights/${item.id}`}>
+                      <button className="px-[25px] py-[10px] xl:py-[13px] xl:px-[45px] flex gap-1 justify-center items-center bg-green-600 rounded-[25px] w-full xs:w-max">
+                        <p className="text-base font-poppins text-white">
+                          Select
+                        </p>
+                        <GrFormNextLink color="white" />
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -214,12 +218,15 @@ const ReturnTicketCard = ({ FlightsData }) => {
                       <p className="text-2xl xl:text-3xl text-gray-4B font-poppins font-semibold">
                         {item.ticketPrice}
                       </p>
-                      <button className="px-[25px] py-[10px] xl:py-[13px] xl:px-[45px] flex gap-1 justify-center items-center bg-green-600 rounded-[25px] w-full xs:w-max">
-                        <p className="text-base font-poppins text-white">
-                          Select
-                        </p>
-                        <GrFormNextLink color="white" />
-                      </button>
+
+                      <Link href={`Flights/${item.id}`}>
+                        <button className="px-[25px] py-[10px] xl:py-[13px] xl:px-[45px] flex gap-1 justify-center items-center bg-green-600 rounded-[25px] w-full xs:w-max">
+                          <p className="text-base font-poppins text-white">
+                            Select
+                          </p>
+                          <GrFormNextLink color="white" />
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

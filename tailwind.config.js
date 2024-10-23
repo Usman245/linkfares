@@ -47,6 +47,7 @@ module.exports = {
         "black-1E": "#1C1B1E",
         "gray-e0": "#e0e0e0",
         "green-f2": "#DDFBF2",
+        "green-6c": "#00AA6C",
         "gray-71": "#626971",
         "black-26": "#262626",
         "black-33": "#333333",
@@ -55,6 +56,10 @@ module.exports = {
         "gray-4B": "#4B4B4B",
         "gray-D9": "#D9D9D9",
         "gray-87": "#878787",
+        "gray-EB": "#E7E9EB",
+        "gray-69": "#696969",
+        "blue-0D": "#408BFC0D",
+        "gray-2B": "#2B2B2B",
       },
       fontFamily: {
         roboto: ["var(--roboto)"],

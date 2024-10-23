@@ -89,7 +89,7 @@ const FlightFilter = () => {
         </div>
       </div>
 
-      <hr class="my-[24px] h-0.5 border-t-0 bg-gray-D9 " />
+      <hr className="my-[24px] h-0.5 border-t-0 bg-gray-D9 " />
 
       <div className="flex flex-col gap-[16px] ">
         <p className="font-poppins  text-[20px] text-gray-4B  font-medium">
@@ -150,7 +150,7 @@ const FlightFilter = () => {
         </div>
       </div>
 
-      <hr class="my-[24px] h-0.5 border-t-0 bg-gray-D9 " />
+      <hr className="my-[24px] h-0.5 border-t-0 bg-gray-D9 " />
 
       <div className="flex flex-col gap-[16px] ">
         <p className="font-poppins  text-[20px] text-gray-4B  font-medium">
