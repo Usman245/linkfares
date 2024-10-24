@@ -1,7 +1,7 @@
 import React from "react";
 
 const HotelBanner = () => {
-  return <div>Banner</div>;
+  return <div>Hotel Banner Banner</div>;
 };
 
 export default HotelBanner;
