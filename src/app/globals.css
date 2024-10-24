@@ -102,3 +102,13 @@ body {
   border: 2px solid #E7E9EB !important;
   border-radius: 12px;
 }
+.custom-tab span {
+  background-color: #05203C !important;
+
+}
+
+
+.custom-star span {
+  line-height: 20px !important;
+
+}
