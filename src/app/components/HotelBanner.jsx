@@ -7,8 +7,9 @@ import { FaBus } from "react-icons/fa6";
 import { TbPackages } from "react-icons/tb";
 import Link from "next/link";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { MdOutlineSwapHorizontalCircle } from "react-icons/md";
+// import {DatePicker} from "@nextui-org/date-picker";
+import { GoArrowRight } from "react-icons/go";
+
 
 
 const flighttabs = [
@@ -60,83 +61,50 @@ const HotelBanner = () => {
 
       </div>
       <h1 className="my-[40px] text-4xl font-semibold">Find the right <span className="text-green-600">hotel today</span></h1>
-      <div className="w-full bg-green-600 p-10 rounded">
-        <form className="w-full">
-          <div className="grid  grid-cols-1 md:grid-cols-12 gap-2 w-full">
-            <div className=" col-span-12 md:col-span-12 lg:col-span-10  w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-1  w-full ">
+      <div className="w-full bg-green-600 p-10 xs:p-7 rounded">
+        <form>
+          <div className="grid grid-cols-12">
+            <div className="inputs xs:col-span-12 md:col-span-6 lg:col-span-10 grid grid-cols-12">
 
-                <div className="lg:col-span-4 rounded-lg lg:rounded-none  lg:rounded-l-lg p-2 flex lg:justify-center  w-full  relative e">
-                  <div className="flex flex-col justify-center ">
-                    <label className=" font-roboto text-sm font-bold ">
-                      Where do you want to stay?
-                    </label>
-                    <input
-                      type="text"
-                      className="p-2 w-full text-base  text-gray-71 "
-                      placeholder="Enter destination or hotel name"
-                    />
-                  </div>
-                </div>
+              <div className="destinations xs:col-span-12  lg:col-span-5">
+                <label className="flex justify-start mb-2">Where do you want to stay?</label>
+                <input className="w-full xs:rounded p-3 text-gray-71 lg:rounded-tl lg:rounded-bl lg:rounded-tr-none lg:rounded-br-none outline-none" type="text" placeholder="Enter destination or hotel name" />
+              </div>
 
-                <div className="lg:col-span-2 rounded-lg lg:rounded-none   p-2 relative flex lg:justify-center">
-                  <div className="flex flex-col  justify-center">
-                    <label className=" font-roboto text-sm font-bold ">
-                      Check
-                    </label>
-                    <DatePicker
-                      selected={startDate}
-                      onChange={(date) => setStartDate(date)}
-                      className="p-2  w-full text-base  text-gray-71 outline-none"
-                    />
-                  </div>
-                </div>
+              <div className="Check_in xs:col-span-12  xs:mt-4 xs:mt-0 lg:col-span-2">
+                <label className="flex justify-start mb-2">Check in</label>
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  className="   w-full p-3 text-base xs:rounded lg:rounded-none text-gray-71 outline-none"
+                />
+              </div>
 
-                <div className="lg:col-span-2 rounded-lg lg:rounded-none   p-2 relative flex lg:justify-center">
-                  <div className="flex flex-col  justify-center">
-                    <label className=" font-roboto text-sm font-bold ">
-                      Check Out
-                    </label>
-                    <DatePicker
-                      selected={startDate}
-                      onChange={(date) => setStartDate(date)}
-                      className="p-2 w-full text-base  text-gray-71 outline-none"
-                    />
-                  </div>
-                </div>
+              <div className="Check_out xs:col-span-12  xs:mt-4 xs:mt-0 lg:col-span-2">
+                <label className="flex justify-start mb-2">Check in</label>
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  className="   w-full p-3 text-base xs:rounded lg:rounded-none text-gray-71 outline-none"
+                />
+              </div>
 
-                {/* //seclet */}
-                <div className="lg:col-span-4 rounded-lg lg:rounded-none  lg:rounded-r-lg p-2 flex lg:justify-center">
-                  <div className="flex flex-col  justify-center">
-                    <label className=" font-roboto text-sm font-bold ">
-                      Guests and rooms
-                    </label>
-                    <select id="countries" class="bg-gray-50 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                      <option selected>Choose a country</option>
-                      <option value="US">United States</option>
-                      <option value="CA">Canada</option>
-                      <option value="FR">France</option>
-                      <option value="DE">Germany</option>
-                    </select>
-                  </div>
-                </div>
-                {/* //seclet */}
+              <div className="sel_booking xs:col-span-12  xs:mt-4 xs:mt-0 lg:col-span-3">
+                <label className="flex justify-start mb-2">Guests and rooms</label>
+                <select id="countries" class="xs:rounded lg:rounded-tl-none lg:rounded-bl-none lg:rounded-tr lg:rounded-br rounded text-gray-71 bg-white text-gray-900 text-sm py-[14.5px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option selected>Choose a country</option>
+                  <option value="US">United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="FR">France</option>
+                  <option value="DE">Germany</option>
+                </select>
               </div>
             </div>
 
-            {/* button */}
-            <div className="col-span-12   md:col-span-12 lg:col-span-2">
-              {" "}
-              <Link href={"/Flights"}>
-                <button
-                  className=" px-[14px] py-3 w-full font-roboto text-sm font-bold text-white bg-green-500 hover:bg-green-700 rounded-lg h-full"
-                  type="submit"
-                >
-                  Search
-                </button>
-              </Link>
+            {/* buttonn */}
+            <div className="lg:col-span-2 md:col-span-6 xs:col-span-12 flex xs:mt-4 items-end lg:ml-5 xs:ml-0">
+              <a className="flex justify-between items-center buttonss bg-[#429C7D] p-3 w-full  rounded" href="#">Search Hotels <GoArrowRight /></a>
             </div>
-            {/* ENd button */}
           </div>
         </form>
       </div>
