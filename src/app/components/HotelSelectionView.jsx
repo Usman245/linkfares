@@ -3,6 +3,9 @@
 import React from "react";
 import { Select, SelectItem } from "@nextui-org/react";
 import { DatePicker } from "@nextui-org/react";
+import { Input } from "@nextui-org/react";
+import { GoArrowRight } from "react-icons/go";
+
 
 export const locations = [
   { key: "dubai", label: "Dubai" },
@@ -22,75 +25,98 @@ export const locations = [
 
 const HotelSelectionView = () => {
   return (
-    <div className="py-3 bg-green-600 ">
+    <div className="py-5 bg-red-600">
       <div className="container ">
-        <div className="grid grid-cols-12 py-[8px] px-[12px] bg-white">
-          <div className="col-span-5">
-            {/* <Select
-              label="Favorite Animal"
-              placeholder="Select an animal"
-              className="w-full dropshadow-none border-none bg-tranparent"
-              variant="bordered"
-              radius="none"
-              classNames={{
-                label: "text-green-white",
-                base: "bg-transparent border-none",
-              }}
-            >
-              {locations.map((item) => (
-                <SelectItem key={item.key}>{item.label}</SelectItem>
-              ))}
-            </Select> */}
-            <Select
-              label="Favorite Animal"
-              placeholder="Select an animal"
-              className="w-full" // Set width to full
-              variant="flat"
-              radius="none" // Use the 'flat' variant to remove the border style
-              css={{
-                backgroundColor: "transparent", // Set background to transparent
-                border: "none", // Remove the border
-                boxShadow: "none", // Remove any shadow if applied
-              }}
-              classNames={{
-                label: "text-green-600 ", // Set label color to green-600
-                base: "bg-transparent border-none",
-                value:
-                  " group-data-[has-value=true]:text-lg  group-data-[has-value=true]:text-green-600  group-data-[has-value=true]:font-bold ",
-                trigger: "bg-transparent", // Ensure base styles have no background or border
-              }}
-            >
-              {locations.map((item) => (
-                <SelectItem
-                  key={item.key}
-                  classNames={{
-                    label: "text-green-600 ", // Set label color to green-600
-                    base: "bg-transparent border-none",
-                    value:
-                      " group-data-[has-value=true]:text-lg  group-data-[has-value=true]:text-green-600  group-data-[has-value=true]:font-bold ",
-                    trigger: "bg-transparent", // Ensure base styles have no background or border
-                  }}
-                >
-                  {item.label}
-                </SelectItem>
-              ))}
-            </Select>
-          </div>
-          <div className="col-span-4  grid grid-cols-12">
-            <div className="col-span-6">
+        <div className="grid grid-cols-12">
+          {/* input */}
+          <div className="grid grid-cols-10 col-span-12 lg:col-span-10 md:col-span-12">
+            <div className="col-span-12 md:col-span-4 xl:mt-0 mt-4 border-r">
+              <Select
+                label="Favorite Animal"
+                placeholder="Select an animal"
+                className="w-full" // Set width to full
+                variant="flat"
+                radius="none" // Use the 'flat' variant to remove the border style
+                css={{
+                  // backgroundColor: "#fff", // Set background to transparent
+                  border: "none", // Remove the border
+                  boxShadow: "none", // Remove any shadow if applied
+                }}
+                classNames={{
+                  label: "text-green-600 ", // Set label color to green-600
+                  base: "bg-white border-none",
+                  value:
+                    " group-data-[has-value=true]:text-lg  group-data-[has-value=true]:text-green-600  group-data-[has-value=true]:font-bold ",
+                  trigger: "bg-transparent", // Ensure base styles have no background or border
+                }}
+              >
+                {locations.map((item) => (
+                  <SelectItem
+                    key={item.key}
+                    classNames={{
+                      label: "text-green-600 ", // Set label color to green-600
+                      base: "bg-white border-none",
+                      value:
+                        " group-data-[has-value=true]:text-lg  group-data-[has-value=true]:text-green-600  group-data-[has-value=true]:font-bold ",
+                      trigger: "bg-transparent", // Ensure base styles have no background or border
+                    }}
+                  >
+                    {item.label}
+                  </SelectItem>
+                ))}
+              </Select>
+            </div>
+            <div className="col-span-12 md:col-span-2 xl:mt-0 mt-4 border-r">
               <DatePicker
                 label="Birth date"
                 className="w-full"
                 radius="none"
                 dateInputClassNames={{
-                  segment: " text-green-600 ",
-                  // Ensure base styles have no background or border
+                  segment: " text-green-600  font-bold",
+                  innerWrapper: "text-green-600",
+                  inputWrapper: "bg-white",
+                  inputfield: "text-green-600 ",
+                  value:
+                    "group-data-[has-value=true]:text-lg  group-data-[has-value=true]:text-green-600  group-data-[has-value=true]:font-bold",
                 }}
               />
             </div>
-            <div className="col-span-6">
-              <DatePicker label="Birth date" className="w-full" />
+            <div className="col-span-12 md:col-span-2 xl:mt-0 mt-4 border-r">
+              <DatePicker
+                label="Birth date"
+                className="w-full"
+                radius="none"
+                dateInputClassNames={{
+                  segment: " text-green-600  font-bold",
+                  base: "bg-white border-none",
+                  innerWrapper: "text-green-600",
+                  inputWrapper: "bg-white",
+                  inputfield: "text-green-600 ",
+                  value:
+                    "group-data-[has-value=true]:text-lg  group-data-[has-value=true]:text-green-600  group-data-[has-value=true]:font-bold",
+                }}
+              />
             </div>
+            <div className="col-span-12 md:col-span-2 xl:mt-0 mt-4">
+              <Input
+                type="text "
+                label="Email"
+                radius="none"
+                placeholder="Enter your email"
+                classNames={{
+                  label: "text-green-600", // Set label color to green-600
+                  base: "border-none",
+                  inputWrapper: "bg-white",
+                  input:
+                    " group-data-[has-value=true]:text-lg  group-data-[has-value=true]:text-green-600  group-data-[has-value=true]:font-bold ",
+                  trigger: "bg-white", // Ensure base styles have no background or border
+                }}
+              />
+            </div>
+          </div>
+          {/* buttonn */}
+          <div className="col-span-12 lg:col-span-2 md:col-span-12 mt-4 xl:mt-0 text-white font-semibold">
+            <a className="flex justify-evenly items-center buttonss bg-[#429C7D] p-[16px] w-full rounded-tl-none rounded-bl-none rounded" href="#">Search Hotels <GoArrowRight /></a>
           </div>
         </div>
       </div>
