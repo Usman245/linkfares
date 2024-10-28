@@ -8,7 +8,7 @@ import ReactStars from "react-rating-stars-component";
 const HotelsFilterDrawer = () => {
   return (
     <div className="">
-      <div className="p-4 rounded-2xl   flex flex-col ">
+      <div className="shadow p-4 rounded-2xl flex flex-col ">
         <div className="flex  items-center gap-2 ">
           <div className=" text-green-600">
             <TbFilterDown />
@@ -21,9 +21,9 @@ const HotelsFilterDrawer = () => {
           <diV className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
               <MdOutlineKingBed />
-              <div className="text-xl font-bold text-black">
+              <h6 className="text-base font-bold text-black">
                 Book With Peace of Mind
-              </div>
+              </h6>
             </div>
 
             <div className="flex justify-between items-center">
@@ -56,7 +56,9 @@ const HotelsFilterDrawer = () => {
           <diV className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
               <MdOutlineKingBed />
-              <div className="text-xl font-bold text-black">Price</div>
+              <h6 className="text-base font-bold text-black">
+                Price
+              </h6>
             </div>
 
             <div className="flex justify-between items-center">
@@ -190,7 +192,9 @@ const HotelsFilterDrawer = () => {
           <diV className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
               <MdOutlineKingBed />
-              <div className="text-xl font-bold text-black">Star Rating</div>
+              <h6 className="text-base font-bold text-black">
+                Star Rating
+              </h6>
             </div>
 
             <div className="grid grid-cols-12 gap-1 items-center">
@@ -349,9 +353,9 @@ const HotelsFilterDrawer = () => {
 
           <diV className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
-              <div className="text-xl font-bold text-black">
-                AccomoDation Type{" "}
-              </div>
+              <h6 className="text-base font-bold text-black">
+                AccomoDation Type{" "}AccomoDation Type{" "}
+              </h6>
             </div>
 
             <div className="flex justify-between items-center">
