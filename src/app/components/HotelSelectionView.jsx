@@ -82,8 +82,8 @@ const HotelSelectionView = () => {
                 label="Birth date"
                 className="w-full"
                 radius="none"
-                classNames={{
-                  innerWrapper: " bg-default-none border-none ",
+                dateInputClassNames={{
+                  segment: " text-green-600 ",
                   // Ensure base styles have no background or border
                 }}
               />
