@@ -3,6 +3,7 @@
 import React from "react";
 import { Select, SelectItem } from "@nextui-org/react";
 import { DatePicker } from "@nextui-org/react";
+import { Input } from "@nextui-org/react";
 
 export const locations = [
   { key: "dubai", label: "Dubai" },
@@ -26,21 +27,6 @@ const HotelSelectionView = () => {
       <div className="container ">
         <div className="grid grid-cols-12 py-[8px] px-[12px] bg-white">
           <div className="col-span-5">
-            {/* <Select
-              label="Favorite Animal"
-              placeholder="Select an animal"
-              className="w-full dropshadow-none border-none bg-tranparent"
-              variant="bordered"
-              radius="none"
-              classNames={{
-                label: "text-green-white",
-                base: "bg-transparent border-none",
-              }}
-            >
-              {locations.map((item) => (
-                <SelectItem key={item.key}>{item.label}</SelectItem>
-              ))}
-            </Select> */}
             <Select
               label="Favorite Animal"
               placeholder="Select an animal"
@@ -83,14 +69,42 @@ const HotelSelectionView = () => {
                 className="w-full"
                 radius="none"
                 dateInputClassNames={{
-                  segment: " text-green-600 ",
-                  // Ensure base styles have no background or border
+                  segment: " text-green-600  font-bold",
+                  innerWrapper: "text-green-600  ",
+                  inputfield: "text-green-600 ",
+                  value:
+                    "group-data-[has-value=true]:text-lg  group-data-[has-value=true]:text-green-600  group-data-[has-value=true]:font-bold",
                 }}
               />
             </div>
             <div className="col-span-6">
-              <DatePicker label="Birth date" className="w-full" />
+              <DatePicker
+                label="Birth date"
+                className="w-full"
+                dateInputClassNames={{
+                  segment: " text-green-600  font-bold",
+                  innerWrapper: "text-green-600  ",
+                  inputfield: "text-green-600 ",
+                  value:
+                    "group-data-[has-value=true]:text-lg  group-data-[has-value=true]:text-green-600  group-data-[has-value=true]:font-bold",
+                }}
+              />
             </div>
+          </div>
+
+          <div className="col-span-3">
+            <Input
+              type="text "
+              label="Email"
+              placeholder="Enter your email"
+              classNames={{
+                label: "text-green-600 ", // Set label color to green-600
+                base: "bg-transparent border-none",
+                input:
+                  " group-data-[has-value=true]:text-lg  group-data-[has-value=true]:text-green-600  group-data-[has-value=true]:font-bold ",
+                trigger: "bg-transparent", // Ensure base styles have no background or border
+              }}
+            />
           </div>
         </div>
       </div>
