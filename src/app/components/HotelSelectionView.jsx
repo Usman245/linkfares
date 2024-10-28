@@ -25,7 +25,7 @@ export const locations = [
 
 const HotelSelectionView = () => {
   return (
-    <div className="py-5 bg-red-600">
+    <div className="py-5 bg-green-600">
       <div className="container ">
         <div className="grid grid-cols-12">
           {/* input */}
