@@ -31,7 +31,9 @@ const FastFacts = () => {
             Fast <span className="text-green-600">facts</span>
           </p>
           <p className="text-lg font-roboto">
-            Sleep easy, armed with the stuff that's good to know before you go.
+            {
+              "Sleep easy, armed with the stuff that's good to know before you go."
+            }
           </p>
         </div>
 
