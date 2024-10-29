@@ -1,5 +1,6 @@
 import React from "react";
 import HotelsFilterDrawer from "./HotelsFilterDrawer";
+import HotelsListPage from "./HotelsListPage";
 
 const HotelsDisplayPage = () => {
   return (
@@ -7,10 +8,9 @@ const HotelsDisplayPage = () => {
       <div className="col-span-3">
         <HotelsFilterDrawer />
       </div>
-      <div className="col-span-4">
-        
+      <div className="col-span-9">
+        <HotelsListPage />
       </div>
-      <div className="col-span-5"></div>
     </div>
   );
 };
