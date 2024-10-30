@@ -4,6 +4,8 @@ import ReactStars from "react-rating-stars-component";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaRegCircle } from "react-icons/fa";
 import { FaCircle } from "react-icons/fa";
+import { BiSolidLike } from "react-icons/bi";
+import { PiWarningCircleFill } from "react-icons/pi";
 
 const HotelListCardlg = () => {
   return (
@@ -14,7 +16,7 @@ const HotelListCardlg = () => {
           className="object-fill rounded-l-lg  w-full h-full"
         />
       </div>
-      <div className="col-span-7">
+      <div className="col-span-6">
         <div className="p-2 ">
           <div className="flex flex-col  gap-[56px]">
             <div>
@@ -59,6 +61,18 @@ const HotelListCardlg = () => {
                   <p className="text-xs font-regular text-gray-4B">Reviews</p>
                 </div>
               </div>
+
+              <div className=" pt-3">
+                <div className="p-2 rounded-xl  flex items-center gap-2 bg-gray-F8 w-max">
+                  <div>
+                    <BiSolidLike />
+                  </div>
+                  <p className="text-sm  text-black-16 font-regular ">
+                    Location
+                  </p>
+                  <p className="text-sm  text-black-16 font-regular">4.5/5</p>
+                </div>
+              </div>
             </div>
 
             <div className="grid grid-cols-3">
@@ -94,14 +108,32 @@ const HotelListCardlg = () => {
           </div>
         </div>
       </div>
-      <div className="col-span-2   ">
+      <div className="col-span-3  ">
         <div className="p-2  relative  h-full">
-          <div className="flex flex-col gap-2 font-roboto justify-center  ">
-            <h2 className="text-xl font-bold">RS 20,796</h2>
-            <p>a night</p>
+          <div className=" flex flex-col gap-3">
+            <button className="py-2 px-2 rounded-lg  flex justify-center items-center bg-green-600 text-white w-max flex items-center gap-2   ">
+              <BiSolidLike color="#ffffff" />
+              <p>Great Price</p>
+            </button>
+
+            <div className="flex flex-col gap-2 font-roboto justify-center  ">
+              <p className="text-lg font-regular font-roboto  text-pink-66 max-w-[160px]  inline-block   ruby ">
+                Cheapest provider by Rs 6,578{" "}
+                <span>
+                  <PiWarningCircleFill color="#626971" size={24} />
+                </span>
+              </p>
+
+              <p className="text-lg font-regular font-roboto text-gray-69">
+                Offers may differ
+              </p>
+
+              <h2 className="text-xl font-bold">RS 20,796</h2>
+              <p>a night</p>
+            </div>
           </div>
 
-          <div className="absolute  mb-2 mr-2 bottom-0  left-0  w-full ">
+          <div className="absolute  mb-2  bottom-0    right-[8px]  w-full ">
             <button className="py-2 px-2 rounded-lg  flex justify-center items-center bg-green-600 text-white w-full ">
               Go to Site
             </button>
