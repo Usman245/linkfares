@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { TbFilterDown } from "react-icons/tb";
 import { MdOutlineKingBed } from "react-icons/md";
 import { Checkbox } from "@nextui-org/checkbox";
@@ -12,9 +12,47 @@ import { MdOutlinePool } from "react-icons/md";
 import { BiSolidSpa } from "react-icons/bi";
 import { FaWifi } from "react-icons/fa";
 const HotelsFilterDrawer = () => {
+
+  const HoterFilter = {
+    BookPOM: [
+      {
+        tagValue: false,
+        tagTitle: "Free Cancellation",
+        tagCount: 752
+      },
+      {
+        tagValue: false,
+        tagTitle: "Pay on Arrival",
+        tagCount: 75
+      },
+    ],
+    Price: [
+      {
+        tagValue: false,
+        tagTitle: "Rs 0 - Rs 44,200",
+        tagCount: 32
+      },
+      {
+        tagValue: false,
+        tagTitle: "Rs 0 - Rs 44,200",
+        tagCount: 32
+      },
+      {
+        tagValue: false,
+        tagTitle: "Rs 0 - Rs 44,200",
+        tagCount: 32
+      },
+      {
+        tagValue: false,
+        tagTitle: "Rs 0 - Rs 44,200",
+        tagCount: 32
+      },
+    ]
+  }
+
   return (
-    <div className="xl:h-screen overflow-y-scroll shadow-lg p-4">
-      <div className="flex flex-col ">
+    <div className="xl:h-full overflow-y-scroll shadow-lg p-4">
+      <div className="flex flex-col">
         <div className="flex  items-center gap-2 ">
           <div className=" text-green-600">
             <TbFilterDown />
@@ -33,20 +71,26 @@ const HotelsFilterDrawer = () => {
               </h6>
             </div>
 
-            <div className="flex justify-between items-center">
-              <div className="flex  items-center gap-1">
-                <div>
+            {
+              HoterFilter.BookPOM?.map((items, index) => (
+                <div key={index} className="flex justify-between items-center">
+                  <div className="flex  items-center gap-1">
+                    <div>
+                      <Checkbox defaultSelected color="primary"></Checkbox>
+                    </div>
+                    <p className="text-xs text-black-16 font-regular">
+                      {items.tagTitle}
+                    </p>
+                  </div>
 
-                  <Checkbox defaultSelected color="primary"></Checkbox>
+                  <p className="text-xs font-regular text-gray-2B">{items.tagCount}</p>
                 </div>
-                <p className="text-xs text-black-16 font-regular">
-                  Free Cancellation
-                </p>
-              </div>
+              ))
 
-              <p className="text-xs font-regular text-gray-2B">752</p>
-            </div>
-            <div className="flex justify-between items-center">
+            }
+
+
+            {/* <div className="flex justify-between items-center">
               <div className="flex  items-center gap-1">
                 <div>
 
@@ -58,7 +102,8 @@ const HotelsFilterDrawer = () => {
               </div>
 
               <p className="text-xs font-regular text-gray-2B">228</p>
-            </div>
+            </div> */}
+
           </diV>
 
           {/* price */}
@@ -69,133 +114,22 @@ const HotelsFilterDrawer = () => {
                 Price
               </h6>
             </div>
+            {
+              HoterFilter.Price?.map((items, index) => (
+                <div kay={index} className="flex justify-between items-center">
+                  <div className="flex  items-center gap-1">
+                    <div>
+                      <Checkbox checked={items.tagValue} color="primary"></Checkbox>
+                    </div>
+                    <p className="text-xs text-black-16 font-regular">
+                      {items.tagTitle}
+                    </p>
+                  </div>
 
-            <div className="flex justify-between items-center">
-              <div className="flex  items-center gap-1">
-                <div>
-
-                  <Checkbox defaultSelected color="primary"></Checkbox>
+                  <p className="text-xs font-regular text-gray-2B">{items.tagCount}</p>
                 </div>
-                <p className="text-xs text-black-16 font-regular">
-                  Rs 0 - Rs 44,200
-                </p>
-              </div>
-
-              <p className="text-xs font-regular text-gray-2B">585</p>
-            </div>
-            <div className="flex justify-between items-center">
-              <div className="flex  items-center gap-1">
-                <div>
-
-                  <Checkbox defaultSelected color="primary"></Checkbox>
-                </div>
-                <p className="text-xs font-regular text-black-16">
-                  Rs 4,200 - 88,400
-                </p>
-              </div>
-
-              <p className="text-xs font-regular text-gray-2B">245</p>
-            </div>
-
-            <div className="flex justify-between items-center">
-              <div className="flex  items-center gap-1">
-                <div>
-
-                  <Checkbox defaultSelected color="primary"></Checkbox>
-                </div>
-                <p className="text-xs font-regular text-black-16">
-                  Rs 4,200 - 88,400
-                </p>
-              </div>
-
-              <p className="text-xs font-regular text-gray-2B">245</p>
-            </div>
-
-            <div className="flex justify-between items-center">
-              <div className="flex  items-center gap-1">
-                <div>
-
-                  <Checkbox defaultSelected color="primary"></Checkbox>
-                </div>
-                <p className="text-xs font-regular text-black-16">
-                  Rs 4,200 - 88,400
-                </p>
-              </div>
-
-              <p className="text-xs font-regular text-gray-2B">245</p>
-            </div>
-
-            <div className="flex justify-between items-center">
-              <div className="flex  items-center gap-1">
-                <div>
-
-                  <Checkbox defaultSelected color="primary"></Checkbox>
-                </div>
-                <p className="text-xs font-regular text-black-16">
-                  Rs 4,200 - 88,400
-                </p>
-              </div>
-
-              <p className="text-xs font-regular text-gray-2B">245</p>
-            </div>
-            <div className="flex justify-between items-center">
-              <div className="flex  items-center gap-1">
-                <div>
-
-                  <Checkbox defaultSelected color="primary"></Checkbox>
-                </div>
-                <p className="text-xs font-regular text-black-16">
-                  Rs 4,200 - 88,400
-                </p>
-              </div>
-
-              <p className="text-xs font-regular text-gray-2B">245</p>
-            </div>
-
-            <div className="flex justify-between items-center">
-              <div className="flex  items-center gap-1">
-                <div>
-
-                  <Checkbox defaultSelected color="primary"></Checkbox>
-                </div>
-                <p className="text-xs font-regular text-black-16">
-                  Rs 4,200 - 88,400
-                </p>
-              </div>
-
-              <p className="text-xs font-regular text-gray-2B">245</p>
-            </div>
-
-            <div className=" grid   grid-cols-12 gap-3">
-              <div className="grid grid-cols-12 items-center col-span-10 gap-2">
-
-                <div className="col-span-5">
-                  <Input
-                    type="text"
-                    placeholder="Rs"
-                    radius="none"
-                    classNames={{
-                      inputWrapper: "",
-                    }}
-                  />
-                </div>
-                <div className="col-span-2">---</div>
-                <div className="col-span-5">
-                  <Input
-                    type="text"
-                    placeholder="Rs"
-                    radius="none"
-                    classNames={{
-                      inputWrapper: " ",
-                    }}
-                  />
-                </div>
-              </div>
-
-              <button className="p-3 rounded-lg bg-blue-3c flex justify-center items-center text-white col-span-2">
-                <IoSearchSharp />
-              </button>
-            </div>
+              ))
+            }
           </diV>
 
           {/* start rating */}
@@ -871,7 +805,7 @@ const HotelsFilterDrawer = () => {
           </diV>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
