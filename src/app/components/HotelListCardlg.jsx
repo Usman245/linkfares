@@ -7,22 +7,22 @@ import { FaCircle } from "react-icons/fa";
 import { BiSolidLike } from "react-icons/bi";
 import { PiWarningCircleFill } from "react-icons/pi";
 
-const HotelListCardlg = () => {
+const HotelListCardlg = ({ hotels }) => {
   return (
     <div className="grid  grid-cols-12 rounded-2xl  drop-shadow-lg bg-white">
-      <div className="col-span-3">
+      <div className="  col-span-12 lg:col-span-3">
         <img
-          src="/images/hotellist.png"
-          className="object-fill rounded-l-lg  w-full h-full"
+          src={hotels?.hotelimg}
+          className=" object-fill lg:rounded-l-lg  w-full lg:h-full  h-[200px]  "
         />
       </div>
-      <div className="col-span-6">
+      <div className="col-span-12  lg:col-span-6">
         <div className="p-2 ">
           <div className="flex flex-col  gap-[56px]">
             <div>
               <div className=" flex gap-2  justify-between items-start pb-3 ">
                 <h3 className="text-xl font-bold  text-black-16 leading-0">
-                  Vintage Grand Hotel - Formerly Ghaya Grand Hotel
+                  {hotels.hoteltitle}
                 </h3>
 
                 <div>
@@ -34,13 +34,13 @@ const HotelListCardlg = () => {
                 <ReactStars
                   count={5}
                   // onChange={ratingChange}
-                  value={2}
+                  value={hotels.hotelrating}
                   size={24}
                   activeColor="#FFA033"
                 />
               </div>
               <p className="text-lg font-regular text-black-16  pb-[12px]">
-                1.59 km from Union
+                {hotels.hotellocation}
               </p>
 
               <div className="flex gap-1 items-center">
@@ -51,65 +51,64 @@ const HotelListCardlg = () => {
                     // onChange={ratingChange}
                     emptyIcon={<FaRegCircle color="#12B76A" />}
                     filledIcon={<FaCircle color="#12B76A" />}
-                    value={2}
+                    value={hotels.hotelrating}
                     size={14}
                     activeColor="#FFA033"
                   />
                 </div>
                 <div className="flex items-center gap-2">
-                  <p className="text-xs font-regular text-gray-4B">4206,</p>
+                  <p className="text-xs font-regular text-gray-4B">
+                    {hotels.hotelreviews}
+                  </p>
                   <p className="text-xs font-regular text-gray-4B">Reviews</p>
                 </div>
               </div>
 
               <div className=" pt-3">
-                <div className="p-2 rounded-xl  flex items-center gap-2 bg-gray-F8 w-max">
-                  <div>
-                    <BiSolidLike />
+                {hotels.badgeinfo && (
+                  <div className="p-2 rounded-xl  flex items-center gap-2 bg-gray-F8 w-max">
+                    <div>
+                      <BiSolidLike />
+                    </div>
+                    <p className="text-sm  text-black-16 font-regular ">
+                      Location
+                    </p>
+                    <p className="text-sm  text-black-16 font-regular">4.5/5</p>
                   </div>
-                  <p className="text-sm  text-black-16 font-regular ">
-                    Location
-                  </p>
-                  <p className="text-sm  text-black-16 font-regular">4.5/5</p>
-                </div>
+                )}
               </div>
             </div>
 
-            <div className="grid grid-cols-3">
-              <div className="flex-col gap-3">
-                <div className="flex gap-2 items-center">
-                  <p className="text-lg font-regular text-black-16">Best</p>
-                  <div>
-                    <FaExternalLinkAlt />
+            <div
+              className={`grid   gap-3  grid-cols-1   lg:${
+                hotels.hotelpackages.length === 1
+                  ? "grid-cols-1"
+                  : hotels.hotelpackages.length === 2
+                  ? "grid-cols-2"
+                  : "grid-cols-3"
+              }`}
+            >
+              {hotels.hotelpackages.map((item, index) => (
+                <div className="flex-col gap-3" key={index}>
+                  <div className="flex gap-2 items-center">
+                    <p className="text-lg font-regular text-black-16">
+                      {item.pacakgetitle}
+                    </p>
+                    <div>
+                      <FaExternalLinkAlt />
+                    </div>
                   </div>
+                  <p className="text-lg font-bold  text-black-16 ">
+                    RS {item.packagePrice}
+                  </p>
                 </div>
-                <p className="text-lg font-bold  text-black-16 ">RS 19,407</p>
-              </div>
-
-              <div className="flex-col gap-3">
-                <div className="flex gap-2 items-center">
-                  <p className="text-lg font-regular text-black-16">Best</p>
-                  <div>
-                    <FaExternalLinkAlt />
-                  </div>
-                </div>
-                <p className="text-lg font-bold  text-black-16 ">RS 19,407</p>
-              </div>
-              <div className="flex-col gap-3">
-                <div className="flex gap-2 items-center">
-                  <p className="text-lg font-regular text-black-16">Best</p>
-                  <div>
-                    <FaExternalLinkAlt />
-                  </div>
-                </div>
-                <p className="text-lg font-bold  text-black-16 ">RS 19,407</p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
-      <div className="col-span-3  ">
-        <div className="p-2  relative  h-full">
+      <div className="col-span-12   lg:col-span-3  ">
+        <div className="p-2  relative  h-full flex flex-col   justify-between">
           <div className=" flex flex-col gap-3">
             <button className="py-2 px-2 rounded-lg  flex justify-center items-center bg-green-600 text-white w-max flex items-center gap-2   ">
               <BiSolidLike color="#ffffff" />
@@ -117,23 +116,30 @@ const HotelListCardlg = () => {
             </button>
 
             <div className="flex flex-col gap-2 font-roboto justify-center  ">
-              <p className="text-lg font-regular font-roboto  text-pink-66 max-w-[160px]  inline-block   ruby ">
-                Cheapest provider by Rs 6,578{" "}
-                <span>
-                  <PiWarningCircleFill color="#626971" size={24} />
-                </span>
-              </p>
+              {hotels.alertmessage && (
+                <p className="text-lg font-regular font-roboto  text-pink-66 max-w-[160px]  inline-block   ruby ">
+                  Cheapest provider by Rs 6,578{" "}
+                  <span>
+                    <PiWarningCircleFill color="#626971" size={24} />
+                  </span>
+                </p>
+              )}
 
-              <p className="text-lg font-regular font-roboto text-gray-69">
-                Offers may differ
-              </p>
+              {hotels.alertoffer && (
+                <p className="text-lg font-regular font-roboto text-gray-69">
+                  Offers may differ
+                </p>
+              )}
 
-              <h2 className="text-xl font-bold">RS 20,796</h2>
-              <p>a night</p>
+              <h2 className="text-xl font-bold">{hotels.hotelPrice}</h2>
+              <p>{hotels.hoteltype}</p>
             </div>
           </div>
 
-          <div className="absolute  mb-2  bottom-0    right-[8px]  w-full ">
+          <div
+            className="
+            mb-2  bottom-0    right-[8px]  w-full "
+          >
             <button className="py-2 px-2 rounded-lg  flex justify-center items-center bg-green-600 text-white w-full ">
               Go to Site
             </button>

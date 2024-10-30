@@ -3,6 +3,93 @@ import { Tabs, Tab, Chip } from "@nextui-org/react";
 import HotelListCardlg from "./HotelListCardlg";
 
 const HotelsListPage = () => {
+  
+  const hotlesData = [
+    {
+      hotelimg: "/images/hotellist.png",
+      hoteltitle: "Vintage Grand Hotel - Formerly Ghaya Grand Hotel",
+      hotellocation: "27.93 km from city centre",
+      hotelrating: 5,
+      hotelreviews: 4206,
+      hotelpackages: [
+        {
+          packagetitle: "Best",
+          packagePrice: "19,407",
+        },
+        {
+          packagetitle: "Standard",
+          packagePrice: "21,407",
+        },
+        {
+          packagetitle: "Luxury",
+          packagePrice: "26,407",
+        },
+      ],
+      hotelPrice: "20,796",
+      hoteltype: "a night",
+    },
+
+    {
+      hotelimg: "/images/hotelavani.png",
+      hoteltitle: "Avani Deira Dubai Hotel",
+      hotellocation: "27.93 km from city centre",
+      hotelrating: 5,
+      hotelreviews: 4206,
+      hotelpackages: [
+        {
+          packagetitle: "Best",
+          packagePrice: "19,407",
+        },
+        {
+          packagetitle: "Standard",
+          packagePrice: "21,407",
+        },
+        {
+          packagetitle: "Luxury",
+          packagePrice: "26,407",
+        },
+      ],
+      hotelPrice: "20,796",
+      hoteltype: "a night",
+    },
+
+    {
+      hotelimg: "/images/MarcoPolo.png",
+      hoteltitle: "Marco Polo Hotel",
+      hotellocation: "27.93 km from city centre",
+      hotelrating: 5,
+      hotelreviews: 4206,
+      hotelpackages: [
+        {
+          packagetitle: "Best",
+          packagePrice: "19,407",
+        },
+      ],
+      hotelPrice: "20,796",
+      hoteltype: "a night",
+    },
+
+    {
+      hotelimg: "/images/crowneplaza.png",
+      hoteltitle: "Crowne Plaza Dubai Deira, an IHG Hotel",
+      hotellocation: "27.93 km from city centre",
+      hotelrating: 3,
+      hotelreviews: 4206,
+      hotelpackages: [
+        {
+          packagetitle: "Best",
+          packagePrice: "19,407",
+        },
+        {
+          packagetitle: "Best",
+          packagePrice: "19,407",
+        },
+      ],
+      hotelPrice: "20,796",
+      hoteltype: "a night",
+    },
+  ];
+
   return (
     <div className="p-4">
       <div className="flex flex-col gap-3 ">
@@ -71,6 +158,9 @@ const HotelsListPage = () => {
           />
         </Tabs>
 
+
+    
+
         <p className="text-sm font-roboto  font-regular  text-center  ">
           We search for prices from hundreds of providers — what they pay us may
           affect our sort order.
@@ -78,15 +168,9 @@ const HotelsListPage = () => {
         </p>
 
         <div className="flex flex-col gap-4">
-          <HotelListCardlg />
-
-          <HotelListCardlg />
-
-          <HotelListCardlg />
-
-          <HotelListCardlg />
-          <HotelListCardlg />
-          <HotelListCardlg />
+          {hotlesData.map((items, index) => (
+            <HotelListCardlg key={index} hotels={items} />
+          ))}
         </div>
 
         <div className="flex flex-col "></div>
