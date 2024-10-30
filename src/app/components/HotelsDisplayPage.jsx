@@ -1,6 +1,7 @@
 import React from "react";
 import HotelsFilterDrawer from "./HotelsFilterDrawer";
 import HotelsListPage from "./HotelsListPage";
+import DicoverMorePage from "./DicoverMorePage";
 
 const HotelsDisplayPage = () => {
   return (
@@ -9,7 +10,10 @@ const HotelsDisplayPage = () => {
         <HotelsFilterDrawer />
       </div>
       <div className="col-span-9">
-        <HotelsListPage />
+        <div className="flex flex-col gap-3">
+          <HotelsListPage />
+          <DicoverMorePage />
+        </div>
       </div>
     </div>
   );
