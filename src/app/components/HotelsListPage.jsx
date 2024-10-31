@@ -31,7 +31,7 @@ const HotelsListPage = () => {
 
     {
       hotelimg: "/images/hotelavani.png",
-      hoteltitle: "Avani Deira Dubai Hotel",
+      hoteltitle: "Avani Deira Dubai Hotel",  
       hotellocation: "27.93 km from city centre",
       hotelrating: 5,
       hotelreviews: 4206,
