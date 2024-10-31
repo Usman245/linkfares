@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { TbFilterDown } from "react-icons/tb";
 import { MdOutlineKingBed } from "react-icons/md";
 import { Checkbox } from "@nextui-org/checkbox";
-import { Input } from "@nextui-org/input";
-import { IoSearchSharp } from "react-icons/io5";
 import ReactStars from "react-rating-stars-component";
 import { MdAirportShuttle } from "react-icons/md";
 import { TbParkingCircleFilled } from "react-icons/tb";
@@ -14,11 +12,12 @@ import { FaWifi } from "react-icons/fa";
 const HotelsFilterDrawer = () => {
   const [tagShowAll, setTagShowAll] = useState(3)
   const [tagShowAllSingle, setTagShowAllSingle] = useState(1)
-  const [isVisible, setIsVisible] = useState(false);
+  const [isOpen, SetIsOpen] = useState(false);
 
-  const toggleColumn = () => {
-    setIsVisible(!isVisible);
-  };
+  const toggleBtn = () => {
+    SetIsOpen(!isOpen);
+  }
+
 
   const HoterFilter = {
     BookPOM: [
@@ -306,14 +305,15 @@ const HotelsFilterDrawer = () => {
   return (
 
     <div className="xl:h-full overflow-y-scroll shadow-lg p-4">
-      <div onClick={toggleColumn} className="flex  items-center gap-2 ">
+      <div className="flex  items-center gap-2 ">
         <div className=" text-green-600">
           <TbFilterDown />
         </div>
-        <p className="text-xs font-bold  text-green-600">{isVisible ? "Hide Filters" : "Show Filters"}</p>
+        <p onClick={toggleBtn} className="text-xs font-bold  text-green-600">Hide Filters</p>
       </div>
       <hr class="h-px my-3 bg-gray-2B border-0 " />
-      <div className='flex flex-col {isVisible ? "show" : ""}'>
+      {isOpen && (
+        <div className='flex flex-col'>
         <div className="flex flex-col gap-8">
 
           {/* Book With Peace of Mind */}
@@ -647,6 +647,8 @@ const HotelsFilterDrawer = () => {
           </diV>
         </div>
       </div>
+      )}
+     
     </div >
   );
 };
