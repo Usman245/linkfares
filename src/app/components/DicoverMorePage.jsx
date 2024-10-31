@@ -25,7 +25,7 @@ const DicoverMorePage = () => {
                 Business travellers
               </button>
 
-              <button className="p-3 rounded-lg text-lg font-regular text-black flex justify-center items-center bg-green-600   border border-gray-CF">
+              <button className="p-3 rounded-lg text-lg font-regular text-white flex justify-center items-center bg-green-600   border border-gray-CF">
                 Couples
               </button>
             </div>
