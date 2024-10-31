@@ -9,7 +9,7 @@ module.exports = {
   ],
   theme: {
     screens: {
-      xs: "375px",
+      xs: "375px", 
       sm: "640px",
       md: "768px",
       lg: "1024px",
@@ -62,6 +62,7 @@ module.exports = {
         "blue-0D": "#408BFC0D",
         "gray-2B": "#2B2B2B",
         "gray-CF": "#C1C7CF",
+        "gray-E9": "#E0E4E9",
 
         "gray-F8": "#EFF3F8",
         "blue-3c": "#05203C",

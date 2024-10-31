@@ -5,7 +5,7 @@ import React from "react";
 
 const HotelSelectionPage = () => {
   return (
-    <div>
+    <div >
       <HotelSelectionView /> <HotelsDisplayPage />
     </div>
   );
