@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import { Roboto } from "next/font/google";
 import { Poppins } from "next/font/google";
 import { Inter } from "next/font/google";
+import { Reem_Kufi } from "next/font/google";
 
 // app/providers.tsx
 
@@ -30,6 +31,12 @@ const inter = Inter({
   weight: ["100", "300", "400", "500", "700", "900"], // Available weights for Roboto
 });
 
+const reemkufi = Reem_Kufi({
+  subsets: ["latin"],
+  variable: "--reemkufi", // Correct usage of variable
+  // Available weights for Roboto
+});
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -50,7 +57,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={` ${roboto.variable}  ${poppins.variable}  ${inter.variable}`}
+      className={` ${roboto.variable}  ${poppins.variable}  ${inter.variable} ${reemkufi.variable}`}
     >
       <body
         className={`${geistSans.variable} ${geistMono.variable}   antialiased`}
