@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState } from "react";
 import { MdFlight } from "react-icons/md";
@@ -11,36 +10,41 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { MdOutlineSwapHorizontalCircle } from "react-icons/md";
 
-
 const flighttabs = [
   {
     id: 1,
     name: "Flights",
+    routePath: "/Flights",
+
     pic: <MdFlight color="white" style={{ transform: "rotate(50deg)" }} />,
   },
   {
     id: 2,
     name: "Hotels",
+    routePath: "/Hotels",
     pic: <MdOutlineKingBed color="white" />,
   },
   {
     id: 3,
     name: "Car Hire",
+    routePath: "#",
     pic: <FaCarSide color="white" />,
   },
   {
     id: 4,
     name: "Buses",
+    routePath: "#",
     pic: <FaBus color="white" />,
   },
   {
     id: 5,
     name: "Packages",
+    routePath: "/Packages",
     pic: <TbPackages color="white" />,
   },
 ];
 
-const  FlightBanner = () => {
+const FlightBanner = () => {
   const [startDate, setStartDate] = useState(new Date());
   return (
     <div className="bg-[url('/images/flightbanner.png')] bg-green-600">
@@ -52,7 +56,7 @@ const  FlightBanner = () => {
           <div className="flex gap-2 flex-wrap  item-center justify-center">
             {flighttabs.map((item, index) => (
               <Link
-                href="#"
+                href={`${item.routePath}`}
                 className={`flex gap-2 items-center  justify-center  py-[10px] px-4 rounded-[100px] border   border-gray-50   hover:bg-green-500 hover:border-opacity-0`}
                 key={index}
               >
