@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "@nextui-org/react";
 import { IoMdFitness, IoMdStar } from "react-icons/io";
+import { GiMeal } from "react-icons/gi";
 import { BiPlus } from "react-icons/bi";
+import { FaUmbrellaBeach } from "react-icons/fa6";
 
 const PackagesDetailCard = () => {
   const cards = [
@@ -175,27 +177,27 @@ const PackagesDetailCard = () => {
             key={index}
             className="flex justify-end gap-2 py-2 px-4 bg-white rounded-lg border border-[#D9D9D9]"
           >
-            <div className="2xl:w-3/5 xl:w-3/5 lg:w-3/5 md:w-3/5 sm:w-3/5  xs:w-full">
+            <div className="2xl:w-3/5 xl:w-3/5 lg:w-full md:w-full sm:w-full  xs:w-full">
               <h1 className="text-2xl font-bold">{card.title}</h1>
               <div className="flex items-center mt-2 ">
                 {card.rating} <IoMdStar className="text-yellow-500" /> Hotel
               </div>
-              <div className="flex gap-2 my-2">
-                <div className=" flex items-center border border-green-700 gap-3 py-1 px-2 bg-[#E7EEF5] rounded-sm">
-                  <IoMdFitness className="text-green-700 w-4 h-4" />
-                  <div className="text-green-700 text-base font-medium">
-                    Fitness Gym
+              <div className="flex flex-wrap gap-2 my-2">
+                <div className=" flex items-center border border-green-600 gap-3 py-1 px-2 bg-[#E7EEF5] rounded-sm">
+                  <GiMeal className="text-green-600 w-4 h-4" />
+                  <div className="text-green-600 2xl:text-base 2xl:font-medium xl:font-medium font-normal text-sm ">
+                    Breakfast included
                   </div>
                 </div>
-                <div className=" flex items-center border border-green-700 gap-3 py-1 px-2 bg-[#E7EEF5] rounded-sm">
-                  <IoMdFitness className="text-green-700 w-4 h-4" />
-                  <div className="text-green-700 text-base font-medium">
-                    Fitness Gym
+                <div className=" flex items-center border border-green-600 gap-3 py-1 px-2 bg-[#E7EEF5] rounded-sm">
+                  <FaUmbrellaBeach className="text-green-600 w-4 h-4" />
+                  <div className="text-green-600 2xl:text-base 2xl:font-medium xl:font-medium font-normal text-sm ">
+                    Private Beach
                   </div>
                 </div>
-                <div className=" flex items-center border border-green-700 gap-3 py-1 px-2 bg-[#E7EEF5] rounded-sm">
-                  <IoMdFitness className="text-green-700 w-4 h-4" />
-                  <div className="text-green-700 text-base font-medium">
+                <div className=" flex items-center border border-green-600 gap-3 py-1 px-2 bg-[#E7EEF5] rounded-sm">
+                  <IoMdFitness className="text-green-600 w-4 h-4" />
+                  <div className="text-green-600 2xl:text-base 2xl:font-medium xl:font-medium font-normal text-sm ">
                     Fitness Gym
                   </div>
                 </div>
@@ -203,7 +205,7 @@ const PackagesDetailCard = () => {
                   <BiPlus className="text-white w-4 h-4 cursor-pointer" />
                 </div>
               </div>
-              <hr />
+              <hr className="border-t-2 border-[#F0F0F0]" />
               <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-row xs:flex-col w-full justify-between items-center xs:items-start mt-2">
                 <div>
                   <div className="text-xs text-red-600 line-through">
@@ -216,9 +218,9 @@ const PackagesDetailCard = () => {
                     {card.description}
                   </div>
                 </div>
-                <div className="flex flex-col justify-end xs:justify-start xs:text-left text-right">
+                <div className="flex flex-col justify-end xs:justify-start xs:text-left 2xl:text-right xl:text-right lg:text-right">
                   <div className="text-base font-medium">{card.night}</div>
-                  <Link className="bg-[#12B67A] text-white text-lg font-semibold py-1 px-4 mt-1 cursor-pointer rounded-sm">
+                  <Link className="bg-green-600 text-white text-lg font-normal py-1 px-4 mt-1 cursor-pointer rounded-sm">
                     View Details
                   </Link>
                 </div>

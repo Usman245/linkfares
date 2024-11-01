@@ -23,12 +23,12 @@ const PackagesDetailBanner = () => {
         <div className="flex sm:flex-wrap xs:flex-wrap items-start mt-3 gap-4">
           <Link
             href="#"
-            className="flex justify-center items-center w-[244px] h-[48px] gap-2 rounded border border-white text-white py-2 px-4"
+            className="flex justify-center items-center w-[244px] h-[48px] gap-2 rounded border border-white text-white py-2 px-4 cursor-pointer"
           >
             <FaWhatsapp className="text-white w-4 h-4" />
             <span className="text-lg font-normal">Get in Touch</span>
           </Link>
-          <Link className="flex justify-center items-center  gap-2 rounded border border-white text-white py-2 px-2">
+          <Link className="flex justify-center items-center  gap-2 rounded border border-white text-white py-2 px-2 cursor-pointer">
             <FaLink className="w-4 h-4" />
             <span className="text-lg font-normal">View destination guide</span>
           </Link>

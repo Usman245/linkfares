@@ -49,7 +49,7 @@ const PackagesFilter = () => {
                 type="checkbox"
                 checked={selectedBudget === option}
                 onChange={() => handleBudgetChange(option)}
-                className="form-checkbox h-5 w-5 rounded border-gray-300 accent-green-600 focus:ring-0"
+                className="form-checkbox h-5 w-5 rounded text-white  accent-[#2b9d68] focus:ring-0"
               />
               <span className="text-gray-700">{option}</span>
             </label>
@@ -69,7 +69,7 @@ const PackagesFilter = () => {
                 type="checkbox"
                 checked={selectedDays === option}
                 onChange={() => handleDaysChange(option)}
-                className="form-checkbox h-5 w-5 rounded border-gray-300 accent-green-600 focus:none"
+                className="form-checkbox h-5 w-5 rounded text-white  accent-[#2b9d68] focus:ring-0"
               />
               <span className="text-gray-700">{option}</span>
             </label>

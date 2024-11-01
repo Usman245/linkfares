@@ -11,7 +11,7 @@ const page = () => {
             <PackagesDetailBanner />
             <PackagesDetailMiniBanner />
             <div className="container w-full flex gap-4">
-                <div className="xs:hidden sm:hidden md:hidden lg:flex xl:flex 2xl:flex">
+                <div className="xs:hidden sm:hidden md:hidden lg:flex xl:flex 2xl:flex 2xl:w-2/6 xl:w-2/6 lg:w-2/6">
                     <PackagesFilter />
                 </div>
                 <PackagesDetailCard />
