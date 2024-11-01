@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaBars } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
-import PackagesFilter from "./PackagesFilters";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -174,7 +173,6 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-            <PackagesFilter />
           </div>
         </div>
       </nav>
