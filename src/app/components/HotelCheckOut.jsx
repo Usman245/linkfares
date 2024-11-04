@@ -22,7 +22,7 @@ const options = [
   { key: "no", label: "No" },
 ];
 
-const CheckoutCard = () => {
+const HotelCheckOut = () => {
   return (
     <div className="container">
       <div className="py-10">
@@ -393,4 +393,4 @@ const CheckoutCard = () => {
   );
 };
 
-export default CheckoutCard;
+export default HotelCheckOut;

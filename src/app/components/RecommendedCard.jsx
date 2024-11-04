@@ -7,7 +7,7 @@ import { FaCircle } from "react-icons/fa";
 
 const RecommendedCard = ({ hotel }) => {
   return (
-    <div className="flex flex-col rounded-t-2xl w-full">
+    <div className="flex flex-col rounded-t-2xl w-full mb-[50px]">
       <div className="h-[180px] rounded-t-3xl relative w-full">
         <img
           src={`${hotel.rimg}`}
@@ -32,7 +32,7 @@ const RecommendedCard = ({ hotel }) => {
         <div class="absolute bottom-0 w-full h-full bg-gradient-to-t from-[#16161699] to-[#16161600] transition-opacity duration-300"></div>
       </div>
 
-      <div className="  p-[20px] bg-white drop-shadow-xl rounded-xl">
+      <div className="  p-[20px] bg-white drop-shadow-xl rounded-b-2xl">
         <div className="flex flex-col gap-2">
           <div className="flex gap-2 items-center">
             <div>

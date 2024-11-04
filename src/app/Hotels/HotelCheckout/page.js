@@ -22,7 +22,7 @@ const options = [
   { key: "no", label: "No" },
 ];
 
-const CheckoutCard = () => {
+const page = () => {
   return (
     <div className="container">
       <div className="py-10">
@@ -261,13 +261,14 @@ const CheckoutCard = () => {
           <div className="flex flex-col gap-3 py-10 px-8  bg-blue-0D  rounded-[30px]">
             <div className="p-3 bg-white rounded-[20px]  relative">
               <div className="flex flex-col gap-5">
-                <div className="flex flex-col  sm:flex-row  items-center gap-[30px]">
-                  <div>
+                <div className="flex flex-col  sm:flex-row   gap-[30px]">
+                  <div className="w[110px] h-[70px] rounded-[6px]">
                     {" "}
                     <img
                       // height={30}
-                      src={"/images/airblue.png"}
+                      src={"/images/dubai.png"}
                       alt=""
+                      className="w-full h-full rounded-[6px]"
                     />
                   </div>
 
@@ -393,4 +394,4 @@ const CheckoutCard = () => {
   );
 };
 
-export default CheckoutCard;
+export default page;
