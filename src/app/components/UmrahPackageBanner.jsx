@@ -21,6 +21,36 @@ const UmrahPackageBanner = () => {
             <FaCheck className="w-5 h-5 text-green-600" />
             <span className="text-sm text-[#646464]">Visa Processing</span>
           </li>
+          <li className="flex items-center gap-2">
+            <FaCheck className="w-5 h-5 text-green-600" />
+            <span className="text-sm text-[#646464]">
+              Greater services at lowest cost
+            </span>
+          </li>
+          <li className="flex items-center gap-2">
+            <FaCheck className="w-5 h-5 text-green-600" />
+            <span className="text-sm text-[#646464]">
+              Comfortable hotels in Economy
+            </span>
+          </li>
+          <li className="flex items-center gap-2">
+            <FaCheck className="w-5 h-5 text-green-600" />
+            <span className="text-sm text-[#646464]">
+              Best customer support during your journey
+            </span>
+          </li>
+          <li className="flex items-center gap-2">
+            <FaCheck className="w-5 h-5 text-green-600" />
+            <span className="text-sm text-[#646464]">
+              Best customer support during your journey
+            </span>
+          </li>
+          <li className="flex items-center gap-2">
+            <FaCheck className="w-5 h-5 text-green-600" />
+            <span className="text-sm text-[#646464]">
+              Most of all — No false commitments!
+            </span>
+          </li>
         </ul>
         <p className="text-sm my-2 text-[#646464]">
           You can get your customized Umrah package in Economy or Star from our
