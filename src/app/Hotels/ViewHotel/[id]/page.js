@@ -8,6 +8,7 @@ import { DateRangePicker } from "@nextui-org/react";
 import { parseDate } from "@internationalized/date";
 import { Select, SelectItem } from "@nextui-org/react";
 import ReactStars from "react-rating-stars-component";
+import { CiClock2 } from "react-icons/ci";
 
 const hotelViewContent = {
   range: [
@@ -34,23 +35,23 @@ const page = () => {
     <div className="main py-5">
       <div className="container">
         <div className="grid grid-cols-12 col-span-12 flex items-center">
-          <div className="col-span-8">
-            <h1 className="font-semibold flex items-center"><span className="mr-8 xl:text-5xl lg:text-3xl md:text-2xl xs:text-xl">Hotel Excelsior Karachi</span>  <ReactStars
+          <div className="xl:col-span-8 col-span-10 flex flex-col md:gap-2 gap-1">
+            <h1 className="font-semibold flex items-center"><span className="mr-8 xl:text-5xl md:text-4xl text-2xl ">Hotel Excelsior Karachi</span>  <ReactStars
               count={5}
               // onChange={ratingChanged}
               value={4}
               size={28}
               activeColor="#F55D42"
             /></h1>
-            <p className="flex items-center m-2 sm:mt-1"><ImLocation2 /> <span className="ml-2 xl:text-base xs:text-sm">Plot SB-21, Sarwar Shaheed Rd، opposite Atrium Mall،, Karachi, 75600, Pakistan</span></p>
+            <p className="flex items-center sm:mt-1"><ImLocation2 /> <span className="ml-2 xl:text-base xs:text-sm">Plot SB-21, Sarwar Shaheed Rd، opposite Atrium Mall،, Karachi, 75600, Pakistan</span></p>
           </div>
-          <div className="col-span-4 flex justify-end">
+          <div className="xl:col-span-4 col-span-2 flex justify-end">
             <LuUpload size={24} className="mr-3" />
             <CiHeart size={24} />
           </div>
         </div>
         {/* second row */}
-        <div className="grid grid-cols-12 col-span-12 flex items-center mt-5">
+        <div className="grid grid-cols-12 col-span-12 flex items-center mt-5 flex gap-2">
           <div className="col-span-12 xl:col-span-2 md:col-span-3 flex">
             <div>
               <span className="text-4xl font-bold">43</span>
@@ -67,6 +68,9 @@ const page = () => {
           </div>
         </div>
       </div>
+
+
+
       {/* banner gallery */}
       <div className="media grid grid grid-cols-12 col-span-12 flex my-5">
         <div className="col-span-5">
@@ -134,6 +138,7 @@ const page = () => {
             </div>
           </div>
 
+          {/* buttons */}
           <div className="button my-5 grid-cols-12 col-span-12 flex gap-3 items-center flex-wrap">
             <div className="col-span-2">
               <h1 className="font-semibold">Filter by</h1>
@@ -150,12 +155,10 @@ const page = () => {
             </div>
           </div>
 
+          {/* card details */}
           <div className="detail">
             <p>Price per night including taxes and fees</p>
             <div className="grid grid-cols-12 col-span-12 bg-white rounded-lg flex items-center p-[15px] mt-4">
-
-
-              {/* ///first column */}
               <div className="grid grid-cols-12 flex gap-5 items-center lg:col-span-10 md:col-span-8 col-span-12">
                 <div className="img lg:col-span-3 md:col-span-5 col-span-12 h-full">
                   <img className="rounded-2xl h-full w-full object-cover" src="/images/industries.jpg" alt="hotel" />
@@ -182,11 +185,6 @@ const page = () => {
 
                 </div>
               </div>
-
-
-
-
-              {/* ///sec column */}
               <div className="lg:col-span-2 md:col-span-4 col-span-12 flex md:flex-col flex-row justify-between gap-5 md:items-end items-center md:mt-0 mt-5">
                 <div>
                   <h3 className="font-bold text-2xl">Rs 20,670</h3>
@@ -211,13 +209,28 @@ const page = () => {
                   </button>
                 </div>
               </div>
-
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* timing  */}
+      <div className="timing py-[50px]">
+        <div className="container">
+          <h1 className="text-4xl font-semibold">Check in and Check Out</h1>
+          <div className="timer flex gap-16 items-center mt-3">
+            <div className="clock"><CiClock2 /></div>
+            <div className="checkIn flex flex-col gap-2">
+              Check in From:
+              <span className="font-bold text-lg">14:00</span>
+            </div>
+            <div className="checkOut flex flex-col gap-2">
+            Check out Before:
+              <span className="font-bold text-lg">14:00</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   )
 };
 
