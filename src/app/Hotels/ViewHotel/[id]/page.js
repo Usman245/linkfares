@@ -8,7 +8,7 @@ import { DateRangePicker } from "@nextui-org/react";
 import { parseDate } from "@internationalized/date";
 import { Select, SelectItem } from "@nextui-org/react";
 import ReactStars from "react-rating-stars-component";
-import { CiClock2 } from "react-icons/ci";
+import { FaRegClock } from "react-icons/fa";
 
 const hotelViewContent = {
   range: [
@@ -52,7 +52,7 @@ const page = () => {
         </div>
         {/* second row */}
         <div className="grid grid-cols-12 col-span-12 flex items-center mt-5 flex gap-2">
-          <div className="col-span-12 xl:col-span-2 md:col-span-3 flex">
+          <div className="col-span-12 xl:col-span-2 md:col-span-3 flex items-end gap-4">
             <div>
               <span className="text-4xl font-bold">43</span>
               <span>/5</span>
@@ -216,15 +216,17 @@ const page = () => {
       {/* timing  */}
       <div className="timing py-[50px]">
         <div className="container">
-          <h1 className="text-4xl font-semibold">Check in and Check Out</h1>
-          <div className="timer flex gap-16 items-center mt-3">
-            <div className="clock"><CiClock2 /></div>
-            <div className="checkIn flex flex-col gap-2">
+          <h1 className="sm:text-4xl xs:text-2xl font-semibold">Check in and Check Out</h1>
+          <div className="timer grid grid-cols-12 flex gap-16 items-center mt-4">
+            <div className="clock sm:col-span-2 col-span-12">
+              <FaRegClock className="text-4xl" />
+            </div>
+            <div className="checkIn sm:col-span-3 col-span-6  flex flex-col gap-2">
               Check in From:
               <span className="font-bold text-lg">14:00</span>
             </div>
-            <div className="checkOut flex flex-col gap-2">
-            Check out Before:
+            <div className="checkOut sm:col-span-7 col-span-6 flex flex-col gap-2">
+              Check out Before:
               <span className="font-bold text-lg">14:00</span>
             </div>
           </div>
