@@ -3,22 +3,59 @@ import Image from "next/image";
 import Link from "next/link";
 
 const exploreData = [
-  { id: 1, imgpath: "/images/explore.png", cardtitle: "Domestic Tour" },
-  { id: 2, imgpath: "/images/flights.png", cardtitle: "International Tour" },
+  {
+    id: 1,
+    imgpath: "/images/explore.png",
+    cardtitle: "Domestic Tour",
+    linkurl: "/PackagesDetails",
+  },
+  {
+    id: 2,
+    imgpath: "/images/flights.png",
+    cardtitle: "International Tour",
+    linkurl: "/PackagesDetails",
+  },
   {
     id: 3,
     imgpath: "/images/ummrahpkg.png",
     cardtitle: "Haji and Ummrah Package",
+    linkurl: "/UmrahPackages",
   },
-  { id: 4, imgpath: "/images/explore.png", cardtitle: "Customized Packages" },
-  { id: 5, imgpath: "/images/zayaratpkg.png", cardtitle: "Zayarat Packages" },
-  { id: 6, imgpath: "/images/bus.png", cardtitle: "Others Packages" },
-  { id: 7, imgpath: "/images/explore.png", cardtitle: "Domestic Tours" },
-  { id: 8, imgpath: "/images/flights.png", cardtitle: "International Tour" },
+  {
+    id: 4,
+    imgpath: "/images/explore.png",
+    cardtitle: "Customized Packages",
+    linkurl: "/PackagesDetails",
+  },
+  {
+    id: 5,
+    imgpath: "/images/zayaratpkg.png",
+    cardtitle: "Zayarat Packages",
+    linkurl: "/UmrahPackages",
+  },
+  {
+    id: 6,
+    imgpath: "/images/bus.png",
+    cardtitle: "Others Packages",
+    linkurl: "/PackagesDetails",
+  },
+  {
+    id: 7,
+    imgpath: "/images/explore.png",
+    cardtitle: "Domestic Tours",
+    linkurl: "/PackagesDetails",
+  },
+  {
+    id: 8,
+    imgpath: "/images/flights.png",
+    cardtitle: "International Tour",
+    linkurl: "/PackagesDetails",
+  },
   {
     id: 9,
     imgpath: "/images/ummrahpkg.png",
     cardtitle: "Haji and Ummrah Package",
+    linkurl: "/UmrahPackages",
   },
 ];
 
@@ -43,7 +80,7 @@ const PackagesExplore = () => {
                   key={index}
                   className="relative rounded-lg w-[350px] h-[270px] overflow-hidden"
                 >
-                  <Link href="#">
+                  <Link href={`/Packages${item.linkurl}`}>
                     <div className="rounded-lg w-full h-full">
                       <Image
                         src={item.imgpath}
