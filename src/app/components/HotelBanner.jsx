@@ -123,12 +123,12 @@ const HotelBanner = () => {
 
               {/* buttonn */}
               <div className="xl:col-span-2 lg:col-span-12 xs:col-span-12 col-span-12 mt-4 flex items-end xl:ml-5 lg:ml-0 xs:ml-0">
-                <a
+                <Link
                   className="flex justify-evenly items-center text-white font-semibold buttonss bg-[#429C7D] p-3 w-full  rounded"
-                  href="#"
+                  href="/Hotels/HotelSelection/123"
                 >
                   Search Hotels <GoArrowRight />
-                </a>
+                </Link>
               </div>
             </div>
           </form>

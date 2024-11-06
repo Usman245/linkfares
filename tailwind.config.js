@@ -68,6 +68,8 @@ module.exports = {
         "blue-3c": "#05203C",
         "pink-66": "#E70866",
         "green-8A": "#0C838A",
+        "blue-54": "#344054",
+        "light-C": "#E4E7EC",
       },
       fontFamily: {
         roboto: ["var(--roboto)"],

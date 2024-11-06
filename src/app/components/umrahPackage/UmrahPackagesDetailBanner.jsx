@@ -32,6 +32,7 @@ const UmrahPackagesDetailBanner = ({
         height={400}
         layout="responsive"
         quality="100"
+        alt=""
       />
     </div>
   );

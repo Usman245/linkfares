@@ -1,8 +1,9 @@
+import Link from "next/link";
 import React from "react";
 
 const FabulasHotelCard = ({ hotel }) => {
   return (
-    <div>
+    <Link href={"/Hotels/HotelSelection/123"}>
       <div className="flex flex-col rounded-lg bg-white drop-shadow-lg   rounded-t-lg   ">
         <div className="h-[190px] w-full rounded-t-lg ">
           <img
@@ -34,7 +35,7 @@ const FabulasHotelCard = ({ hotel }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

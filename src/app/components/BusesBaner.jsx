@@ -4,6 +4,7 @@ import { RadioGroup, Radio, cn } from "@nextui-org/react";
 import { Input } from "@nextui-org/input";
 import { DatePicker } from "@nextui-org/date-picker";
 import { IoSearchOutline } from "react-icons/io5";
+import { RiErrorWarningFill } from "react-icons/ri";
 
 const BusesBaner = () => {
   return (
@@ -52,39 +53,51 @@ const BusesBaner = () => {
               </RadioGroup>
             </div>
 
-            <div className="grid grid-cols-12 gap-4">
-              <div className=" col-span-12  lg:col-span-10 grid grid-cols-12 gap-4">
-                <div className="col-span-12  md:col-span-4">
-                  <Input
-                    type="email"
-                    label="Email"
-                    placeholder="Enter your email"
-                  />
+            <div className="flex flex-col gap-2">
+              <div className="grid grid-cols-12 gap-4">
+                <div className=" col-span-12  lg:col-span-10 grid grid-cols-12 gap-4">
+                  <div className="col-span-12  md:col-span-4">
+                    <Input
+                      type="email"
+                      label="Email"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+
+                  <div className="col-span-12  md:col-span-4">
+                    <Input
+                      type="email"
+                      label="Email"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+
+                  <div className=" col-span-12  md:col-span-4">
+                    <DatePicker label={"Date"} />
+                  </div>
                 </div>
 
-                <div className="col-span-12  md:col-span-4">
-                  <Input
-                    type="email"
-                    label="Email"
-                    placeholder="Enter your email"
-                  />
-                </div>
-
-                <div className=" col-span-12  md:col-span-4">
-                  <DatePicker label={"Date"} />
+                <div className=" col-span-12  lg:col-span-2">
+                  <button className="flex gap-2 items-center justify-center rounded-lg py-2  px-3  h-full w-full bg-green-500">
+                    <div className="text-white">
+                      <IoSearchOutline />
+                    </div>
+                    <p className="text-lg font-regular font-inter text-white">
+                      {" "}
+                      Book Now
+                    </p>
+                  </button>
                 </div>
               </div>
 
-              <div className=" col-span-12  lg:col-span-2">
-                <button className="flex gap-2 items-center justify-center rounded-lg py-2  px-3  h-full w-full bg-green-500">
-                  <div className="text-white">
-                    <IoSearchOutline />
-                  </div>
-                  <p className="text-lg font-regular font-inter text-white">
-                    {" "}
-                    Book Now
-                  </p>
-                </button>
+              <div className="flex items-ceneter gap-3">
+                <div className="flex justify-center items-center">
+                  <RiErrorWarningFill color="white" />
+                </div>
+
+                <p className="font-regular text-lg  text-white  ">
+                  LinkFares and get 2% Off on a return ticket
+                </p>
               </div>
             </div>
           </div>
