@@ -42,7 +42,13 @@ const UmrahPackageDetail = () => {
           Day 1 to 5: Makkah The Holliest Place
         </h1>
         <p>
-          {` Upon arrival in Makkah, you will be accommodated in a comfortable hotel conveniently located near the Grand Mosque. Over the next six days, you will have the opportunity to perform rituals, including Tawaf (circumambulation) around the Kaaba and Sa'i (walking) between the hills of Safa and Marwa. Our experienced guides will be there to assist and guide you throughout your stay, ensuring a smooth and fulfilling experience.`}
+          {`      Upon arrival in Makkah, you will be accommodated in a comfortable
+          hotel conveniently located near the Grand Mosque. Over the next six
+          days, you will have the opportunity to perform rituals, including
+          Tawaf (circumambulation) around the Kaaba and Sa'i (walking) between
+          the hills of Safa and Marwa. Our experienced guides will be there to
+          assist and guide you throughout your stay, ensuring a smooth and
+          fulfilling experience.`}
         </p>
       </div>
     </div>

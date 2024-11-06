@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Select, SelectItem } from "@nextui-org/react";
-import React from "react";
+import { useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { RxCross2 } from "react-icons/rx";
 import { Slider } from "@nextui-org/react";
@@ -28,7 +28,6 @@ function maskCreditCardNumber(cardNumber) {
     cardNumberStr.slice(0, -4).replace(/\d/g, "*") + cardNumberStr.slice(-4);
   return maskedNumber.replace(/(.{4})/g, "$1 ");
 }
-
 const options = [
   { key: "yes", label: "Yes" },
   { key: "no", label: "No" },
@@ -48,6 +47,7 @@ const CheckoutCard = () => {
       cardNo: "4444111111111111",
     },
   ];
+
   const {
     wrapperProps,
     getCardImageProps,
@@ -55,6 +55,7 @@ const CheckoutCard = () => {
     getExpiryDateProps,
     getCVCProps,
   } = usePaymentInputs();
+
   return (
     <div className="container">
       <div className="py-10">
@@ -203,44 +204,44 @@ const CheckoutCard = () => {
                     <p className="text-lg font-regular text-gray-69">
                       Debit Card
                     </p>
-                    {cards.map((e, index) => (
-                      <div
-                        className="p-3 border border-2 rounded-[12px]"
-                        key={index}
-                      >
-                        <div className="grid grid-cols-12 gap-2 items-center">
-                          <div className="col-span-12 md:col-span-4 flex gap-2 items-center">
-                            <Image
-                              width={50}
-                              height={30}
-                              src={e.logoPath}
-                              alt="Mastercard"
+                    {cards.map((e,index)=>(
+                      <div className="p-3 border border-2 rounded-[12px]" key={index}>
+                      <div className="grid grid-cols-12 gap-2 items-center">
+                        <div className="col-span-12 md:col-span-4 flex gap-2 items-center">
+                          <Image
+                            width={50}
+                            height={30}
+                            src={e.logoPath}
+                            alt="Mastercard"
+                          />
+                          <p className="text-lg text-gray-69 font-regular">
+                            {e.bank}
+                          </p>
+                        </div>
+                        <div className="col-span-12 md:col-span-5 text-lg text-gray-69 font-regular md:text-center">
+                          {maskCreditCardNumber(e.cardNo)}
+                        </div>
+                        <div className="col-span-12 md:col-span-3 flex md:justify-end md:items-end">
+                          <div className="w-6 h-6 border-2 border-green-600 rounded-full">
+                            <input
+                              type="checkbox"
+                              id="grow3"
+                              className="hidden peer"
                             />
-                            <p className="text-lg text-gray-69 font-regular">
-                              {e.bank}
-                            </p>
-                          </div>
-                          <div className="col-span-12 md:col-span-5 text-lg text-gray-69 font-regular md:text-center">
-                            {maskCreditCardNumber(e.cardNo)}
-                          </div>
-                          <div className="col-span-12 md:col-span-3 flex md:justify-end md:items-end">
-                            <div className="w-6 h-6 border-2 border-green-600 rounded-full">
-                              <input
-                                type="checkbox"
-                                id="grow3"
-                                className="hidden peer"
-                              />
-                              <label
-                                htmlFor="grow3"
-                                className="flex items-center justify-center bg-gray-200 w-full h-full border-2 rounded-full cursor-pointer peer-checked:bg-green-600 peer-checked:border-geen-600 p-2"
-                              ></label>
-                            </div>
+                            <label
+                              htmlFor="grow3"
+                              className="flex items-center justify-center bg-gray-200 w-full h-full border-2 rounded-full cursor-pointer peer-checked:bg-green-600 peer-checked:border-geen-600 p-2"
+                            ></label>
                           </div>
                         </div>
                       </div>
+                    </div>
                     ))}
 
-                    <button className="flex gap-2 items-center" onClick={onOpen}>
+                    <button
+                      onClick={onOpen}
+                      className="flex gap-2 items-center"
+                    >
                       <div className=" p-2 rounded-full flex justify-center items-center  bg-green-100  text-gray-6">
                         <FaPlus />
                       </div>
@@ -312,23 +313,22 @@ const CheckoutCard = () => {
                     {" "}
                     <img
                       // height={30}
-                      src={"/images/airblue.png"}
+                      src={"/images/ummrahBannerBg.png"}
                       alt=""
+                      className=" w-40 h-32"
                     />
                   </div>
 
                   <div className="flex justify-center sm:justify-start flex-col gap-3">
                     <div className="flex flex-col gap-2">
                       <p className="text-xl text-gray-4B font-semibold">
-                        LHR TO DXB
+                        Umrah 21 Days Packages
                       </p>
-                      <p className="text-lg font-medium text-gray-2B">
-                        Best Offer
-                      </p>
+                      <p className="text-lg font-medium text-gray-2B"></p>
                     </div>
 
                     <p className="text-3xl font-semibold  text-green-600">
-                      PKR 73,138
+                      PKR 195,000
                     </p>
                   </div>
                 </div>
@@ -340,7 +340,7 @@ const CheckoutCard = () => {
                     <ReactStars
                       count={5}
                       // onChange={ratingChange}
-                      value={2}
+                      value={5}
                       size={30}
                       activeColor="#FFA033"
                     />
@@ -392,12 +392,12 @@ const CheckoutCard = () => {
                         Order
                       </p>
                       <p className="text-xl text-gray-69 font-regular ">
-                        PKR 73,138
+                        PKR 195,000
                       </p>
                     </div>
                     <div className="flex justify-between items-center ">
                       <p className="text-xl text-gray-69 font-regular ">Tax</p>
-                      <p className="text-xl text-gray-69 font-regular ">5%</p>
+                      <p className="text-xl text-gray-69 font-regular ">0</p>
                     </div>
                   </div>
                   <hr class="h-px my-4 bg-gray-EB border-0 " />
@@ -405,7 +405,7 @@ const CheckoutCard = () => {
                   <div className="flex justify-between items-center ">
                     <p className="text-xl text-gray-69 font-semibold ">Total</p>
                     <p className="text-xl text-gray-69 font-semibold ">
-                      PKR 76,795
+                      PKR 195,000
                     </p>
                   </div>
                 </div>

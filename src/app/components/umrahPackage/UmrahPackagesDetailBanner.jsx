@@ -9,7 +9,7 @@ const UmrahPackagesDetailBanner = ({
   startingPoint,
 }) => {
   return (
-    <div className="w-4/5">
+    <div className="w-full">
       <h1
         className="
         text-green-600 font-medium font-poppins text-xl"
