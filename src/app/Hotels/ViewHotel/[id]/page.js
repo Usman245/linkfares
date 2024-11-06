@@ -8,6 +8,7 @@ import { parseDate } from "@internationalized/date";
 import { Select, SelectItem } from "@nextui-org/react";
 import ReactStars from "react-rating-stars-component";
 import { FaRegClock } from "react-icons/fa";
+import Link from "next/link";
 
 const hotelViewContent = {
   range: [
@@ -239,9 +240,11 @@ const page = () => {
 
                 <div className="flex flex-col gap-2">
                   <p className="text-sm">3night, 2guest</p>
-                  <button className="border rounded-lg w-full xs:w-max bg-[#12b76a] py-2 px-[16px] text-white">
-                    Book Now
-                  </button>
+                  <Link href={"/Hotels/HotelCart"}>
+                    <button className="border rounded-lg w-full xs:w-max bg-[#12b76a] py-2 px-[16px] text-white">
+                      Book Now
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

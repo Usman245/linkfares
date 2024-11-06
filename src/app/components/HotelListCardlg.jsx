@@ -6,6 +6,7 @@ import { FaRegCircle } from "react-icons/fa";
 import { FaCircle } from "react-icons/fa";
 import { BiSolidLike } from "react-icons/bi";
 import { PiWarningCircleFill } from "react-icons/pi";
+import Link from "next/link";
 
 const HotelListCardlg = ({ hotels }) => {
   return (
@@ -140,9 +141,11 @@ const HotelListCardlg = ({ hotels }) => {
             className="
             mb-2  bottom-0    right-[8px]  w-full "
           >
-            <button className="py-2 px-2 rounded-lg  flex justify-center items-center bg-green-600 text-white w-full ">
-              Go to Site
-            </button>
+            <Link href={"/Hotels/HotelCart"}>
+              <button className="py-2 px-2 rounded-lg  flex justify-center items-center bg-green-600 text-white w-full ">
+                Go to Site
+              </button>
+            </Link>
           </div>
         </div>
       </div>

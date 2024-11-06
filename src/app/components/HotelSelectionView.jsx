@@ -5,7 +5,7 @@ import { Select, SelectItem } from "@nextui-org/react";
 import { DatePicker } from "@nextui-org/react";
 import { Input } from "@nextui-org/react";
 import { GoArrowRight } from "react-icons/go";
-
+import Link from "next/link";
 
 export const locations = [
   { key: "dubai", label: "Dubai" },
@@ -115,8 +115,14 @@ const HotelSelectionView = () => {
             </div>
           </div>
           {/* buttonn */}
+
           <div className="col-span-12 lg:col-span-2 md:col-span-12 mt-4 xl:mt-0 text-white font-semibold">
-            <a className="flex justify-evenly items-center buttonss bg-[#429C7D] p-[16px] w-full rounded-tl-none rounded-bl-none rounded" href="#">Search Hotels <GoArrowRight /></a>
+            <a
+              className="flex justify-evenly items-center buttonss bg-[#429C7D] p-[16px] w-full rounded-tl-none rounded-bl-none rounded"
+              href="#"
+            >
+              Search Hotels <GoArrowRight />
+            </a>
           </div>
         </div>
       </div>

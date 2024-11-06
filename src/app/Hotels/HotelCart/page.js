@@ -16,6 +16,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { Pagination } from "swiper/modules";
+import Link from "next/link";
 const RecommendedData = [
   {
     rtitle: "Popular Hotel",
@@ -292,9 +293,11 @@ const Page = () => {
                 </div>
 
                 <div className="flex justify-center items-center">
-                  <button className="py-4 px-4 w-full md:w-max md:px-[100px] bg-green-600 text-white font-inter text-lg  rounded-lg">
-                    Go For Checkout
-                  </button>
+                  <Link href={"/Hotels/HotelCheckout"}>
+                    <button className="py-4 px-4 w-full md:w-max md:px-[100px] bg-green-600 text-white font-inter text-lg  rounded-lg">
+                      Go For Checkout
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
