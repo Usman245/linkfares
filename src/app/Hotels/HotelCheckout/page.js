@@ -10,6 +10,17 @@ import { Accordion, AccordionItem, button } from "@nextui-org/react";
 import { FaPlus } from "react-icons/fa6";
 import { color } from "framer-motion";
 import Link from "next/link";
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+  useDisclosure,
+} from "@nextui-org/react";
+import { usePaymentInputs, PaymentInputsWrapper } from "react-payment-inputs";
+import images from "react-payment-inputs/images";
 function maskCreditCardNumber(cardNumber) {
   const cardNumberStr = cardNumber.toString();
   const maskedNumber =
@@ -23,6 +34,26 @@ const options = [
 ];
 
 const page = () => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const cards = [
+    {
+      logoPath: "/images/mastercard.png",
+      bank: "Allied Bank",
+      cardNo: "4444111111111111",
+    },
+    {
+      logoPath: "/images/visa.png",
+      bank: "Mezan Bank",
+      cardNo: "4444111111111111",
+    },
+  ];
+  const {
+    wrapperProps,
+    getCardImageProps,
+    getCardNumberProps,
+    getExpiryDateProps,
+    getCVCProps,
+  } = usePaymentInputs();
   return (
     <div className="container">
       <div className="py-10">
@@ -171,21 +202,24 @@ const page = () => {
                     <p className="text-lg font-regular text-gray-69">
                       Debit Card
                     </p>
-                    <div className="p-3 border border-2 rounded-[12px]">
+                  
+
+                    {cards.map((e,index)=>(
+                      <div className="p-3 border border-2 rounded-[12px]" key={index}>
                       <div className="grid grid-cols-12 gap-2 items-center">
                         <div className="col-span-12 md:col-span-4 flex gap-2 items-center">
                           <Image
                             width={50}
                             height={30}
-                            src="/images/mastercard.png"
+                            src={e.logoPath}
                             alt="Mastercard"
                           />
                           <p className="text-lg text-gray-69 font-regular">
-                            Meezan Bank
+                            {e.bank}
                           </p>
                         </div>
                         <div className="col-span-12 md:col-span-5 text-lg text-gray-69 font-regular md:text-center">
-                          {maskCreditCardNumber(4444111111111111)}
+                          {maskCreditCardNumber(e.cardNo)}
                         </div>
                         <div className="col-span-12 md:col-span-3 flex md:justify-end md:items-end">
                           <div className="w-6 h-6 border-2 border-green-600 rounded-full">
@@ -202,47 +236,57 @@ const page = () => {
                         </div>
                       </div>
                     </div>
-
-                    <div className="p-3 border border-2 rounded-[12px]">
-                      <div className="grid grid-cols-12 gap-2 items-center">
-                        <div className="col-span-12 md:col-span-4 flex gap-2 items-center">
-                          <Image
-                            width={50}
-                            height={30}
-                            src="/images/visa.png"
-                            alt="Visa"
-                          />
-                          <p className="text-lg text-gray-69 font-regular">
-                            Allied Bank
-                          </p>
-                        </div>
-                        <div className="col-span-12 md:col-span-5 text-lg text-gray-69 font-regular md:text-center">
-                          {maskCreditCardNumber(4444111111111111)}
-                        </div>
-                        <div className="col-span-12 md:col-span-3 flex md:justify-end md:items-end">
-                          <div className="w-6 h-6 border-2 border-green-600 rounded-full">
-                            <input
-                              type="checkbox"
-                              id="grow4"
-                              className="hidden peer"
-                            />
-                            <label
-                              htmlFor="grow4"
-                              className="flex items-center justify-center bg-gray-200 w-full h-full border-2 rounded-full cursor-pointer peer-checked:bg-green-600 peer-checked:border-geen-600 p-2"
-                            ></label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    ))}
 
                     <button className="flex gap-2 items-center">
-                      <div className=" p-2 rounded-full flex justify-center items-center  bg-green-100  text-gray-6">
+                      <div className=" p-2 rounded-full flex justify-center items-center  bg-green-100  text-gray-6" onClick={onOpen}>
                         <FaPlus />
                       </div>
                       <p className="text-lg font-regular text-gray-69">
                         Add New Cards
                       </p>
                     </button>
+                    <Modal
+                      isOpen={isOpen}
+                      onOpenChange={onOpenChange}
+                      isDismissable={false}
+                      isKeyboardDismissDisabled={true}
+                    >
+                      <ModalContent>
+                        {(onClose) => (
+                          <>
+                            <ModalHeader className="flex flex-col gap-1">
+                              Put the card Detail
+                            </ModalHeader>
+                            <ModalBody>
+                              <div>
+                                <PaymentInputsWrapper {...wrapperProps}>
+                                  <svg {...getCardImageProps({ images })} />
+                                  <input {...getCardNumberProps()} />
+                                  <input {...getExpiryDateProps()} />
+                                  <input {...getCVCProps()} />
+                                </PaymentInputsWrapper>
+                              </div>
+                            </ModalBody>
+                            <ModalFooter>
+                              <Button
+                                color="danger"
+                                variant="light"
+                                onPress={onClose}
+                              >
+                                Cancel
+                              </Button>
+                              <Button
+                                className="bg-green-600 text-white py-2 px-3 cursor-pointer text-sm "
+                                onPress={onClose}
+                              >
+                                Add Card
+                              </Button>
+                            </ModalFooter>
+                          </>
+                        )}
+                      </ModalContent>
+                    </Modal>
                   </div>
                 </AccordionItem>
               </Accordion>
