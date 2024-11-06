@@ -26,13 +26,13 @@ const flighttabs = [
   {
     id: 3,
     name: "Car Hire",
-    routePath: "#",
+    routePath: "/Cabs",
     pic: <FaCarSide color="white" />,
   },
   {
     id: 4,
     name: "Buses",
-    routePath: "#",
+    routePath: "/Buses",
     pic: <FaBus color="white" />,
   },
   {

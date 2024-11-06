@@ -222,7 +222,7 @@ const PackagesDetailCard = () => {
                   <div className="text-base font-medium font-reemkufi">
                     {card.night}
                   </div>
-                  <Link
+                  <Link href="/Packages/UmrahPackagesDetails/"
                     className="bg-green-600 text-white text-lg font-normal py-1 px-4 mt-1 cursor-pointer rounded-[4px]
                   "
                   >
