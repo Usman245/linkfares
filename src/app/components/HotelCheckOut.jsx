@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Select, SelectItem } from "@nextui-org/react";
+import { Button, Select, SelectItem, useDisclosure } from "@nextui-org/react";
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 import { RxCross2 } from "react-icons/rx";
@@ -10,6 +10,7 @@ import { Accordion, AccordionItem, button } from "@nextui-org/react";
 import { FaPlus } from "react-icons/fa6";
 import { color } from "framer-motion";
 import Link from "next/link";
+import Modals from "./Modal";
 function maskCreditCardNumber(cardNumber) {
   const cardNumberStr = cardNumber.toString();
   const maskedNumber =
@@ -21,7 +22,7 @@ const options = [
   { key: "yes", label: "Yes" },
   { key: "no", label: "No" },
 ];
-
+ const [onOpen,isOpen,onOpenChange]=useDisclosure()
 const HotelCheckOut = () => {
   return (
     <div className="container">
@@ -235,14 +236,15 @@ const HotelCheckOut = () => {
                       </div>
                     </div>
 
-                    <button className="flex gap-2 items-center">
+                    <Button onPress={onOpen} className="flex justify-start bg-transparent outline-none gap-2 items-center">
                       <div className=" p-2 rounded-full flex justify-center items-center  bg-green-100  text-gray-6">
                         <FaPlus />
                       </div>
                       <p className="text-lg font-regular text-gray-69">
                         Add New Cards
                       </p>
-                    </button>
+                    </Button>
+                        <Modals isOpen={isOpen} onOpenChange={onOpenChange} />
                   </div>
                 </AccordionItem>
               </Accordion>
