@@ -11,16 +11,11 @@ import { FaPlus } from "react-icons/fa6";
 import { color } from "framer-motion";
 import Link from "next/link";
 import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
   Button,
   useDisclosure,
 } from "@nextui-org/react";
 import { usePaymentInputs, PaymentInputsWrapper } from "react-payment-inputs";
-import images from "react-payment-inputs/images";
+import Modals from "./Modal";
 
 function maskCreditCardNumber(cardNumber) {
   const cardNumberStr = cardNumber.toString();
@@ -48,13 +43,7 @@ const CheckoutCard = () => {
       cardNo: "4444111111111111",
     },
   ];
-  const {
-    wrapperProps,
-    getCardImageProps,
-    getCardNumberProps,
-    getExpiryDateProps,
-    getCVCProps,
-  } = usePaymentInputs();
+  
   return (
     <div className="container">
       <div className="py-10">
@@ -240,55 +229,15 @@ const CheckoutCard = () => {
                       </div>
                     ))}
 
-                    <button className="flex gap-2 items-center" onClick={onOpen}>
+                    <Button onPress={onOpen} className="flex gap-2 justify-start bg-transparent items-center" >
                       <div className=" p-2 rounded-full flex justify-center items-center  bg-green-100  text-gray-6">
                         <FaPlus />
                       </div>
                       <p className="text-lg font-regular text-gray-69">
                         Add New Cards
                       </p>
-                    </button>
-                    <Modal
-                      isOpen={isOpen}
-                      onOpenChange={onOpenChange}
-                      isDismissable={false}
-                      isKeyboardDismissDisabled={true}
-                    >
-                      <ModalContent>
-                        {(onClose) => (
-                          <>
-                            <ModalHeader className="flex flex-col gap-1">
-                              Put the card Detail
-                            </ModalHeader>
-                            <ModalBody>
-                              <div>
-                                <PaymentInputsWrapper {...wrapperProps}>
-                                  <svg {...getCardImageProps({ images })} />
-                                  <input {...getCardNumberProps()} />
-                                  <input {...getExpiryDateProps()} />
-                                  <input {...getCVCProps()} />
-                                </PaymentInputsWrapper>
-                              </div>
-                            </ModalBody>
-                            <ModalFooter>
-                              <Button
-                                color="danger"
-                                variant="light"
-                                onPress={onClose}
-                              >
-                                Cancel
-                              </Button>
-                              <Button
-                                className="bg-green-600 text-white py-2 px-3 cursor-pointer text-sm "
-                                onPress={onClose}
-                              >
-                                Add Card
-                              </Button>
-                            </ModalFooter>
-                          </>
-                        )}
-                      </ModalContent>
-                    </Modal>
+                    </Button>
+                   <Modals isOpen={isOpen} onOpenChange={onOpenChange}/>
                   </div>
                 </AccordionItem>
               </Accordion>
