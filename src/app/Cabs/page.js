@@ -3,6 +3,7 @@ import CabsHomePageBanner from '../components/cabs/CabsHomePageBanner'
 import CarRentalDestinations from '../components/cabs/CarRentalDestinations'
 import CarDeals from '../components/cabs/CarDeals'
 import ProcessForHireCar from '../components/cabs/ProcessForHireCar'
+import Newsletter from '../components/Newsletter'
 
 const page = () => {
   return (
@@ -11,6 +12,7 @@ const page = () => {
         <CarRentalDestinations/>
         <CarDeals/>
         <ProcessForHireCar/>
+        <Newsletter/>
     </div>
   )
 }

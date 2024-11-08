@@ -16,6 +16,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
+import { FaCalculator } from "react-icons/fa";
 
 const CarRentalDestinations = () => {
   const navItem = [
@@ -84,7 +85,7 @@ const CarRentalDestinations = () => {
           </span>
         </li>
         <li className="flex gap-2 items-start">
-          <FaCarSide size={25} />
+          <FaCalculator size={25} />
           <span className="text-base font-semibold">
             Compare deals from trusted car hire providers in one place
           </span>
@@ -98,7 +99,7 @@ const CarRentalDestinations = () => {
       </div>
 
       <div
-        className="my-6 px-6 py-4 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-2 items-center justify-center font-roboto"
+        className="my-6 px-6 py-4 bg-white flex xl:gap-0 md:gap-4 md:flex-row flex-col gap-4 flex-wrap justify-between md:items-center items-start font-roboto"
         style={{ boxShadow: "0px 1.33px 4px 0px rgba(0, 0, 0, 0.25)" }}
       >
         {navItem.map((item, index) => (
@@ -106,16 +107,16 @@ const CarRentalDestinations = () => {
             href="#"
             key={index}
             className={`flex text-base font-normal ${
-              activeIndex === index ? "text-blue-600  underline" : "text-black"
+              activeIndex === index ? "text-blue-600 underline" : "text-black"
             }`}
-            onClick={() => setActiveIndex(index)} // Set active index on click
+            onClick={() => setActiveIndex(index)}
           >
             {item}
           </Link>
         ))}
       </div>
 
-      <div className="my-4 font-roboto">
+      <div className="md:my-12 my-8 font-roboto">
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold my-2">
             Popular car rental destination
@@ -172,7 +173,7 @@ const CarRentalDestinations = () => {
                     className="w-auto h-auto object-cover rounded"
                   />
                   <div className="flex py-2 px-4  justify-between">
-                    <div className="flex flex-col items-start gap-[1px] ">
+                    <div className="text-start gap-[1px] ">
                       <h2 className="text-xl font-bold my-2">{card.title}</h2>
                       <p className="text-gray-700">{card.content}</p>
                     </div>
@@ -188,7 +189,7 @@ const CarRentalDestinations = () => {
           </Swiper>
         </div>
 
-        <div className="px-4 py-2 rounded-lg my-4 bg-[#EFF3F8] flex gap-2 items-start font-roboto">
+        <div className="px-4 py-2 rounded-lg md:mt-8 mt-4 bg-[#EFF3F8] flex gap-2 items-start font-roboto">
           <IoMdInformationCircle className="w-8 h-8 text-gray-800" />
           <div className="text-base font-normal">
             These are estimated prices to help you choose from a large number of
