@@ -23,8 +23,9 @@ const options = [
   { key: "yes", label: "Yes" },
   { key: "no", label: "No" },
 ];
-const [onOpen, isOpen, onOpenChange] = useDisclosure();
+
 const HotelCheckOut = () => {
+  const [onOpen, isOpen, onOpenChange] = useDisclosure();
   return (
     <div className="container">
       <div className="py-10">
