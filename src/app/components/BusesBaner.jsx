@@ -5,6 +5,7 @@ import { Input } from "@nextui-org/input";
 import { DatePicker } from "@nextui-org/date-picker";
 import { IoSearchOutline } from "react-icons/io5";
 import { RiErrorWarningFill } from "react-icons/ri";
+import Link from "next/link";
 
 const BusesBaner = () => {
   return (
@@ -78,15 +79,17 @@ const BusesBaner = () => {
                 </div>
 
                 <div className=" col-span-12  lg:col-span-2">
-                  <button className="flex gap-2 items-center justify-center rounded-lg py-2  px-3  h-full w-full bg-green-500">
-                    <div className="text-white">
-                      <IoSearchOutline />
-                    </div>
-                    <p className="text-lg font-regular font-inter text-white">
-                      {" "}
-                      Book Now
-                    </p>
-                  </button>
+                  <Link href={"Buses/BusesList"}>
+                    <button className="flex gap-2 items-center justify-center rounded-lg py-2  px-3  h-full w-full bg-green-500">
+                      <div className="text-white">
+                        <IoSearchOutline />
+                      </div>
+                      <p className="text-lg font-regular font-inter text-white">
+                        {" "}
+                        Book Now
+                      </p>
+                    </button>
+                  </Link>
                 </div>
               </div>
 
