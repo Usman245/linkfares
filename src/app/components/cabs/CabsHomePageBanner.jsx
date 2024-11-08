@@ -70,7 +70,7 @@ const CabsHomePageBanner = () => {
               </li>
             </div>
           </form>
-          <div className="flex justify-between items-center mt-2 mb-3 font-roboto">
+          <div className="flex justify-between sm:flex-row flex-col items-center mt-2 mb-3 font-roboto">
             <div className="flex flex-col items-start list-none">
               <label className="flex items-center space-x-2">
                 <input

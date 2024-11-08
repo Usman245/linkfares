@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import { Select, SelectItem } from "@nextui-org/react";
 import React from "react";
 import ReactStars from "react-rating-stars-component";

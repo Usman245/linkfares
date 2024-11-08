@@ -41,7 +41,7 @@ const CarDeals = () => {
     }
   ];
   return (
-    <div className="container mt-8 font-roboto">
+    <div className="container md:mt-16 mt-8 font-roboto">
       <h1 className="text-3xl font-bold my-2">
         Find the best car hire deals in Islamabad
       </h1>
@@ -94,7 +94,7 @@ const CarDeals = () => {
             </div>
           ))}
         </div>
-        <button className=" mt-4 text-[#0062E3] font-bold text-lg cursor-pointer flex items-center justify-center gap-1">
+        <button className=" mt-4 text-[#0062E3] font-bold text-lg cursor-pointer flex items-center justify-center gap-1 hover:scale-105 transition-all ease-in-out ">
           View all
           <FaArrowRight className="w-6 h-4 text-[#0062E3] ml-2" />
         </button>
@@ -109,7 +109,7 @@ const CarDeals = () => {
           here are the cheapest we found for the most popular kinds of vehicle.
         </div>
       </div>
-      <div className="mt-4">
+      <div className="md:mt-12 mt-6">
         <h1 className="text-3xl font-bold mt-2">
           The best car providers in Islamabad right now
         </h1>
@@ -126,7 +126,7 @@ const CarDeals = () => {
           ))}
         </div>
       </div>
-      <div className="mt-8">
+      <div className="md:mt-16 mt-8">
         <h1 className="text-2xl font-bold mt-2">Fast facts about Cars</h1>
         <p className="text-base mt-2 ">
           Everything you need to know to hit the road happy.
