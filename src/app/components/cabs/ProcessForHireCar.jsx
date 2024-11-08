@@ -1,7 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { FaCar, FaCarSide, FaTruckField } from "react-icons/fa6";
-import { FaCalendarAlt, FaChargingStation, FaHandHoldingUsd, FaMapPin } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaChargingStation,
+  FaHandHoldingUsd,
+  FaMapPin,
+} from "react-icons/fa";
 import { BsFillFuelPumpFill } from "react-icons/bs";
 import { CiMap, CiMapPin } from "react-icons/ci";
 import Link from "next/link";
@@ -32,7 +37,10 @@ const ProcessForHireCar = () => {
         </h1>
         <div className="flex lg:flex-row flex-col  justify-between gap-8 mt-4">
           {process.map((item, index) => (
-            <div className="flex justify-center gap-[2px] items-center flex-col">
+            <div
+              className="flex justify-center gap-[2px] items-center flex-col"
+              key={index}
+            >
               <Image src={item.icon} width={170} height={170} />
               <h3 className="font-medium text-xl">{item.title}</h3>
               <p className="font-normal text-base">{item.desc}</p>
@@ -45,11 +53,11 @@ const ProcessForHireCar = () => {
           How to find the best car hire deal
         </h1>
         <p className="text-base font-normal mt-2">
-          We are frequently named as the most trusted travel search site out
+          {`         We are frequently named as the most trusted travel search site out
           there. We're free to use, and well do the hard work for you by
           searching hundreds of car hire companies, allowing you to instantly
           compare prices and then book. Here's how to get the most out of your
-          car rental search.
+          car rental search.`}
         </p>
         <div className="mt-6 flex md:flex-row flex-col justify-between gap-5 text-[#161616]">
           <div className="flex flex-col gap-4">
@@ -59,9 +67,13 @@ const ProcessForHireCar = () => {
                 <h4 className="text-xl font-bold">Book now, cancel later</h4>
                 <p className="text-sm font-normal">
                   There are many car and van hire options with flexible booking
-                  policies and <span className="font-semibold">Free cancelation</span>. So you can bag the best deal
-                  with total flexibility to change your plans last-minute if you
-                  need to.<Link href="#" className="text-[#0062E3] cursor-pointer">Find a flexible car hire.</Link>
+                  policies and{" "}
+                  <span className="font-semibold">Free cancelation</span>. So
+                  you can bag the best deal with total flexibility to change
+                  your plans last-minute if you need to.
+                  <Link href="#" className="text-[#0062E3] cursor-pointer">
+                    Find a flexible car hire.
+                  </Link>
                 </p>
               </div>
             </div>
@@ -71,7 +83,12 @@ const ProcessForHireCar = () => {
                 <h4 className="text-xl font-bold">Compare fuel policies</h4>
                 <p className="text-sm font-normal">
                   To save money on topping up the tank before you take off, look
-                  out for deals with a <span className="font-semibold">'full to full'</span> fuel tank policy.<Link href="#" className="text-[#0062E3] cursor-pointer">Explore fuel Prices.</Link>
+                  out for deals with a{" "}
+                  <span className="font-semibold">{`'full to full'`}</span> fuel
+                  tank policy.
+                  <Link href="#" className="text-[#0062E3] cursor-pointer">
+                    Explore fuel Prices.
+                  </Link>
                 </p>
               </div>
             </div>
@@ -86,7 +103,10 @@ const ProcessForHireCar = () => {
                   companies avoid costly admin in between pick-ups by hiring out
                   cars for longer periods. So see if monthly car rental is
                   cheaper than the three weeks you need it for by selecting 30
-                  days.<Link href="#" className="text-[#0062E3] cursor-pointer">Try it now.</Link>
+                  days.
+                  <Link href="#" className="text-[#0062E3] cursor-pointer">
+                    Try it now.
+                  </Link>
                 </p>
               </div>
             </div>
@@ -97,10 +117,11 @@ const ProcessForHireCar = () => {
               <div className="flex flex-col gap-2">
                 <h4 className="text-xl font-bold"> Skip the queues</h4>
                 <p className="text-sm font-normal">
-                  We call out keyless or <span className="font-semibold">self-service pick-up</span> when you search
-                  with us. No keys to pick up or paperwork to fill in means no
-                  queues. Just turn up at your preferred car hire location, hop
-                  in and hit the road.
+                  We call out keyless or{" "}
+                  <span className="font-semibold">self-service pick-up</span>{" "}
+                  when you search with us. No keys to pick up or paperwork to
+                  fill in means no queues. Just turn up at your preferred car
+                  hire location, hop in and hit the road.
                 </p>
               </div>
             </div>
@@ -124,9 +145,10 @@ const ProcessForHireCar = () => {
               <div className="flex flex-col gap-2">
                 <h4 className="text-xl font-bold">Look further afield</h4>
                 <p className="text-sm font-normal">
-                  If you're on a budget, it's often cheaper to hop on public
-                  transport to a car rental <span className="font-semibold">pick-up location</span> a little further
-                  away.
+                  {`   If you're on a budget, it's often cheaper to hop on public
+                  transport to a car rental`}{" "}
+                  <span className="font-semibold">pick-up location</span> a
+                  little further away.
                 </p>
               </div>
             </div>
