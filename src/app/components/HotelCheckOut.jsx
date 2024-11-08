@@ -1,7 +1,8 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import { Button, Select, SelectItem, useDisclosure } from "@nextui-org/react";
-import React from "react";
+
 import ReactStars from "react-rating-stars-component";
 import { RxCross2 } from "react-icons/rx";
 import { Slider } from "@nextui-org/react";
@@ -22,7 +23,7 @@ const options = [
   { key: "yes", label: "Yes" },
   { key: "no", label: "No" },
 ];
- const [onOpen,isOpen,onOpenChange]=useDisclosure()
+const [onOpen, isOpen, onOpenChange] = useDisclosure();
 const HotelCheckOut = () => {
   return (
     <div className="container">
@@ -236,7 +237,10 @@ const HotelCheckOut = () => {
                       </div>
                     </div>
 
-                    <Button onPress={onOpen} className="flex justify-start bg-transparent outline-none gap-2 items-center">
+                    <Button
+                      onPress={onOpen}
+                      className="flex justify-start bg-transparent outline-none gap-2 items-center"
+                    >
                       <div className=" p-2 rounded-full flex justify-center items-center  bg-green-100  text-gray-6">
                         <FaPlus />
                       </div>
@@ -244,7 +248,7 @@ const HotelCheckOut = () => {
                         Add New Cards
                       </p>
                     </Button>
-                        <Modals isOpen={isOpen} onOpenChange={onOpenChange} />
+                    <Modals isOpen={isOpen} onOpenChange={onOpenChange} />
                   </div>
                 </AccordionItem>
               </Accordion>
