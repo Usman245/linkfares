@@ -39,7 +39,7 @@ body {
   background: #fff;
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -120,4 +120,8 @@ body {
     /* justify-content: space-between;
     width: 100%; */
   }
+}
+
+.custom-progress .nextui-progress-bar {
+  background-color: #12B76A; /* Replace with your preferred color */
 }

@@ -1,12 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import Link from "next/link";
-import {
-  FaAngleLeft,
-  FaAngleRight,
-  FaCaretRight,
-  FaInfo,
-} from "react-icons/fa6";
+import { FaAngleLeft, FaAngleRight, FaCaretRight } from "react-icons/fa6";
 import { FaCarSide } from "react-icons/fa6";
 import { AiFillTag } from "react-icons/ai";
 import { IoMdInformationCircle } from "react-icons/io";
@@ -17,8 +12,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import { FaCalculator } from "react-icons/fa";
+import { Tabs, Tab } from "@nextui-org/tabs";
+import "../../globals.css";
 
 const CarRentalDestinations = () => {
+  const variants = ["underlined"];
+
   const navItem = [
     "Car hire deals from Rs17,110",
     "The best Islamabad car hire providers",
@@ -26,6 +25,7 @@ const CarRentalDestinations = () => {
     "How to find the best deal",
     "FAQs",
   ];
+
   const cards = [
     {
       id: 1,
@@ -55,6 +55,13 @@ const CarRentalDestinations = () => {
       imgPath: "/images/london.png",
       price: "4599",
     },
+    {
+      id: 5,
+      title: "Car hire in Europe",
+      content: "Most popular car type: Economy",
+      imgPath: "/images/londoncard.png",
+      price: "5699",
+    },
     // Add more cards as needed
   ];
 
@@ -79,13 +86,13 @@ const CarRentalDestinations = () => {
 
       <div className="my-4 flex md:flex-row flex-col gap-4 list-none justify-between font-roboto">
         <li className="flex gap-2 items-start">
-          <FaCarSide size={25} />
+          <FaCarSide className="w-6 h-6" />
           <span className="text-base font-semibold">
             Search for cheap car rental in seconds anywhere in the world
           </span>
         </li>
         <li className="flex gap-2 items-start">
-          <FaCalculator size={25} />
+          <FaCalculator className="w-6 h-6" />
           <span className="text-base font-semibold">
             Compare deals from trusted car hire providers in one place
           </span>
@@ -97,30 +104,36 @@ const CarRentalDestinations = () => {
           </span>
         </li>
       </div>
-
       <div
-        className="my-6 px-6 py-4 bg-white flex xl:gap-0 md:gap-4 md:flex-row flex-col gap-4 flex-wrap justify-between md:items-center items-start font-roboto"
+        className="md:mt-24  mt-8 bg-white overflow-hidden"
         style={{ boxShadow: "0px 1.33px 4px 0px rgba(0, 0, 0, 0.25)" }}
       >
-        {navItem.map((item, index) => (
-          <Link
-            href="#"
-            key={index}
-            className={`flex text-base font-normal ${
-              activeIndex === index ? "text-blue-600 underline" : "text-black"
-            }`}
-            onClick={() => setActiveIndex(index)}
+        {variants.map((variant) => (
+          <Tabs
+            key={variant}
+            variant={variant}
+            color="primary"
+            aria-label="Tabs variants"
+            className="overflow-x-auto flex"
+            style={{
+              overflowY: "scroll",
+              msOverflowStyle: "none", // IE and Edge
+              scrollbarWidth: "none", // Firefox
+            }}
           >
-            {item}
-          </Link>
+            {navItem.map((e, index) => (
+              <Tab
+                key={e}
+                title={e}
+                className="text-base cursor-pointer py-5 px-6"
+              />
+            ))}
+          </Tabs>
         ))}
       </div>
-
-      <div className="md:my-12 my-8 font-roboto">
+      <div className="md:mt-24 mt-8 font-roboto">
         <div className="flex justify-between items-center">
-          <h1 className="text-3xl font-bold my-2">
-            Popular car rental destination
-          </h1>
+          <h1 className="text-3xl font-bold">Popular car rental destination</h1>
           <div className="flex gap-2 items-center">
             <button
               ref={prevButtonRef}
@@ -137,8 +150,9 @@ const CarRentalDestinations = () => {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative mt-4">
           <Swiper
+            className="py-5"
             modules={[Navigation]}
             spaceBetween={20}
             slidesPerView={3}
@@ -161,27 +175,30 @@ const CarRentalDestinations = () => {
             }}
           >
             {cards.map((card) => (
-              <SwiperSlide key={card.id}>
-                <div
-                  className=" bg-white rounded-b-xl "
-                  style={{ boxShadow: "0px 1px 3px 0px rgba(37, 32, 31, 0.3)" }}
-                >
+              <SwiperSlide
+                key={card.id}
+                className="flex justify-center bg-white rounded-b-lg h-full w-full max-w-sm flex-col min-h-[360px]" // Adjust min height as needed
+                style={{ boxShadow: "0px 1px 3px 0px #25201F4D" }}
+              >
+                <div className="relative h-48 w-full">
                   <Image
                     src={card.imgPath}
-                    width={370}
-                    height={182}
-                    className="w-auto h-auto object-cover rounded"
+                    layout="fill" // Makes the image take the full height and width of the container
+                    objectFit="cover"
+                    quality={100} // Ensures high image quality
+                    className="h-[171px]"
+                    alt={card.title}
                   />
-                  <div className="flex py-2 px-4  justify-between">
-                    <div className="text-start gap-[1px] ">
-                      <h2 className="text-xl font-bold my-2">{card.title}</h2>
-                      <p className="text-gray-700">{card.content}</p>
-                    </div>
-                    <div className="flex flex-col items-end  text-base">
-                      <div>From</div>
-                      <div className="font-bold text-xl">RS{card.price}</div>
-                      <div>Per day</div>
-                    </div>
+                </div>
+                <div className="p-4 flex  justify-between gap-4">
+                  <div className="text-start">
+                    <h2 className="text-lg font-bold mb-1">{card.title}</h2>
+                    <p className="text-gray-700 text-sm">{card.content}</p>
+                  </div>
+                  <div className="flex flex-col items-end justify-start  text-sm">
+                    <div>From</div>
+                    <div className="font-bold text-lg">RS{card.price}</div>
+                    <div>Per day</div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -189,8 +206,8 @@ const CarRentalDestinations = () => {
           </Swiper>
         </div>
 
-        <div className="px-4 py-2 rounded-lg md:mt-8 mt-4 bg-[#EFF3F8] flex gap-2 items-start font-roboto">
-          <IoMdInformationCircle className="w-8 h-8 text-gray-800" />
+        <div className="px-4 py-2 rounded-lg md:mt-8 mt-4 bg-[#EFF3F8] flex gap-2 justify-start items-center font-roboto">
+          <IoMdInformationCircle className="w-6 h-6 text-gray-800" />
           <div className="text-base font-normal">
             These are estimated prices to help you choose from a large number of
             options. Each is an average based on the lowest{" "}

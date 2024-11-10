@@ -30,12 +30,12 @@ const ProcessForHireCar = () => {
     },
   ];
   return (
-    <div className="container mt-8 font-roboto">
-      <div className="flex flex-col justify-center items-center bg-[#EFF3F8] rounded-xl py-12 px-4 text-center">
+    <div className="container md:mt-16 mt-8 font-roboto">
+      <div className="flex flex-col justify-center items-center bg-[#EFF3F8] rounded-xl py-12 px-6 text-center">
         <h1 className="font-bold my-2 text-2xl ">
           Booking car hire in three simple Steps
         </h1>
-        <div className="flex lg:flex-row flex-col  justify-between gap-8 mt-4">
+        <div className="flex lg:flex-row flex-col  justify-between gap-12 mt-4">
           {process.map((item, index) => (
             <div
               className="flex justify-center gap-[2px] items-center flex-col"
@@ -48,7 +48,7 @@ const ProcessForHireCar = () => {
           ))}
         </div>
       </div>
-      <div className="mt-10 sm:mb-64 mb-80">
+      <div className="md:mt-16 mt-8 sm:mb-64 mb-80">
         <h1 className="text-2xl font-semibold ">
           How to find the best car hire deal
         </h1>
@@ -60,12 +60,12 @@ const ProcessForHireCar = () => {
           car rental search.`}
         </p>
         <div className="mt-6 flex md:flex-row flex-col justify-between gap-5 text-[#161616]">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 md:w-1/2 w-full">
             <div className="flex items-start gap-2">
               <FaCarSide className="w-12 h-12 relative bottom-[12px]" />
               <div className="flex flex-col gap-2">
                 <h4 className="text-xl font-bold">Book now, cancel later</h4>
-                <p className="text-sm font-normal">
+                <p className="text-[15px] font-normal">
                   There are many car and van hire options with flexible booking
                   policies and{" "}
                   <span className="font-semibold">Free cancelation</span>. So
@@ -81,7 +81,7 @@ const ProcessForHireCar = () => {
               <BsFillFuelPumpFill className="w-6 h-6 relative " />
               <div className="flex flex-col gap-2">
                 <h4 className="text-xl font-bold">Compare fuel policies</h4>
-                <p className="text-sm font-normal">
+                <p className="text-[15px] font-normal">
                   To save money on topping up the tank before you take off, look
                   out for deals with a{" "}
                   <span className="font-semibold">{`'full to full'`}</span> fuel
@@ -98,7 +98,7 @@ const ProcessForHireCar = () => {
                 <h4 className="text-xl font-bold">
                   Hire cars for a whole month
                 </h4>
-                <p className="text-sm font-normal">
+                <p className="text-[15px] font-normal">
                   Want to rent a car for almost a month? Often, car rental
                   companies avoid costly admin in between pick-ups by hiring out
                   cars for longer periods. So see if monthly car rental is
@@ -111,12 +111,12 @@ const ProcessForHireCar = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 md:w-1/2 w-full">
             <div className="flex items-start gap-2">
               <FaHandHoldingUsd className="w-14 h-14 relative bottom-[14px]" />
               <div className="flex flex-col gap-2">
                 <h4 className="text-xl font-bold"> Skip the queues</h4>
-                <p className="text-sm font-normal">
+                <p className="text-[15px] font-normal">
                   We call out keyless or{" "}
                   <span className="font-semibold">self-service pick-up</span>{" "}
                   when you search with us. No keys to pick up or paperwork to
@@ -129,7 +129,7 @@ const ProcessForHireCar = () => {
               <FaChargingStation className="w-16 h-12 relative bottom-[8px]" />
               <div className="flex flex-col gap-2">
                 <h4 className="text-xl font-bold">Go greener</h4>
-                <p className="text-sm font-normal">
+                <p className="text-[15px] font-normal">
                   Limit your impact on this beautiful planet while you explore
                   it. Filter by electric vehicles, which will be charged up and
                   ready to go when you pick them up, meaning no worries about
@@ -144,7 +144,7 @@ const ProcessForHireCar = () => {
               />
               <div className="flex flex-col gap-2">
                 <h4 className="text-xl font-bold">Look further afield</h4>
-                <p className="text-sm font-normal">
+                <p className="text-[15px] font-normal">
                   {`   If you're on a budget, it's often cheaper to hop on public
                   transport to a car rental`}{" "}
                   <span className="font-semibold">pick-up location</span> a
