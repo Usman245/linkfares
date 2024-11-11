@@ -8,6 +8,19 @@ import { parseDate } from "@internationalized/date";
 import { Select, SelectItem } from "@nextui-org/react";
 import ReactStars from "react-rating-stars-component";
 import { FaRegClock } from "react-icons/fa";
+import { LiaChildSolid } from "react-icons/lia";
+import { FaBed } from "react-icons/fa";
+import { MdPets } from "react-icons/md";
+import { PiForkKnifeFill } from "react-icons/pi";
+import { PiSealWarningBold } from "react-icons/pi";
+import { FaRegBuilding } from "react-icons/fa";
+import { MdOutlinePayments } from "react-icons/md";
+import { FaWifi } from "react-icons/fa";
+import { TbParkingCircleFilled } from "react-icons/tb";
+import { GiCoolSpices } from "react-icons/gi";
+import { MdAirportShuttle } from "react-icons/md";
+import { FaFemale } from "react-icons/fa";
+import { IoFastFoodSharp } from "react-icons/io5";
 import Link from "next/link";
 
 const hotelViewContent = {
@@ -25,7 +38,77 @@ const hotelViewContent = {
     { title: "Breakfast included" },
     { title: "Pay on arrival" },
   ],
-};
+
+  timing: [
+    {
+      icon: <LiaChildSolid className="text-2xl" />,
+      title: "Children",
+      description: "children are welcome at this hotel"
+    }
+  ],
+  timingContent: [
+    {
+      description: "children are welcome at this hotel"
+    },
+    {
+      description: "adult are welcome at this hotel"
+    },
+    {
+      description: "For each room, 1 child can use existing beds for an additional charge of PKR 1500"
+    },
+    {
+      description: "Pets are not allowed."
+    },
+    {
+      breakefast: {
+        description: "Breakfast available.",
+        menu: "Buffet.",
+        options: "Continental breakfast.",
+        price: "Rs 1,833 /person"
+      }
+    },
+    {
+      description: `According to local regulations, foreign guests entering Pakistan are required to report 
+                      their purpose of visit and itinerary to the local police. Some areas may have temporary 
+                      control measures or closures. It is necessary to have security guard and bulletproof 
+                      vehicles for travel. Please contact the hotel in advance to confirm the relevant 
+                      arrangements.`
+    },
+    {
+      description: "Visitors of the guests are not permitted to stay in or enter the guest rooms."
+    },
+    {
+      description: "The hotel accepts the following payment methods:"
+    },
+  ],
+  amenities: [
+    {
+      icons: <FaWifi className='text-[30px]' />,
+      title: "Wi-fi"
+    },
+    {
+      icons: <TbParkingCircleFilled className='text-[30px]' />,
+      title: "Parking"
+    },
+    {
+      icons: <GiCoolSpices className='text-[30px]' />,
+      title: "Air conditioning"
+    },
+    {
+      icons: <MdAirportShuttle className='text-[30px]' />,
+      title: "Airport shuttle"
+    },
+    {
+      icons: <FaFemale className='text-[30px]' />,
+      title: "Front desk 24 hour"
+    },
+    {
+      icons: <IoFastFoodSharp className='text-[30px]' />,
+      title: "Restaurant"
+    },
+  ]
+
+}
 
 const page = () => {
   return (
@@ -251,29 +334,173 @@ const page = () => {
           </div>
         </div>
       </div>
+
       {/* timing  */}
       <div className="timing py-[50px]">
         <div className="container">
-          <h1 className="sm:text-4xl xs:text-2xl font-semibold">
+          <h3 className="sm:text-4xl text-2xl font-semibold">
             Check in and Check Out
-          </h1>
-          <div className="timer grid grid-cols-12 flex gap-16 items-center mt-4">
-            <div className="clock sm:col-span-2 col-span-12">
+          </h3>
+          <div className="timer grid grid-cols-12 flex items-center mt-4">
+            <div className="clock sm:col-span-2 col-span-2">
               <FaRegClock className="text-4xl" />
             </div>
-            <div className="checkIn sm:col-span-3 col-span-6  flex flex-col gap-2">
+            <div className="checkIn sm:col-span-3 col-span-5 flex flex-col gap-2">
               Check in From:
               <span className="font-bold text-lg">14:00</span>
             </div>
-            <div className="checkOut sm:col-span-7 col-span-6 flex flex-col gap-2">
+            <div className="checkOut sm:col-span-7 col-span-5 flex flex-col gap-2">
               Check out Before:
               <span className="font-bold text-lg">14:00</span>
+            </div>
+          </div>
+          <h3 className="sm:text-3xl text-2xl font-semibold mb-4 mt-[60px]">
+            Good to know
+          </h3>
+          <div className="GTN bg-[#f1f1f1] p-3 rounded">
+            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
+              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center mb-2">
+                <LiaChildSolid className="text-2xl text-[#12B76A]" />
+                <h3 className="text-lg font-semibold">Children</h3>
+              </div>
+              <div className="sm:col-span-8 col-span-12 mb-2">
+                <p>{hotelViewContent.timingContent[0].description}</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
+              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
+                <FaBed className="text-2xl text-[#12B76A]" />
+                <h3 className="text-lg font-semibold">Additional beds</h3>
+              </div>
+              <div className="sm:col-span-8 col-span-12 my-2">
+                <p>{hotelViewContent.timingContent[1].description}</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
+              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
+                <FaBed className="text-2xl text-[#12B76A]" />
+                <h3 className="text-lg font-semibold">Available beds</h3>
+              </div>
+              <div className="sm:col-span-8 col-span-12 my-2 flex flex-col gap-3">
+                <div className="ageLimit grid grid-cols-12 gap-2">
+                  <div className="md:col-span-4 col-span-12 flex gap-5 items-center">
+                    <span className="text-xs">Free</span>
+                    <h6 className="font-bold  text-base">From 5 to 5 <br className="inlines" /> years old</h6>
+                  </div>
+                  <div className="md:col-span-8 col-span-12 md:mt-0 mt-3">
+                    <p>For each room, 1 child can use existing beds for free.</p>
+                  </div>
+                </div>
+                <div className="ageLimit grid grid-cols-12 gap-2">
+                  <div className="md:col-span-4 col-span-12 flex gap-5 items-center">
+                    <span className="text-xs">Pay</span>
+                    <h6 className="font-bold text-base">From 6 to 17 years <br className="inlines" />
+                      old</h6>
+                  </div>
+                  <div className="md:col-span-8 col-span-12 md:mt-0 mt-3">
+                    <p>{hotelViewContent.timingContent[2].description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
+              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
+                <MdPets className="text-2xl text-[#12B76A]" />
+                <h3 className="text-lg font-semibold">Pets</h3>
+              </div>
+              <div className="sm:col-span-8 col-span-12 my-2">
+                <p>{hotelViewContent.timingContent[3].description}</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
+              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
+                <PiForkKnifeFill className="text-2xl text-[#12B76A]" />
+                <h3 className="text-lg font-semibold">Breakfast</h3>
+              </div>
+              <div className="sm:col-span-8 col-span-12 my-2 flex flex-col gap-2">
+                <p>{hotelViewContent.timingContent[4].breakefast.description}</p>
+                <div className="ageLimit grid grid-cols-12 gap-2 border-b">
+                  <div className="sm:col-span-5 col-span-12 flex gap-5 items-center">
+                    <h6 className="font-bold  text-base">Breakfast menu</h6>
+                  </div>
+                  <div className="sm:col-span-7 col-span-12">
+                    <p>{hotelViewContent.timingContent[4].breakefast.menu}</p>
+                  </div>
+                </div>
+                <div className="ageLimit grid grid-cols-12 gap-2 border-b">
+                  <div className="sm:col-span-5 col-span-12 flex gap-5 items-center">
+                    <h6 className="font-bold  text-base">Breakfast options</h6>
+                  </div>
+                  <div className="sm:col-span-7 col-span-12">
+                    <p>{hotelViewContent.timingContent[4].breakefast.options}</p>
+                  </div>
+                </div>
+                <div className="ageLimit grid grid-cols-12 gap-2">
+                  <div className="sm:col-span-5 col-span-12 flex gap-5 items-center">
+                    <h6 className="font-bold  text-base">Breakfast price</h6>
+                  </div>
+                  <div className="sm:col-span-7 col-span-12">
+                    <p>{hotelViewContent.timingContent[4].breakefast.price}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
+              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
+                <PiSealWarningBold className="text-2xl text-[#12B76A]" />
+                <h3 className="text-lg font-semibold">Important information from
+                  the hotel</h3>
+              </div>
+              <div className="sm:col-span-8 col-span-12 my-2">
+                <p>{hotelViewContent.timingContent[5].description}</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
+              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
+                <FaRegBuilding className="text-2xl text-[#12B76A]" />
+                <h3 className="text-lg font-semibold">Important information about
+                  the city</h3>
+              </div>
+              <div className="sm:col-span-8 col-span-12 my-2">
+                <p>{hotelViewContent.timingContent[6].description}</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-12 flex items-center gap-5">
+              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
+                <MdOutlinePayments className="text-2xl text-[#12B76A]" />
+                <h3 className="text-lg font-semibold">Accepted payment methods</h3>
+              </div>
+              <div className="sm:col-span-8 col-span-12 my-2">
+                <p>{hotelViewContent.timingContent[7].description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* amenities  */}
+      <div className="aminities">
+        <div className="container">
+          <div className="flex flex-col gap-4">
+            <div className='title'>
+              <h6 className='text-4xl font-semibold'>Amenities</h6>
+            </div>
+            <div className="aminities_services grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-2">
+              {
+                hotelViewContent.amenities.map((items, index) => (
+                  <div key={index} className="amenitiesCard  px-3 text-center bg-[#f1f1f1] md:h-40 h-28 rounded flex flex-col gap-1 justify-center items-center">
+                    {items.icons}
+                    <h6 className='text-sm'>{items.title}</h6>
+                  </div>))
+              }
+            </div>
+            <div className="button flex justify-center">
+              <button className='bg-[#f1f1f1] font-semibold p-2 w-full w-max rounded px-4'>See All Amenities</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default page;
