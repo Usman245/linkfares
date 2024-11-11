@@ -118,7 +118,6 @@ body {
   }
 }
 
-<<<<<<< HEAD
 .custom-marquee {
   .rfm-initial-child-container {
     /* justify-content: space-between;
@@ -127,12 +126,10 @@ body {
 }
 
 .custom-progress .nextui-progress-bar {
-  background-color: #12B76A; /* Replace with your preferred color */
+  background-color: #12b76a; /* Replace with your preferred color */
 }
-=======
-@media (max-width : 767.98px) {
+@media (max-width: 767.98px) {
   .inlines {
     display: none;
   }
 }
->>>>>>> 7ca1d92bb01537e80b140744e51dfdfccd709dce
