@@ -59,7 +59,7 @@ const Faq = () => {
 
   return (
    <div className="container">
-     <div className=" xl:w-3/5 lg:w-4/5 w-full md:16 mt-8">
+     <div className=" xl:w-3/5 lg:w-4/5 w-full md:mt-16 mt-8 md:mb-52 mb-80">
       <h2 className="text-[32px] font-poppins font-bold mb-4 ">
         Frequently Asked Questions
       </h2>

@@ -161,56 +161,7 @@ const CarCollection = () => {
           days and are subject to change.
         </div>
       </div>
-      <div className="md:mt-24 mt-8">
-        <h1 className="text-[32px] font-poppins font-bold ">
-          Hiring a car in London: Fast Facts
-        </h1>
-        <p className="text-base mt-2 ">
-          Everything you need to know to hit the road happy.
-        </p>
-        <div className="mt-8 grid md:grid-cols-3 sm:grid-cols-2 gap-4 md:gap-0 grid-col-1 justify-between">
-          <div className="flex flex-col gap-[2px]">
-            <span className="">
-              <FaHeart className="w-6 h-6" />
-            </span>
-            <h className="text-lg font-normal">Most car hire company</h>
-            <span className="text-green-600 font-bold text-[
-            20px]">
-              Green Motion
-            </span>
-          </div>
-          <div className="flex flex-col gap-[2px]">
-            <span className="">
-              <BiSolidLike className="w-6 h-6" />
-            </span>
-            <h className="text-lg font-normal">Most car hire </h>
-            <span className="text-green-600 font-bold text-[
-            20px]">
-              Compact, SUV
-            </span>
-          </div>
-          <div className="flex flex-col gap-[2px]">
-            <span className="">
-              <AiFillTag className="w-6 h-6" />
-            </span>
-            <h className="text-lg font-normal">Avarage daily price</h>
-            <span className="text-black font-bold text-[
-            20px]">
-              Rs2699
-            </span>
-          </div>
-          <div className="flex flex-col gap-[2px] md:mt-4">
-            <span className="">
-              <FaCalendarAlt className="w-6 h-6" />
-            </span>
-            <h className="text-lg font-normal">Best time to book</h>
-            <span className="text-black font-bold text-[
-            20px]">
-              3 weeks before
-            </span>
-          </div>
-        </div>
-      </div>
+    
     </div>
   );
 };
