@@ -91,11 +91,13 @@ body {
   /* Custom styling for navigation buttons */
   color: #333;
 }
+
 .accordian-wrapper h2 button {
   padding: 12px !important;
   border: 2px solid #e7e9eb !important;
   border-radius: 12px;
 }
+
 .custom-tab span {
   background-color: #05203c !important;
 }
@@ -103,6 +105,7 @@ body {
 .custom-star span {
   line-height: 20px !important;
 }
+
 .hotelswiper .swiper-slide {
   width: 40%;
 
@@ -123,5 +126,10 @@ body {
 }
 
 .custom-progress .nextui-progress-bar {
-  background-color: #12B76A; /* Replace with your preferred color */
+  background-color: #12b76a; /* Replace with your preferred color */
+}
+@media (max-width: 767.98px) {
+  .inlines {
+    display: none;
+  }
 }
