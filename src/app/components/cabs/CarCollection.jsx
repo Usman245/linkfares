@@ -5,9 +5,7 @@ import { FaUserAlt, FaHeart } from "react-icons/fa";
 import { BsFillSuitcase2Fill } from "react-icons/bs";
 import { FaArrowDown } from "react-icons/fa";
 import { IoMdInformationCircle } from "react-icons/io";
-import { FaCalendarAlt } from "react-icons/fa";
-import { BiSolidLike } from "react-icons/bi";
-import {AiFillTag} from 'react-icons/ai'
+
 
 const CarCollection = () => {
   const dealsArr = [
