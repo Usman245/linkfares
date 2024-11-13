@@ -5,6 +5,7 @@ import { FaUserAlt, FaHeart } from "react-icons/fa";
 import { BsFillSuitcase2Fill } from "react-icons/bs";
 import { FaArrowDown } from "react-icons/fa";
 import { IoMdInformationCircle } from "react-icons/io";
+import Link from "next/link";
 
 
 const CarCollection = () => {
@@ -91,7 +92,7 @@ const CarCollection = () => {
       </h1>
       <div className="grid  grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-8">
         {visibleCars.map((e, index) => (
-          <div
+          <Link href='/Cabs/CarSelection'
             className=" rounded-lg bg-[#FFFFFF] cursor-pointer
 "
             key={index}
@@ -134,7 +135,7 @@ const CarCollection = () => {
                 <div>Per day</div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="flex justify-center mt-8">
