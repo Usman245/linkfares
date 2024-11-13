@@ -499,6 +499,139 @@ const page = () => {
           </div>
         </div>
       </div>
+      {/* rating and reviews */}
+      <div className="ratingReviews py-5">
+        <div className="title flex flex-col gap-5">
+          <div className='title'>
+            <h6 className='md:text-4xl text-2xl font-semibold'>Ratings and reviews</h6>
+          </div>
+          <div className="grid grid-cols-12 gap-4 md:gap-0 items-center">
+            <div className="md:col-span-3 col-span-12">
+              <div className="rating">
+                <div className="grid grid-cols-12">
+                  <div className='number col-span-4'>
+                    <span className="text-4xl font-bold">43</span>
+                    <span>/5</span>
+                  </div>
+                  <span className="review col-span-8">
+                    <h5 className="font-semibold">Very good</h5>
+                    <p className="text-sm">41 reviews</p>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="grid md:grid-cols-2 xs:grid-cols-6 md:gap-16 md:col-span-9 col-span-12">
+              <div className="flex flex-col md:gap-5 xs:gap-0">
+                <div className="Cleanliness flex flex-col gap-1">
+                  <div className="detail flex justify-between">
+                    <p>Cleanliness</p>
+                    <span>4.0</span>
+                  </div>
+                  <ProgressBar bgColor="#12B76A" completed={90} />
+                </div>
+                <div className="Service flex flex-col gap-1">
+                  <div className="detail flex justify-between">
+                    <p>Service</p>
+                    <span>3.7</span>
+                  </div>
+                  <ProgressBar bgColor="#12B76A" completed={96} />
+                </div>
+              </div>
+              <div className="flex flex-col md:gap-5 xs:gap-0">
+                <div className="Location flex flex-col gap-1">
+                  <div className="detail flex justify-between">
+                    <p>Location</p>
+                    <span>3.9</span>
+                  </div>
+                  <ProgressBar bgColor="#12B76A" completed={84} />
+                </div>
+                <div className="Facilities flex flex-col gap-1">
+                  <div className="detail flex justify-between">
+                    <p>Facilities</p>
+                    <span>3.9</span>
+                  </div>
+                  <ProgressBar bgColor="#12B76A" completed={80} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* gallery */}
+      <div className="gallery flex flex-col gap-5 py-5">
+        <div className='title mb-5'>
+          <h6 className='md:text-4xl text-2xl font-semibold'>More about Hotel Excelsior Karachi</h6>
+        </div>
+        <div className="gallery">
+          <Gallery images={images} />
+        </div>
+        <div className="description flex flex-col gap-2">
+          <h6 className='md:text-2xl text-lg font-semibold'>Hotel Excelsior Karachi</h6>
+          <p>
+            Hotel Excelsior Karachi is situated in Karachi, in the Saddar Town district. With free WiFi,
+            this 4-star hotel offers room service and a 24-hour front desk.
+          </p>
+          <p>There is a restaurant serving Chinese cuisine, and free private parking is available.</p>
+        </div>
+      </div>
+      {/* rating and reviews */}
+      <div className="ratingReviews py-5">
+        <div className="title flex flex-col gap-5">
+          <div className='title'>
+            <h6 className='md:text-4xl text-2xl font-semibold'>Ratings and reviews</h6>
+          </div>
+          <div className="grid grid-cols-12 gap-4 md:gap-0 items-center">
+            <div className="md:col-span-3 col-span-12">
+              <div className="rating">
+                <div className="grid grid-cols-12">
+                  <div className='number col-span-4'>
+                    <span className="text-4xl font-bold">43</span>
+                    <span>/5</span>
+                  </div>
+                  <span className="review col-span-8">
+                    <h5 className="font-semibold">Very good</h5>
+                    <p className="text-sm">41 reviews</p>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="grid md:grid-cols-2 xs:grid-cols-6 md:gap-16 md:col-span-9 col-span-12">
+              <div className="flex flex-col md:gap-5 xs:gap-0">
+                <div className="Cleanliness flex flex-col gap-1">
+                  <div className="detail flex justify-between">
+                    <p>Cleanliness</p>
+                    <span>4.0</span>
+                  </div>
+                  <ProgressBar bgColor="#12B76A" completed={90} />
+                </div>
+                <div className="Service flex flex-col gap-1">
+                  <div className="detail flex justify-between">
+                    <p>Service</p>
+                    <span>3.7</span>
+                  </div>
+                  <ProgressBar bgColor="#12B76A" completed={96} />
+                </div>
+              </div>
+              <div className="flex flex-col md:gap-5 xs:gap-0">
+                <div className="Location flex flex-col gap-1">
+                  <div className="detail flex justify-between">
+                    <p>Location</p>
+                    <span>3.9</span>
+                  </div>
+                  <ProgressBar bgColor="#12B76A" completed={84} />
+                </div>
+                <div className="Facilities flex flex-col gap-1">
+                  <div className="detail flex justify-between">
+                    <p>Facilities</p>
+                    <span>3.9</span>
+                  </div>
+                  <ProgressBar bgColor="#12B76A" completed={80} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
