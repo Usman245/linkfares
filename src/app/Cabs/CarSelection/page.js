@@ -15,7 +15,7 @@ const page = () => {
         <div className='lg:w-[27%] w-full'>
           <Filters />
         </div>
-        <div className='lg:w-[73%] w-full '>
+        <div className='lg:w-[73%] w-full mb-80 '>
           <CarSelectionMap />
           <AllCars />
         </div>

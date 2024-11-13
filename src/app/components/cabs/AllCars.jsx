@@ -18,6 +18,7 @@ import { BsFillSuitcase2Fill } from "react-icons/bs";
 import { MdAirplanemodeActive } from "react-icons/md";
 import { TbManualGearboxFilled } from "react-icons/tb";
 import { FaCaretRight } from "react-icons/fa6";
+import Link from "next/link";
 
 const AllCars = () => {
   const prevButtonRef = useRef(null);
@@ -329,7 +330,7 @@ const AllCars = () => {
   let totalITems = 50;
   let noOfPages = Math.ceil(totalITems / pageSize);
   return (
-    <div className="mb-80">
+    <div className="">
       <div className="">
         <div className="flex justify-between items-center mt-2">
           <h1 className=""></h1>
@@ -395,7 +396,7 @@ const AllCars = () => {
             ))}
           </Swiper>
         </div>
-        <div className="flex justify-between mt-8 text-base font-medium text-black">
+        <div className="flex sm:flex-row flex-col-reverse gap-2 justify-between mt-8 text-base font-medium text-black">
           <div>402 results out off 407</div>
           <div className="flex gap-1 items-center">
             <span>Sort By</span>{" "}
@@ -412,7 +413,11 @@ const AllCars = () => {
         </div>
         <div className="mt-6 gap-4">
           {carData.map((car) => (
-            <div
+            <Link 
+            href={{
+              pathname: '/Cabs/CarSelection/CarHires',
+            }} 
+            
               key={car.id}
               className="flex sm:flex-row flex-col justify-between items-center  border border-gray-300 rounded-lg shadow-md mb-4"
             >
@@ -478,7 +483,7 @@ const AllCars = () => {
                   View deals
                 </button>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="flex justify-center items-center mt-8 gap-2">
