@@ -21,7 +21,17 @@ import { GiCoolSpices } from "react-icons/gi";
 import { MdAirportShuttle } from "react-icons/md";
 import { FaFemale } from "react-icons/fa";
 import { IoFastFoodSharp } from "react-icons/io5";
+import { Gallery } from "react-grid-gallery";
+import ProgressBar from "@ramonak/react-progress-bar";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/scrollbar';
 import Link from "next/link";
+import { Accordion, AccordionItem, Avatar } from "@nextui-org/react";
+import { MdOutlineFlight } from "react-icons/md";
+import { FaCarSide } from "react-icons/fa";
+import { FaThumbsUp } from "react-icons/fa6";
+import { Pagination } from "@nextui-org/react";
 
 const hotelViewContent = {
   range: [
@@ -106,9 +116,59 @@ const hotelViewContent = {
       icons: <IoFastFoodSharp className='text-[30px]' />,
       title: "Restaurant"
     },
+  ],
+  pic: [
+    {
+      src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
+      width: 320,
+      height: 212,
+    },
+    {
+      src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
+      width: 320,
+      height: 212,
+    },
+    {
+      src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+      width: 320,
+      height: 212,
+    },
+    {
+      src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
+      width: 320,
+      height: 212,
+    },
+    {
+      src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+      width: 320,
+      height: 212,
+    },
+    {
+      src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
+      width: 320,
+      height: 212,
+    },
+    {
+      src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+      width: 320,
+      height: 212,
+    },
+    {
+      src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
+      width: 320,
+      height: 212,
+    },
+    {
+      src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+      width: 320,
+      height: 212,
+    },
   ]
 
 }
+const defaultContent =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
+
 
 const page = () => {
   return (
@@ -499,136 +559,247 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* rating and reviews */}
-      <div className="ratingReviews py-5">
-        <div className="title flex flex-col gap-5">
-          <div className='title'>
-            <h6 className='md:text-4xl text-2xl font-semibold'>Ratings and reviews</h6>
-          </div>
-          <div className="grid grid-cols-12 gap-4 md:gap-0 items-center">
-            <div className="md:col-span-3 col-span-12">
-              <div className="rating">
-                <div className="grid grid-cols-12">
-                  <div className='number col-span-4'>
-                    <span className="text-4xl font-bold">43</span>
-                    <span>/5</span>
-                  </div>
-                  <span className="review col-span-8">
-                    <h5 className="font-semibold">Very good</h5>
-                    <p className="text-sm">41 reviews</p>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-2 xs:grid-cols-6 md:gap-16 md:col-span-9 col-span-12">
-              <div className="flex flex-col md:gap-5 xs:gap-0">
-                <div className="Cleanliness flex flex-col gap-1">
-                  <div className="detail flex justify-between">
-                    <p>Cleanliness</p>
-                    <span>4.0</span>
-                  </div>
-                  <ProgressBar bgColor="#12B76A" completed={90} />
-                </div>
-                <div className="Service flex flex-col gap-1">
-                  <div className="detail flex justify-between">
-                    <p>Service</p>
-                    <span>3.7</span>
-                  </div>
-                  <ProgressBar bgColor="#12B76A" completed={96} />
-                </div>
-              </div>
-              <div className="flex flex-col md:gap-5 xs:gap-0">
-                <div className="Location flex flex-col gap-1">
-                  <div className="detail flex justify-between">
-                    <p>Location</p>
-                    <span>3.9</span>
-                  </div>
-                  <ProgressBar bgColor="#12B76A" completed={84} />
-                </div>
-                <div className="Facilities flex flex-col gap-1">
-                  <div className="detail flex justify-between">
-                    <p>Facilities</p>
-                    <span>3.9</span>
-                  </div>
-                  <ProgressBar bgColor="#12B76A" completed={80} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       {/* gallery */}
-      <div className="gallery flex flex-col gap-5 py-5">
-        <div className='title mb-5'>
-          <h6 className='md:text-4xl text-2xl font-semibold'>More about Hotel Excelsior Karachi</h6>
-        </div>
-        <div className="gallery">
-          <Gallery images={images} />
-        </div>
-        <div className="description flex flex-col gap-2">
-          <h6 className='md:text-2xl text-lg font-semibold'>Hotel Excelsior Karachi</h6>
-          <p>
-            Hotel Excelsior Karachi is situated in Karachi, in the Saddar Town district. With free WiFi,
-            this 4-star hotel offers room service and a 24-hour front desk.
-          </p>
-          <p>There is a restaurant serving Chinese cuisine, and free private parking is available.</p>
+      <div className="gallery py-5">
+        <div className="container">
+          <div className="flex flex-col gap-5">
+            <div className='title mb-5'>
+              <h6 className='md:text-4xl text-2xl font-semibold'>More about Hotel Excelsior Karachi</h6>
+            </div>
+            <div className="gallery">
+              <Gallery images={hotelViewContent.pic} />
+            </div>
+            <div className="description flex flex-col gap-2">
+              <h6 className='md:text-2xl text-lg font-semibold'>Hotel Excelsior Karachi</h6>
+              <p>
+                Hotel Excelsior Karachi is situated in Karachi, in the Saddar Town district. With free WiFi,
+                this 4-star hotel offers room service and a 24-hour front desk.
+              </p>
+              <p>There is a restaurant serving Chinese cuisine, and free private parking is available.</p>
+            </div>
+          </div>
         </div>
       </div>
       {/* rating and reviews */}
       <div className="ratingReviews py-5">
-        <div className="title flex flex-col gap-5">
-          <div className='title'>
-            <h6 className='md:text-4xl text-2xl font-semibold'>Ratings and reviews</h6>
+        <div className="container">
+          <div className="title flex flex-col gap-5">
+            <div className='title'>
+              <h6 className='md:text-4xl text-2xl font-semibold'>Ratings and reviews</h6>
+            </div>
+            <div className="grid grid-cols-12 gap-4 md:gap-0 items-center">
+              <div className="md:col-span-3 col-span-12">
+                <div className="rating">
+                  <div className="grid grid-cols-12">
+                    <div className='number col-span-4'>
+                      <span className="text-4xl font-bold">43</span>
+                      <span>/5</span>
+                    </div>
+                    <span className="review col-span-8">
+                      <h5 className="font-semibold">Very good</h5>
+                      <p className="text-sm">41 reviews</p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-2 xs:grid-cols-6 md:gap-16 md:col-span-9 col-span-12">
+                <div className="flex flex-col md:gap-5 xs:gap-0">
+                  <div className="Cleanliness flex flex-col gap-1">
+                    <div className="detail flex justify-between">
+                      <p>Cleanliness</p>
+                      <span>4.0</span>
+                    </div>
+                    <ProgressBar bgColor="#12B76A" completed={90} />
+                  </div>
+                  <div className="Service flex flex-col gap-1">
+                    <div className="detail flex justify-between">
+                      <p>Service</p>
+                      <span>3.7</span>
+                    </div>
+                    <ProgressBar bgColor="#12B76A" completed={96} />
+                  </div>
+                </div>
+                <div className="flex flex-col md:gap-5 xs:gap-0">
+                  <div className="Location flex flex-col gap-1">
+                    <div className="detail flex justify-between">
+                      <p>Location</p>
+                      <span>3.9</span>
+                    </div>
+                    <ProgressBar bgColor="#12B76A" completed={84} />
+                  </div>
+                  <div className="Facilities flex flex-col gap-1">
+                    <div className="detail flex justify-between">
+                      <p>Facilities</p>
+                      <span>3.9</span>
+                    </div>
+                    <ProgressBar bgColor="#12B76A" completed={80} />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-12 gap-4 md:gap-0 items-center">
-            <div className="md:col-span-3 col-span-12">
-              <div className="rating">
-                <div className="grid grid-cols-12">
-                  <div className='number col-span-4'>
-                    <span className="text-4xl font-bold">43</span>
-                    <span>/5</span>
+        </div>
+      </div>
+      {/* traveller review */}
+      <div className="travellerRev flex flex-col gap-3">
+        <div className="container">
+          <div className='title mb-5'>
+            <h6 className='md:text-4xl text-2xl font-semibold'>Traveller reviews</h6>
+          </div>
+          <div className="slider">
+            <Swiper
+              spaceBetween={30}
+              pagination={{
+                clickable: true,
+              }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1
+                },
+                768: {
+                  slidesPerView: 3
+                },
+                1024: {
+                  slidesPerView: 6
+                },
+                1440: {
+                  slidesPerView: 6
+                }
+              }}
+              className="mySwiper"
+            >
+              {
+                hotelViewContent.pic.map((item, index) => (
+                  <div key={index} className="">
+                    <SwiperSlide><img src={item.src} alt="" /></SwiperSlide>
                   </div>
-                  <span className="review col-span-8">
-                    <h5 className="font-semibold">Very good</h5>
-                    <p className="text-sm">41 reviews</p>
-                  </span>
+
+                ))
+              }
+
+            </Swiper>
+          </div>
+          {/* buttons */}
+          <div className="filter grid grid-cols-12 items-center">
+            <div className="buttonFilter md:col-span-9 flex flex-col flex-col-reverse col-span-12">
+            <div className="filterBtn py-5">
+              <div className="button grid grid-cols-12 items-center">
+                <div className="md:col-span-1 col-span-2">
+                  <h1 className="font-semibold">Filter by</h1>
+                </div>
+                <div className="md:col-span-11 col-span-10 flex flex-wrap gap-3">
+                  {
+                    hotelViewContent.button.map((content, index) => (
+                      <button key={index} className="border rounded-lg w-full w-max shadow p-2">
+                        {content.title}
+                      </button>
+                    ))
+                  }
                 </div>
               </div>
             </div>
-            <div className="grid md:grid-cols-2 xs:grid-cols-6 md:gap-16 md:col-span-9 col-span-12">
-              <div className="flex flex-col md:gap-5 xs:gap-0">
-                <div className="Cleanliness flex flex-col gap-1">
-                  <div className="detail flex justify-between">
-                    <p>Cleanliness</p>
-                    <span>4.0</span>
-                  </div>
-                  <ProgressBar bgColor="#12B76A" completed={90} />
+            </div>
+            <div className="selection md:col-span-3 col-span-12 flex items-center gap-2">
+              <strong>Sort by :</strong> <Select
+                label="Select an animal"
+                className="max-w-xs w-52"
+                radius="5px"
+                classNames={
+                  {
+                    trigger: "border-gray-500"
+                  }}
+              >
+                {hotelViewContent.range.map((items) => (
+                  <SelectItem key={items.key}>{items.label} </SelectItem>
+                ))}
+              </Select>
+            </div>
+          </div>
+          <div className="buttons">
+            <div className="mentional">
+              <div className="button grid grid-cols-12 items-center gap-4">
+                <div className="md:col-span-3 col-span-12">
+                  <h1 className="font-semibold">Filter byMentioned by travellers</h1>
                 </div>
-                <div className="Service flex flex-col gap-1">
-                  <div className="detail flex justify-between">
-                    <p>Service</p>
-                    <span>3.7</span>
-                  </div>
-                  <ProgressBar bgColor="#12B76A" completed={96} />
-                </div>
-              </div>
-              <div className="flex flex-col md:gap-5 xs:gap-0">
-                <div className="Location flex flex-col gap-1">
-                  <div className="detail flex justify-between">
-                    <p>Location</p>
-                    <span>3.9</span>
-                  </div>
-                  <ProgressBar bgColor="#12B76A" completed={84} />
-                </div>
-                <div className="Facilities flex flex-col gap-1">
-                  <div className="detail flex justify-between">
-                    <p>Facilities</p>
-                    <span>3.9</span>
-                  </div>
-                  <ProgressBar bgColor="#12B76A" completed={80} />
+                <div className="md:col-span-9 col-span-12 flex flex-wrap gap-3">
+                  {
+                    hotelViewContent.button.map((content, index) => (
+                      <button key={index} className="border rounded-lg w-full w-max shadow p-2">
+                        {content.title}
+                      </button>
+                    ))
+                  }
                 </div>
               </div>
             </div>
+          </div>
+          <div className="revCard grid grid-cols-12 border-t-2 gap-5 mt-5 py-5">
+            <div className="card1 md:col-span-4 col-span-12">
+              <p className="comm">Comment: 3 Aug 2024</p>
+              <p className="stay">Stayed in: Jul 2024</p>
+            </div>
+            <div className="card1 md:col-span-8 col-span-12 flex flex-col md:gap-5 gap-3">
+              <div className="title">
+                <strong className="text-lg">5.0</strong><span className="text-xs">/5</span> Hotel.com
+              </div>
+              <div className="desc">After staying in several hotels in Saddar, we finally settled in Hotel Excelsior because it was fully booked until
+                that date. The hotel was amazing, the cleanliness, the breakfast had both Pakistani Breakfast and Continental
+                breakfast also. The stay was very comfortable and the service was amazing as well. Also the staff were very…</div>
+              <div className="helpful flex gap-2 items-center"><span><FaThumbsUp /></span> Helpfull?</div>
+            </div>
+          </div>
+          <div className="revCard grid grid-cols-12 border-t-2 gap-5 mt-5 py-5">
+            <div className="card1 md:col-span-4 col-span-12">
+              <p className="comm">Comment: 3 Aug 2024</p>
+              <p className="stay">Stayed in: Jul 2024</p>
+            </div>
+            <div className="card1 md:col-span-8 col-span-12 flex flex-col md:gap-5 gap-3">
+              <div className="title">
+                <strong className="text-lg">5.0</strong><span className="text-xs">/5</span> Hotel.com
+              </div>
+              <div className="desc">After staying in several hotels in Saddar, we finally settled in Hotel Excelsior because it was fully booked until
+                that date. The hotel was amazing, the cleanliness, the breakfast had both Pakistani Breakfast and Continental
+                breakfast also. The stay was very comfortable and the service was amazing as well. Also the staff were very…</div>
+              <div className="helpful flex gap-2 items-center"><span><FaThumbsUp /></span> Helpfull?</div>
+            </div>
+          </div>
+          <div className="pagination flex justify-center">
+            <Pagination isCompact showControls total={10} initialPage={1} classNames={{ cursor: "text-small bg-[#12b76a]" }} />
+          </div>
+        </div>
+      </div>
+      {/* need flights */}
+      <div className="needflights py-5">
+        <div className="container">
+          <div className='title mb-5 flex flex-col gap-2'>
+            <h6 className='md:text-4xl text-2xl font-semibold'>Need flights or a car for your trip?</h6>
+            <p>Did you know we can help you plan the rest of your trip? Get exclusive deals and great rates for flights and car hire.</p>
+          </div>
+          <div className="acc">
+            <Accordion selectionMode="multiple">
+              <AccordionItem
+                key="1"
+                aria-label="Flight"
+                className="border-b-1"
+                startContent={
+                  <MdOutlineFlight style={{ transform: 'rotate(45deg)' }} />
+                }
+                title="Flight"
+              >
+                {defaultContent}
+              </AccordionItem>
+              <AccordionItem
+                key="1"
+                aria-label="Car"
+                className="border-b-1"
+                startContent={
+                  <FaCarSide />
+                }
+                title="Car"
+              >
+                {defaultContent}
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </div>
