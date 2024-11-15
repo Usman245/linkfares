@@ -1,11 +1,11 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { PiCaretRightFill } from "react-icons/pi";
 import { GrLocationPin } from "react-icons/gr";
 import ReactStars from "react-rating-stars-component";
 import { BsUpload } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa6";
-import { Select, SelectItem } from "@nextui-org/react";
+import { image, Select, SelectItem } from "@nextui-org/react";
 import { FaRegClock } from "react-icons/fa";
 import { LiaChildSolid } from "react-icons/lia";
 import { FaBed } from "react-icons/fa";
@@ -14,9 +14,41 @@ import { PiForkKnifeFill } from "react-icons/pi";
 import { PiSealWarningBold } from "react-icons/pi";
 import { FaRegBuilding } from "react-icons/fa";
 import { MdOutlinePayments } from "react-icons/md";
+import { IoMdArrowDropdown } from "react-icons/io";
 
+
+const hotelViewDetails = {
+  cards: [
+    {
+      imx: "/images/master-card.1cb10f91.svg fill.png",
+    },
+    {
+      imx: "/images/union-pay.e87eb351.svg.png",
+    },
+    {
+      imx: "/images/visa.6d11d0bb.svg.png",
+    },
+    {
+      imx: "/images/master-card.1cb10f91.svg fill.png",
+    },
+    {
+      imx: "/images/union-pay.e87eb351.svg.png",
+    },
+    {
+      imx: "/images/visa.6d11d0bb.svg.png",
+    },
+
+  ]
+}
 
 const page = () => {
+  const [seeMore, setSeeMore] = useState(false);
+  const toggleSeeMore = () => {
+    setSeeMore((prev) => !prev);
+  };
+
+  const DisplayCard = seeMore ? hotelViewDetails.cards : hotelViewDetails.cards.slice(0, 3)
+
   return (
     <div>
       <div className="hero py-5">
@@ -101,7 +133,6 @@ const page = () => {
         </div>
       </div>
 
-
       {/* hotel Detail */}
       <div className="hotelDetail py-5">
         <div className="container">
@@ -137,35 +168,6 @@ const page = () => {
                 <button className='bg-[#12B76A] py-[10px] px-[130px] rounded text-[#fff] w-max'>Search rooms and rates</button>
               </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             <div className="button_text">
               <div className="button flex flex-wrap items-center gap-3">
@@ -228,144 +230,134 @@ const page = () => {
         </div>
       </div>
 
-
-       {/* timing  */}
-       <div className="timing py-[50px]">
+      {/* timing  */}
+      <div className="timing">
         <div className="container">
-          <h3 className="sm:text-4xl text-2xl font-semibold">
-            Check in and Check Out
-          </h3>
-          <div className="timer grid grid-cols-12 flex items-center mt-4">
-            <div className="clock sm:col-span-2 col-span-2">
-              <FaRegClock className="text-4xl" />
+          <div className="flex flex-col gap-4">
+            <div className="title">
+              <h1 className='md:text-4xl text-2xl font-semibold'>Check in and check out</h1>
             </div>
-            <div className="checkIn sm:col-span-3 col-span-5 flex flex-col gap-2">
-              Check in From:
-              <span className="font-bold text-lg">14:00</span>
-            </div>
-            <div className="checkOut sm:col-span-7 col-span-5 flex flex-col gap-2">
-              Check out Before:
-              <span className="font-bold text-lg">14:00</span>
-            </div>
-          </div>
-          <h3 className="sm:text-3xl text-2xl font-semibold mb-4 mt-[60px]">
-            Good to know
-          </h3>
-          <div className="GTN bg-[#f1f1f1] p-3 rounded">
-            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
-              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center mb-2">
-                <LiaChildSolid className="text-2xl text-[#12B76A]" />
-                <h3 className="text-lg font-semibold">Children</h3>
-              </div>
-              <div className="sm:col-span-8 col-span-12 mb-2">
-              <p>one</p>
-              </div>
-            </div>
-            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
-              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
-                <FaBed className="text-2xl text-[#12B76A]" />
-                <h3 className="text-lg font-semibold">Additional beds</h3>
-              </div>
-              <div className="sm:col-span-8 col-span-12 my-2">
-              <p>one</p>
-              </div>
-            </div>
-            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
-              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
-                <FaBed className="text-2xl text-[#12B76A]" />
-                <h3 className="text-lg font-semibold">Available beds</h3>
-              </div>
-              <div className="sm:col-span-8 col-span-12 my-2 flex flex-col gap-3">
-                <div className="ageLimit grid grid-cols-12 gap-2">
-                  <div className="md:col-span-4 col-span-12 flex gap-5 items-center">
-                    <span className="text-xs">Free</span>
-                    <h6 className="font-bold  text-base">From 5 to 5 <br className="inlines" /> years old</h6>
-                  </div>
-                  <div className="md:col-span-8 col-span-12 md:mt-0 mt-3">
-                    <p>For each room, 1 child can use existing beds for free.</p>
-                  </div>
-                </div>
-                <div className="ageLimit grid grid-cols-12 gap-2">
-                  <div className="md:col-span-4 col-span-12 flex gap-5 items-center">
-                    <span className="text-xs">Pay</span>
-                    <h6 className="font-bold text-base">From 6 to 17 years <br className="inlines" />
-                      old</h6>
-                  </div>
-                  <div className="md:col-span-8 col-span-12 md:mt-0 mt-3">
-                  <p>one</p>
-                  </div>
+            <div className="time grid grid-cols-2 gap-16">
+              <div className="flex items-center md:gap-24 gap-4">
+                <FaRegClock className='md:text-5xl text-3xl text-[#444560] font-bold' />
+                <div className="flex flex-col gap-2">
+                  <h4 className='md:text-2xl sm:text-lg xs:text-sm'>Check in from:</h4>
+                  <p className='md:text-lg sm:text-sm xs:text-xs font-bold'>14:00</p>
                 </div>
               </div>
-            </div>
-            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
-              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
-                <MdPets className="text-2xl text-[#12B76A]" />
-                <h3 className="text-lg font-semibold">Pets</h3>
-              </div>
-              <div className="sm:col-span-8 col-span-12 my-2">
-              <p>one</p>
+              <div className="flex flex-col gap-2">
+                <h4 className='md:text-2xl sm:text-lg xs:text-sm'>Check out before:</h4>
+                <p className='md:text-lg sm:text-sm xs:text-xs font-bold'>14:00</p>
               </div>
             </div>
-            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
-              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
-                <PiForkKnifeFill className="text-2xl text-[#12B76A]" />
-                <h3 className="text-lg font-semibold">Breakfast</h3>
+            <div className="title">
+              <h1 className='md:text-4xl text-2xl font-semibold'>Good to know</h1>
+            </div>
+            <div className="bg-[#EFF3F8] p-5 rounded">
+              <div className="grid grid-cols-12 gap-2 border-b-2 border-[#C1C7CF] py-3">
+                <div className="md:col-span-5 col-span-12 flex gap-2">
+                  <LiaChildSolid className='text-2xl text-[#12B76A]' />
+                  <h3 className='md:text-lg text-sm font-semibold'>Children</h3>
+                </div>
+                <div className="md:col-span-7 col-span-12">
+                  <p className='md:text-sm text-xs'>Children are welcome at this hotel.</p>
+                </div>
               </div>
-              <div className="sm:col-span-8 col-span-12 my-2 flex flex-col gap-2">
-              <p>one</p>
-                <div className="ageLimit grid grid-cols-12 gap-2 border-b">
-                  <div className="sm:col-span-5 col-span-12 flex gap-5 items-center">
-                    <h6 className="font-bold  text-base">Breakfast menu</h6>
-                  </div>
-                  <div className="sm:col-span-7 col-span-12">
-                  <p>one</p>
-                  </div>
+              <div className="grid grid-cols-12 gap-2 border-b-2 border-[#C1C7CF] py-3">
+                <div className="md:col-span-5 col-span-12 flex gap-3">
+                  <FaBed className='text-2xl text-[#12B76A]' />
+                  <h3 className='md:text-lg text-sm font-semibold'>Additional beds</h3>
                 </div>
-                <div className="ageLimit grid grid-cols-12 gap-2 border-b">
-                  <div className="sm:col-span-5 col-span-12 flex gap-5 items-center">
-                    <h6 className="font-bold  text-base">Breakfast options</h6>
-                  </div>
-                  <div className="sm:col-span-7 col-span-12">
-                  <p>one</p>
-                  </div>
+                <div className="md:col-span-7 col-span-12">
+                  <p className='md:text-sm text-xs'>Cribs cannot be added. Children 5 years old and over can use extra beds for an
+                    additional charge of PKR 2200.0.</p>
                 </div>
-                <div className="ageLimit grid grid-cols-12 gap-2">
-                  <div className="sm:col-span-5 col-span-12 flex gap-5 items-center">
-                    <h6 className="font-bold  text-base">Breakfast price</h6>
+              </div>
+              <div className="grid grid-cols-12 gap-2 border-b-2 border-[#C1C7CF] py-3">
+                <div className="md:col-span-5 col-span-12 flex gap-2">
+                  <FaBed className='text-2xl text-[#12B76A]' />
+                  <h3 className='md:text-lg text-sm font-semibold'>Available beds</h3>
+                </div>
+                <div className="md:col-span-7 col-span-12 flex flex-col gap-5">
+                  <div className="grid grid-cols-12 items-center md:gap-12 gap-1">
+                    <div className="flex items-center gap-3 md:col-span-3 col-span-12">
+                      <span className='text-xs'>Free</span> <strong className='text-sm'>From 5 to 5 years old</strong>
+                    </div>
+                    <div className="md:col-span-9 col-span-12">
+                      <p className='md:text-sm text-xs'>For each room, 1 child can use existing beds for free.</p>
+                    </div>
                   </div>
-                  <div className="sm:col-span-7 col-span-12">
-                  <p>one</p>
+                  <div className="grid grid-cols-12 items-center md:gap-12 gap-1">
+                    <div className="flex items-center gap-3 md:col-span-3 col-span-12">
+                      <span className='text-xs'>Pay</span> <strong className='text-sm'>From 6 to 17 years old</strong>
+                    </div>
+                    <div className="md:col-span-9 col-span-12">
+                      <p className='md:text-sm text-xs'>For each room, 1 child can use existing beds for an
+                      additional charge of PKR 1500.0.</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
-              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
-                <PiSealWarningBold className="text-2xl text-[#12B76A]" />
-                <h3 className="text-lg font-semibold">Important information from
-                  the hotel</h3>
+              <div className="grid grid-cols-12 gap-2 border-b-2 border-[#C1C7CF] py-3">
+                <div className="md:col-span-5 col-span-12 flex gap-3">
+                  <MdPets className='text-2xl text-[#12B76A]' />
+                  <h3 className='md:text-lg text-sm font-semibold'>Pets</h3>
+                </div>
+                <div className="md:col-span-7 col-span-12">
+                  <p className='md:text-sm text-xs'>Pets are not allowed.</p>
+                </div>
               </div>
-              <div className="sm:col-span-8 col-span-12 my-2">
-              <p>one</p>
+              <div className="grid grid-cols-12 gap-2 border-b-2 border-[#C1C7CF] py-3">
+                <div className="md:col-span-5 col-span-12 flex gap-3">
+                  <PiForkKnifeFill className='text-2xl text-[#12B76A]' />
+                  <h3 className='md:text-lg text-sm font-semibold'>Breakfast</h3>
+                </div>
+                <div className="md:col-span-7 col-span-12">
+                  <p className='md:text-sm text-xs'>Children are welcome at this hotel.</p>
+                </div>
               </div>
-            </div>
-            <div className="grid grid-cols-12 flex items-center gap-5 border-b">
-              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
-                <FaRegBuilding className="text-2xl text-[#12B76A]" />
-                <h3 className="text-lg font-semibold">Important information about
-                  the city</h3>
+              <div className="grid grid-cols-12 gap-2 border-b-2 border-[#C1C7CF] py-3">
+                <div className="md:col-span-5 col-span-12 flex gap-3">
+                  <PiSealWarningBold className='text-2xl text-[#12B76A]' />
+                  <h3 className='md:text-lg text-sm font-semibold'>Important information from the hotel</h3>
+                </div>
+                <div className="md:col-span-7 col-span-12">
+                  <p className='md:text-sm text-xs'>Visitors of the guests are not permitted to stay in or enter the guest rooms.</p>
+                </div>
               </div>
-              <div className="sm:col-span-8 col-span-12 my-2">
-                <p>one</p>
+              <div className="grid grid-cols-12 gap-2 border-b-2 border-[#C1C7CF] py-3">
+                <div className="md:col-span-5 col-span-12 flex gap-3">
+                  <FaRegBuilding className='text-2xl text-[#12B76A]' />
+                  <h3 className='md:text-lg text-sm font-semibold'>Important information about the city</h3>
+                </div>
+                <div className="md:col-span-7 col-span-12">
+                  <p className='md:text-sm text-xs'>According to local regulations, foreign guests entering Pakistan are required to report
+                    their purpose of visit and itinerary to the local police. Some areas may have temporary
+                    control measures or closures. It is necessary to have security guard and bulletproof
+                    vehicles for travel. Please contact the hotel in advance to confirm the relevant
+                    arrangements.</p>
+                </div>
               </div>
-            </div>
-            <div className="grid grid-cols-12 flex items-center gap-5">
-              <div className="sm:col-span-4 col-span-12 flex gap-5 items-center my-2">
-                <MdOutlinePayments className="text-2xl text-[#12B76A]" />
-                <h3 className="text-lg font-semibold">Accepted payment methods</h3>
-              </div>
-              <div className="sm:col-span-8 col-span-12 my-2">
-                <p>one</p>
+              <div className="grid grid-cols-12 gap-2 py-3">
+                <div className="md:col-span-5 col-span-12 flex gap-3">
+                  <MdOutlinePayments className='text-2xl text-[#12B76A]' />
+                  <h3 className='md:text-lg text-sm font-semibold'>Accepted payment methods</h3>
+                </div>
+                <div className="md:col-span-7 col-span-12">
+                  <p className='md:text-sm text-xs'>The hotel accepts the following payment methods:</p>
+                  <div className="card flex flex-wrap gap-2">
+                    <ul className="card flex flex-wrap items-center gap-2">
+                      {
+                        DisplayCard.map((items, index) => (
+                          <li key={index}><img src={items.imx} alt="master" /></li>
+                        ))
+                      }
+                    </ul>
+                    <button onClick={toggleSeeMore} className='md:text-lg text-xs text-semibold flex items-center gap-1'>
+                      {seeMore ? "See Less" : "See More"} <IoMdArrowDropdown />
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
