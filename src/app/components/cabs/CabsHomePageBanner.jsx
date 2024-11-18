@@ -1,9 +1,26 @@
-import React from "react";
-import Image from "next/image";
+"use client";
+import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { IoMdInformationCircle } from "react-icons/io";
+import { FaCheck } from "react-icons/fa";
 
 const CabsHomePageBanner = () => {
+  const [checked, setChecked] = useState(false);
+  const [checked2, setChecked2] = useState(false);
+
+  const handleCheckboxChange = () => {
+    if (!checked) {
+      setChecked(true);
+    } else {
+      setChecked(false);
+    }
+  };
+  const handleCheckboxChange2 = () => {
+    if (!checked2) {
+      setChecked2(true);
+    } else {
+      setChecked2(false);
+    }
+  };
   return (
     <div className='relative flex justify-center items-center py-28 bg-cover bg-center bg-no-repeat bg-[url("/images/cabsbg.png")]'>
       {/* Gradient Overlay */}
@@ -71,22 +88,59 @@ const CabsHomePageBanner = () => {
             </div>
           </form>
           <div className="flex justify-between sm:flex-row flex-col items-center mt-2 mb-3 font-roboto">
-            <div className="flex flex-col items-start list-none">
-              <label className="flex items-center space-x-2">
+            <div className="flex flex-col items-start list-none gap-2">
+              <div className="flex items-center">
+                {/* Hidden Checkbox */}
                 <input
                   type="checkbox"
-                  className="w-6 h-6 rounded outline-none border-none checked:text-green-600 checked:border-none checked:ring-0"
+                  id="customCheckbox"
+                  checked={checked}
+                  onChange={handleCheckboxChange}
+                  className="hidden"
                 />
-                <span className="text-base">Accept Terms</span>
-              </label>
-              <label className="flex items-center space-x-2 mt-1">
+                <div
+                  onClick={handleCheckboxChange}
+                  className={`w-5 h-5 flex items-center justify-center rounded border-gray-600 cursor-pointer ${
+                    checked ? "bg-green-600 border-none" : "bg-white border"
+                  }`}
+                >
+                  {checked && <FaCheck className="text-white text-xs" />}
+                </div>
+                <label
+                  htmlFor="customCheckbox"
+                  className="ml-2 font-medium text-sm cursor-pointer"
+                >
+                  Remember me
+                </label>
+              </div>
+              <div className="flex items-center ">
+                {/* Hidden Checkbox */}
                 <input
                   type="checkbox"
-                  className="w-6 h-6 rounded outline-none border-none checked:text-green-600 checked:border-none checked:ring-0"
+                  id="customCheckbox"
+                  checked={checked2}
+                  onChange={handleCheckboxChange2}
+                  className="hidden"
                 />
-                <span className="text-base">Driver aged between 25-50</span>
-                <IoMdInformationCircle color="white" className="rounded-full w-6 h-6 text-black" />
-              </label>
+
+                {/* Custom Checkbox */}
+                <div
+                  onClick={handleCheckboxChange2}
+                  className={`w-5 h-5 flex items-center justify-center rounded border-gray-600 cursor-pointer ${
+                    checked2 ? "bg-green-600 border-none" : "bg-white border"
+                  }`}
+                >
+                  {checked2 && <FaCheck className="text-white text-xs" />}
+                </div>
+
+                {/* Label */}
+                <label
+                  htmlFor="customCheckbox"
+                  className="ml-2 font-medium text-sm cursor-pointer"
+                >
+                  Driver must be btween 25-50
+                </label>
+              </div>
             </div>
             <div className="flex items-end top-3 relative">
               <button className="flex items-center justify-center py-2 px-4 gap-2 bg-green-500 rounded text-white text-lg font-normal cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out">

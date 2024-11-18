@@ -1,35 +1,47 @@
-'use client'
-import React, { useState } from 'react';
-import { FaFacebook, FaGoogle, FaApple, FaAngleLeft, FaCheck } from 'react-icons/fa';
-import { FcGoogle } from 'react-icons/fc';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import React, { useState } from "react";
+import {
+  FaFacebook,
+  FaGoogle,
+  FaApple,
+  FaAngleLeft,
+  FaCheck,
+} from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function page() {
-        const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false);
 
-        const handleCheckboxChange = () => {
-        setChecked(!checked);
-        };
+  const handleCheckboxChange = () => {
+    setChecked(!checked);
+  };
   return (
     <div className="flex justify-center items-start  py-10 bg-gray-100">
       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md font-poppins">
         {/* Back arrow icon */}
-        <Link href='/AuthPages/Signup' className="text-gray-600 ">
-          <FaAngleLeft className='w-4 h-4'/>
+        <Link href="/AuthPages/Signup" className="text-gray-600 ">
+          <FaAngleLeft className="w-4 h-4" />
         </Link>
 
         {/* Logo and Title */}
         <div className="flex flex-col items-start mb-6 mt-6">
-          
-         <Link href='/' className='flex gap-2 items-center'>
-         <span className="flex justify-center items-center w-12 h-12 rounded-full bg-green-600">
-          <Image src={'/images/Vector.png'} objectFit='cover' width={25} height={20} alt='logo' />
-         </span>
-         <div className='text-xl font-bold'>Link<span className='text-green-600'>Fares</span></div>
-         </Link>
-           
-          
+          <Link href="/" className="flex gap-2 items-center">
+            <span className="flex justify-center items-center w-12 h-12 rounded-full bg-green-600">
+              <Image
+                src={"/images/Vector.png"}
+                objectFit="cover"
+                width={25}
+                height={20}
+                alt="logo"
+              />
+            </span>
+            <div className="text-xl font-bold">
+              Link<span className="text-green-600">Fares</span>
+            </div>
+          </Link>
+
           <h2 className="text-2xl font-bold text-center mt-4">
             Get the <span className="text-green-600">full experience</span>
           </h2>
@@ -56,34 +68,45 @@ export default function page() {
 
         {/* Remember Me Checkbox */}
         <div className="flex items-center mb-6">
-      {/* Hidden Checkbox */}
-      <input
-        type="checkbox"
-        id="customCheckbox"
-        checked={checked}
-        onChange={handleCheckboxChange}
-        className="hidden"
-      />
+          {/* Hidden Checkbox */}
+          <input
+            type="checkbox"
+            id="customCheckbox"
+            checked={checked}
+            onChange={handleCheckboxChange}
+            className="hidden"
+          />
 
-      {/* Custom Checkbox */}
-      <div
-        onClick={handleCheckboxChange}
-        className={`w-5 h-5 flex items-center justify-center rounded border-gray-600 cursor-pointer ${
-          checked ? 'bg-green-600 border-none' : 'bg-white border'
-        }`}
-      >
-        {checked && <FaCheck className="text-white text-xs" />}
-      </div>
+          {/* Custom Checkbox */}
+          <div
+            onClick={handleCheckboxChange}
+            className={`w-5 h-5 flex items-center justify-center rounded border-gray-600 cursor-pointer ${
+              checked ? "bg-green-600 border-none" : "bg-white border"
+            }`}
+          >
+            {checked && <FaCheck className="text-white text-xs" />}
+          </div>
 
-      {/* Label */}
-      <label htmlFor="customCheckbox" className="ml-2 font-medium text-sm cursor-pointer">
-        Remember me
-      </label>
-    </div>
+          {/* Label */}
+          <label
+            htmlFor="customCheckbox"
+            className="ml-2 font-medium text-sm cursor-pointer"
+          >
+            Remember me
+          </label>
+        </div>
 
         {/* Terms and Policy */}
         <p className="text-sm text-gray-800 font-medium">
-          By continuing you agree to our <a href="#" className="text-blue-500 underline">Terms of Service</a> and <a href="#" className="text-blue-500 underline">Privacy Policy</a>.
+          By continuing you agree to our{" "}
+          <a href="#" className="text-blue-500 underline">
+            Terms of Service
+          </a>{" "}
+          and{" "}
+          <a href="#" className="text-blue-500 underline">
+            Privacy Policy
+          </a>
+          .
         </p>
       </div>
     </div>
