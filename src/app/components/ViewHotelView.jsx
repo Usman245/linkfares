@@ -21,6 +21,7 @@ import { GiCoolSpices } from "react-icons/gi";
 import { FaVanShuttle } from "react-icons/fa6";
 import { FaFemale } from "react-icons/fa";
 import { IoFastFoodSharp } from "react-icons/io5";
+import Link from "next/link";
 
 const hotelViewDetails = {
   cards: [
@@ -349,9 +350,12 @@ const ViewHotelView = () => {
                     </div>
                     <div className="flex flex-col gap-2">
                       <p>3 nights, 2 guest</p>
-                      <button className="bg-[#12B76A] py-2 px-3 rounded text-[#fff] w-max">
+                      <Link
+                        href={"/Hotels/HotelCart"}
+                        className="bg-[#12B76A] py-2 px-3 rounded text-[#fff] w-max"
+                      >
                         Book Now
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -577,7 +581,7 @@ const ViewHotelView = () => {
         </div>
 
         {/* amenities */}
-        <div className="amenities">
+        <div className="amenities  py-5">
           <div className="container">
             <div className="flex flex-col gap-4">
               <div className="title">
