@@ -1,5 +1,5 @@
 import SignUpForm from "@/app/components/SignUpForm";
-import React, { useState } from "react";
+import React from "react";
 
 const page = () => {
   return <SignUpForm />;
