@@ -15,6 +15,12 @@ import { PiSealWarningBold } from "react-icons/pi";
 import { FaRegBuilding } from "react-icons/fa";
 import { MdOutlinePayments } from "react-icons/md";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { FaWifi } from "react-icons/fa";
+import { TbParkingCircleFilled } from "react-icons/tb";
+import { GiCoolSpices } from "react-icons/gi";
+import { FaVanShuttle } from "react-icons/fa6";
+import { FaFemale } from "react-icons/fa";
+import { IoFastFoodSharp } from "react-icons/io5";
 
 
 const hotelViewDetails = {
@@ -38,6 +44,56 @@ const hotelViewDetails = {
       imx: "/images/visa.6d11d0bb.svg.png",
     },
 
+  ],
+  amenities: [
+    {
+      icon: <FaWifi className='text-2xl' />,
+      label: "WIFI"
+    },
+    {
+      icon: <TbParkingCircleFilled className='text-2xl' />,
+      label: "Parking"
+    },
+    {
+      icon: <GiCoolSpices className='text-2xl' />,
+      label: "Air conditioning"
+    },
+    {
+      icon: <FaVanShuttle className='text-2xl' />,
+      label: "Airport shuttle"
+    },
+    {
+      icon: <FaFemale className='text-2xl' />,
+      label: "Front desk 24 hour"
+    },
+    {
+      icon: <IoFastFoodSharp className='text-2xl' />,
+      label: "Restaurant"
+    },
+    {
+      icon: <FaWifi className='text-2xl' />,
+      label: "WIFI"
+    },
+    {
+      icon: <TbParkingCircleFilled className='text-2xl' />,
+      label: "Parking"
+    },
+    {
+      icon: <GiCoolSpices className='text-2xl' />,
+      label: "Air conditioning"
+    },
+    {
+      icon: <FaVanShuttle className='text-2xl' />,
+      label: "Airport shuttle"
+    },
+    {
+      icon: <FaFemale className='text-2xl' />,
+      label: "Front desk 24 hour"
+    },
+    {
+      icon: <IoFastFoodSharp className='text-2xl' />,
+      label: "Restaurant"
+    }
   ]
 }
 
@@ -46,8 +102,14 @@ const page = () => {
   const toggleSeeMore = () => {
     setSeeMore((prev) => !prev);
   };
-
   const DisplayCard = seeMore ? hotelViewDetails.cards : hotelViewDetails.cards.slice(0, 3)
+
+
+  const [amenities, setAmenities] = useState(false);
+  const toggleAmenetis = () => {
+    setAmenities((prev) => !prev);
+  };
+  const Amenities = amenities ? hotelViewDetails.amenities : hotelViewDetails.amenities.slice(0, 6)
 
   return (
     <div>
@@ -279,21 +341,21 @@ const page = () => {
                   <h3 className='md:text-lg text-sm font-semibold'>Available beds</h3>
                 </div>
                 <div className="md:col-span-7 col-span-12 flex flex-col gap-5">
-                  <div className="grid grid-cols-12 items-center md:gap-12 gap-1">
-                    <div className="flex items-center gap-3 md:col-span-3 col-span-12">
+                  <div className="grid grid-cols-12 md:gap-12 gap-1">
+                    <div className="flex gap-4 md:col-span-3 col-span-12">
                       <span className='text-xs'>Free</span> <strong className='text-sm'>From 5 to 5 years old</strong>
                     </div>
                     <div className="md:col-span-9 col-span-12">
                       <p className='md:text-sm text-xs'>For each room, 1 child can use existing beds for free.</p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-12 items-center md:gap-12 gap-1">
-                    <div className="flex items-center gap-3 md:col-span-3 col-span-12">
+                  <div className="grid grid-cols-12 md:gap-12 gap-1">
+                    <div className="flex gap-4 md:col-span-3 col-span-12">
                       <span className='text-xs'>Pay</span> <strong className='text-sm'>From 6 to 17 years old</strong>
                     </div>
                     <div className="md:col-span-9 col-span-12">
                       <p className='md:text-sm text-xs'>For each room, 1 child can use existing beds for an
-                      additional charge of PKR 1500.0.</p>
+                        additional charge of PKR 1500.0.</p>
                     </div>
                   </div>
                 </div>
@@ -312,8 +374,20 @@ const page = () => {
                   <PiForkKnifeFill className='text-2xl text-[#12B76A]' />
                   <h3 className='md:text-lg text-sm font-semibold'>Breakfast</h3>
                 </div>
-                <div className="md:col-span-7 col-span-12">
+                <div className="md:col-span-7 col-span-12 flex flex-col gap-2">
                   <p className='md:text-sm text-xs'>Children are welcome at this hotel.</p>
+                  <div className="grid grid-cols-12 py-2 border-b-1 text-sm">
+                    <div className="md:col-span-3 col-span-12"> <strong>Breakfast menu</strong></div>
+                    <div className="md:col-span-9 col-span-12"><p>Buffet.</p></div>
+                  </div>
+                  <div className="grid grid-cols-12 py-2 border-b-1 text-sm">
+                    <div className="md:col-span-3 col-span-12"> <strong>Breakfast options</strong></div>
+                    <div className="md:col-span-9 col-span-12"><p>Continental breakfast.</p></div>
+                  </div>
+                  <div className="grid grid-cols-12 py-2 border-b-1 text-sm">
+                    <div className="md:col-span-3 col-span-12"> <strong>Breakfast price</strong></div>
+                    <div className="md:col-span-9 col-span-12"><p>Rs 1,833 /person</p></div>
+                  </div>
                 </div>
               </div>
               <div className="grid grid-cols-12 gap-2 border-b-2 border-[#C1C7CF] py-3">
@@ -363,6 +437,33 @@ const page = () => {
           </div>
         </div>
       </div>
+
+      {/* amenities */}
+      <div className="amenities">
+        <div className="container">
+          <div className="flex flex-col gap-4">
+            <div className="title">
+              <h1 className='md:text-4xl text-2xl font-semibold'>Amenities</h1>
+            </div>
+            <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-4">
+              {
+                Amenities.map((items, index) => (
+                  <div key={index} className="bg-[#EFF3F8] rounded-lg h-40 flex flex-col justify-center gap-2 items-center">
+                    {items.icon}
+                    <p className='md:text-sm text-xs'>{items.label}</p>
+                  </div>
+                ))
+              }
+              <button onClick={toggleAmenetis} className='md:text-sm text-xs font-extrabold py-2 bg-[#E0E4E9] rounded-lg'>
+                {amenities ? "Less All Amenities" : "See All Amenities"}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
   )
 }
