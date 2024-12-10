@@ -9,6 +9,7 @@ import Link from "next/link";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { MdOutlineSwapHorizontalCircle } from "react-icons/md";
+import { LiaCcVisa } from "react-icons/lia";
 
 const flighttabs = [
   {
@@ -41,6 +42,12 @@ const flighttabs = [
     name: "Packages",
     routePath: "/Packages",
     pic: <TbPackages color="white" />,
+  },
+  {
+    id: 6,
+    name: "Visa",
+    routePath: "/Visa",
+    pic: <LiaCcVisa color="white" />,
   },
 ];
 

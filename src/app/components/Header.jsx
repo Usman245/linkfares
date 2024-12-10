@@ -33,7 +33,7 @@ const Header = () => {
                 href="#"
                 className="text-black-2f  font-bold text-sm  font-roboto"
               >
-                USD
+                PKR
               </Link>
             </div>
 
