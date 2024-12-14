@@ -91,12 +91,12 @@ const SignUpForm = () => {
 
           {/* Social Login Buttons */}
           <div className="flex gap-4 sm:flex-row flex-col items-center mb-4">
-            <button className="flex items-center justify-center w-full border border-[#D9D9D9] py-2 px-2 whitespace-nowrap hover:bg-gray-100 font-medium rounded-[10px]">
+            <Link href='/AuthPages/Dialog' className="flex items-center justify-center w-full border border-[#D9D9D9] py-2 px-2 whitespace-nowrap hover:bg-gray-100 font-medium rounded-[10px]">
               <FcGoogle className="mr-1 w-6 h-6" /> Sign in with Google
-            </button>
-            <button className="flex items-center justify-center w-full border border-[#D9D9D9] py-2 px-2 whitespace-nowrap  hover:bg-gray-100 font-medium rounded-[10px]">
+            </Link>
+            <Link className="flex items-center justify-center w-full border border-[#D9D9D9] py-2 px-2 whitespace-nowrap  hover:bg-gray-100 font-medium rounded-[10px]">
               <FaApple className="mr-1 w-6 h-6" /> Sign in with Apple
-            </button>
+            </Link>
           </div>
 
           <p className="text-center font-medium">
